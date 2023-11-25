@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb6a22ec-7184-4ad7-8417-54af63675fd0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lazygit.bat" afterDir="false" />
-    </list>
+    <list default="true" id="fb6a22ec-7184-4ad7-8417-54af63675fd0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,7 +32,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Souri/Projects/modul151",
+    "last_opened_file_path": "C:/Users/Souri/Desktop/151",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -55,11 +53,14 @@
       <option name="presentableId" value="Default" />
       <updated>1700294088673</updated>
       <workItem from="1700294089675" duration="948000" />
-      <workItem from="1700299673609" duration="45000" />
+      <workItem from="1700299673609" duration="142000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.bat" />
   </component>
 </project>
