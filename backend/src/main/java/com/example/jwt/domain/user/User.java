@@ -1,17 +1,12 @@
 package com.example.jwt.domain.user;
 
 import com.example.jwt.core.generic.ExtendedAuditEntity;
+import com.example.jwt.domain.level.Level;
 import com.example.jwt.domain.role.Role;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
@@ -28,12 +23,15 @@ public class User extends ExtendedAuditEntity {
 
   @Column(name = "password")
   private String password;
+  @OneToOne(cascade = CascadeType.ALL)
+  @JoinColumn(name = "users_level", referencedColumnName = "id")
+  private Level level;
 
   @ManyToMany(fetch = FetchType.EAGER)
   @JoinTable(
-      name = "users_role",
-      joinColumns = @JoinColumn(name = "users_id", referencedColumnName = "id"),
-      inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id")
+          name = "users_role",
+          joinColumns = @JoinColumn(name = "users_id", referencedColumnName = "id"),
+          inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id")
   )
   private Set<Role> roles = new HashSet<>();
 
@@ -41,7 +39,7 @@ public class User extends ExtendedAuditEntity {
   }
 
   public User(UUID id, String firstName, String lastName, String email, String password,
-      Set<Role> roles) {
+              Set<Role> roles) {
     super(id);
     this.firstName = firstName;
     this.lastName = lastName;
@@ -92,6 +90,15 @@ public class User extends ExtendedAuditEntity {
 
   public User setRoles(Set<Role> roles) {
     this.roles = roles;
+    return this;
+  }
+
+  public Level getLevel() {
+    return level;
+  }
+
+  public User setLevel(Level level) {
+    this.level = level;
     return this;
   }
 }
