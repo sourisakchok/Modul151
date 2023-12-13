@@ -19,7 +19,7 @@ insert into role values ('164ca30f-9104-4e5a-b871-b4df6444708f', 'CLIENT'),
     "lastName":"Muster",
     "email":"test@gmail.com",
     "password":"password",
-    "address":"Peterstrasse",
+    "address":"Peterstrasse 23",
     "ort":"Jona",
     "plz":"8640",
     "birthday":"2000-12-03"
