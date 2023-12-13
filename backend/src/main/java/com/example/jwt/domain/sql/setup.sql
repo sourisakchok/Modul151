@@ -11,6 +11,13 @@ insert into level values ('686bb227-87b1-43e8-8665-8c2a6e22b25d', 'BRONZE'),
 insert into role values ('164ca30f-9104-4e5a-b871-b4df6444708f', 'CLIENT'),
                         ('f4b3b8a8-c23f-4ab3-830e-a519f478c3c3', 'ADMIN');
 
+ALTER TABLE level
+    ADD CONSTRAINT valid_enum_constraint CHECK (name IN ('BRONZE', 'SILVER', 'GOLD', 'PLATINUM', 'DIAMOND'));
+
+ALTER TABLE role
+    ADD CONSTRAINT valid_enum_constraint CHECK (name IN ('CLIENT', 'ADMIN'));
+
+
 
 /* User soll über Postman localhost:8080/users/register erstellt werden.
 
