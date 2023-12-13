@@ -10,34 +10,34 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-12-13T21:55:38+0100",
+    date = "2023-12-13T22:07:33+0100",
     comments = "version: 1.5.5.Final, compiler: Eclipse JDT (IDE) 3.36.0.v20231114-0937, environment: Java 17.0.9 (Eclipse Adoptium)"
 )
 @Component
 public class CategoryMapperImpl implements CategoryMapper {
 
     @Override
-    public Category fromDTO(CategoryDTO arg0) {
-        if ( arg0 == null ) {
+    public Category fromDTO(CategoryDTO dto) {
+        if ( dto == null ) {
             return null;
         }
 
         Category category = new Category();
 
-        category.setId( arg0.getId() );
-        category.setName( arg0.getName() );
+        category.setId( dto.getId() );
+        category.setName( dto.getName() );
 
         return category;
     }
 
     @Override
-    public List<Category> fromDTOs(List<CategoryDTO> arg0) {
-        if ( arg0 == null ) {
+    public List<Category> fromDTOs(List<CategoryDTO> dtos) {
+        if ( dtos == null ) {
             return null;
         }
 
-        List<Category> list = new ArrayList<Category>( arg0.size() );
-        for ( CategoryDTO categoryDTO : arg0 ) {
+        List<Category> list = new ArrayList<Category>( dtos.size() );
+        for ( CategoryDTO categoryDTO : dtos ) {
             list.add( fromDTO( categoryDTO ) );
         }
 
@@ -45,13 +45,13 @@ public class CategoryMapperImpl implements CategoryMapper {
     }
 
     @Override
-    public Set<Category> fromDTOs(Set<CategoryDTO> arg0) {
-        if ( arg0 == null ) {
+    public Set<Category> fromDTOs(Set<CategoryDTO> dtos) {
+        if ( dtos == null ) {
             return null;
         }
 
-        Set<Category> set = new LinkedHashSet<Category>( Math.max( (int) ( arg0.size() / .75f ) + 1, 16 ) );
-        for ( CategoryDTO categoryDTO : arg0 ) {
+        Set<Category> set = new LinkedHashSet<Category>( Math.max( (int) ( dtos.size() / .75f ) + 1, 16 ) );
+        for ( CategoryDTO categoryDTO : dtos ) {
             set.add( fromDTO( categoryDTO ) );
         }
 
@@ -59,27 +59,27 @@ public class CategoryMapperImpl implements CategoryMapper {
     }
 
     @Override
-    public CategoryDTO toDTO(Category arg0) {
-        if ( arg0 == null ) {
+    public CategoryDTO toDTO(Category BO) {
+        if ( BO == null ) {
             return null;
         }
 
         CategoryDTO categoryDTO = new CategoryDTO();
 
-        categoryDTO.setId( arg0.getId() );
-        categoryDTO.setName( arg0.getName() );
+        categoryDTO.setId( BO.getId() );
+        categoryDTO.setName( BO.getName() );
 
         return categoryDTO;
     }
 
     @Override
-    public List<CategoryDTO> toDTOs(List<Category> arg0) {
-        if ( arg0 == null ) {
+    public List<CategoryDTO> toDTOs(List<Category> BOs) {
+        if ( BOs == null ) {
             return null;
         }
 
-        List<CategoryDTO> list = new ArrayList<CategoryDTO>( arg0.size() );
-        for ( Category category : arg0 ) {
+        List<CategoryDTO> list = new ArrayList<CategoryDTO>( BOs.size() );
+        for ( Category category : BOs ) {
             list.add( toDTO( category ) );
         }
 
@@ -87,13 +87,13 @@ public class CategoryMapperImpl implements CategoryMapper {
     }
 
     @Override
-    public Set<CategoryDTO> toDTOs(Set<Category> arg0) {
-        if ( arg0 == null ) {
+    public Set<CategoryDTO> toDTOs(Set<Category> BOs) {
+        if ( BOs == null ) {
             return null;
         }
 
-        Set<CategoryDTO> set = new LinkedHashSet<CategoryDTO>( Math.max( (int) ( arg0.size() / .75f ) + 1, 16 ) );
-        for ( Category category : arg0 ) {
+        Set<CategoryDTO> set = new LinkedHashSet<CategoryDTO>( Math.max( (int) ( BOs.size() / .75f ) + 1, 16 ) );
+        for ( Category category : BOs ) {
             set.add( toDTO( category ) );
         }
 

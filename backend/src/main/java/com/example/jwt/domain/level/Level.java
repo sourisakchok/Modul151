@@ -16,12 +16,9 @@ public class Level extends ExtendedEntity {
     @Column(name = "name")
     @Enumerated(EnumType.STRING)
     private LevelEnum name;
+    // private int seeds;
     @OneToOne(mappedBy = "level")
     private User user;
-
-
-    public Level() {
-    }
 
     public Level(UUID id, LevelEnum name, User user) {
         super(id);
@@ -46,4 +43,18 @@ public class Level extends ExtendedEntity {
         this.user = user;
         return this;
     }
+
+    // public void addSeeds(int newSeeds) {
+    // this.seeds += newSeeds;
+    // updateLevel();
+    // }
+
+    // private void updateLevel() {
+    // for (LevelEnum l : LevelEnum.values()) {
+    // if (this.seeds >= l.getSeed()) {
+    // this.name = l;
+    // break;
+    // }
+    // }
+    // }
 }

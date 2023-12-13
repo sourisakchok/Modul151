@@ -16,36 +16,44 @@ public class User extends ExtendedAuditEntity {
 
   @Column(name = "first_name")
   private String firstName;
+
   @Column(name = "last_name")
   private String lastName;
+
   @Column(name = "email", unique = true, nullable = false)
   private String email;
+
   @Column(name = "password")
   private String password;
+
   @Column(name = "address")
   private String address;
+
   @Column(name = "ort")
   private String ort;
+
   @Column(name = "plz")
   private String plz;
+
   @Column(name = "birthday")
   private LocalDate birthday;
+
+  @Column(name = "discount")
+  private double discount;
+
   @OneToOne(cascade = CascadeType.ALL)
   @JoinColumn(name = "users_level", referencedColumnName = "id")
   private Level level;
 
   @ManyToMany(fetch = FetchType.EAGER)
-  @JoinTable(
-          name = "users_role",
-          joinColumns = @JoinColumn(name = "users_id", referencedColumnName = "id"),
-          inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id")
-  )
+  @JoinTable(name = "users_role", joinColumns = @JoinColumn(name = "users_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
   private Set<Role> roles = new HashSet<>();
 
   public User() {
   }
 
-  public User(String firstName, String lastName, String email, String password, String address, String ort, String plz, LocalDate birthday, Level level, Set<Role> roles) {
+  public User(String firstName, String lastName, String email, String password, String address, String ort, String plz,
+      LocalDate birthday, double discount, Level level, Set<Role> roles) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.email = email;
@@ -56,9 +64,11 @@ public class User extends ExtendedAuditEntity {
     this.birthday = birthday;
     this.level = level;
     this.roles = roles;
+    this.discount = discount;
   }
 
-  public User(UUID id, String firstName, String lastName, String email, String password, String address, String ort, String plz, LocalDate birthday, Level level, Set<Role> roles) {
+  public User(UUID id, String firstName, String lastName, String email, String password, String address, String ort,
+      String plz, LocalDate birthday, double discount, Level level, Set<Role> roles) {
     super(id);
     this.firstName = firstName;
     this.lastName = lastName;
@@ -70,6 +80,7 @@ public class User extends ExtendedAuditEntity {
     this.birthday = birthday;
     this.level = level;
     this.roles = roles;
+    this.discount = discount;
   }
 
   public String getFirstName() {
@@ -134,6 +145,14 @@ public class User extends ExtendedAuditEntity {
 
   public void setBirthday(LocalDate birthday) {
     this.birthday = birthday;
+  }
+
+  public double setDiscount() {
+    return discount;
+  }
+
+  public void setDiscount(double discount) {
+    this.discount = discount;
   }
 
   public Level getLevel() {
