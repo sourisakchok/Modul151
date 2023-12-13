@@ -1,9 +1,13 @@
 package com.example.jwt.domain.authority;
 
 import com.example.jwt.core.generic.ExtendedEntity;
+import com.example.jwt.domain.role.Role;
+
+import java.util.Set;
 import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -13,12 +17,21 @@ public class Authority extends ExtendedEntity {
   @Column(name = "name", nullable = false, unique = true)
   private String name;
 
+  @ManyToMany(mappedBy = "authorities")
+  private Set<Role> roles;
+
   public Authority() {
   }
 
-  public Authority(UUID id, String name) {
+  public Authority(String name, Set<Role> roles) {
+    this.name = name;
+    this.roles = roles;
+  }
+
+  public Authority(UUID id, String name, Set<Role> roles) {
     super(id);
     this.name = name;
+    this.roles = roles;
   }
 
   public String getName() {
@@ -27,6 +40,15 @@ public class Authority extends ExtendedEntity {
 
   public Authority setName(String name) {
     this.name = name;
+    return this;
+  }
+
+  public Set<Role> getRoles() {
+    return roles;
+  }
+
+  public Authority setRoles(Set<Role> roles) {
+    this.roles = roles;
     return this;
   }
 }

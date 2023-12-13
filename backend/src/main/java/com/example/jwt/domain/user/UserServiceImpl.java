@@ -1,6 +1,8 @@
 package com.example.jwt.domain.user;
 
 import com.example.jwt.core.generic.ExtendedServiceImpl;
+import com.example.jwt.domain.authority.Authority;
+import com.example.jwt.domain.role.RoleRepository;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -8,28 +10,30 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 @Service
 public class UserServiceImpl extends ExtendedServiceImpl<User> implements UserService {
 
   private final BCryptPasswordEncoder bCryptPasswordEncoder;
+  private final RoleRepository roleRepository;
+
+  @Autowired
+  public UserServiceImpl(UserRepository repository, Logger logger,
+                         BCryptPasswordEncoder bCryptPasswordEncoder, RoleRepository roleRepository) {
+    super(repository, logger);
+    this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+    this.roleRepository = roleRepository;
+  }
+
   @Override
   public User register(User user) {
     user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-
-    user.setRole(Role.CLIENT);
-
-    Set<Authority> authorities = new HashSet<>();
-    authorities.add(Authority.CAN_PLACE_ORDER);
-    authorities.add(Authority.CAN_RETRIEVE_PURCHASE_HISTORY);
-    authorities.add(Authority.CAN_RETRIEVE_PRODUCTS);
-    user.setAuthorities(authorities);
-
+    user.setRoles(roleRepository.findByName("CLIENT"));
     return save(user);
-  @Autowired
-  public UserServiceImpl(UserRepository repository, Logger logger,
-      BCryptPasswordEncoder bCryptPasswordEncoder) {
-    super(repository, logger);
-    this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+
   }
 
   @Override
@@ -38,9 +42,4 @@ public class UserServiceImpl extends ExtendedServiceImpl<User> implements UserSe
         .orElseThrow(() -> new UsernameNotFoundException(email));
   }
 
-  @Override
-  public User register(User user) {
-    user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-    return save(user);
-  }
 }

@@ -4,7 +4,7 @@ import com.example.jwt.core.generic.ExtendedAuditEntity;
 import com.example.jwt.domain.level.Level;
 import com.example.jwt.domain.role.Role;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
@@ -16,25 +16,20 @@ public class User extends ExtendedAuditEntity {
 
   @Column(name = "first_name")
   private String firstName;
-
   @Column(name = "last_name")
   private String lastName;
-
   @Column(name = "email", unique = true, nullable = false)
   private String email;
-
   @Column(name = "password")
   private String password;
-
-  @Column(name = "adresse")
-  private String adresse;
+  @Column(name = "address")
+  private String address;
   @Column(name = "ort")
   private String ort;
   @Column(name = "plz")
   private String plz;
-
   @Column(name = "birthday")
-  private Date birthday;
+  private LocalDate birthday;
   @OneToOne(cascade = CascadeType.ALL)
   @JoinColumn(name = "users_level", referencedColumnName = "id")
   private Level level;
@@ -50,12 +45,12 @@ public class User extends ExtendedAuditEntity {
   public User() {
   }
 
-  public User(String firstName, String lastName, String email, String password, String adresse, String ort, String plz, Date birthday, Level level, Set<Role> roles) {
+  public User(String firstName, String lastName, String email, String password, String address, String ort, String plz, LocalDate birthday, Level level, Set<Role> roles) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.email = email;
     this.password = password;
-    this.adresse = adresse;
+    this.address = address;
     this.ort = ort;
     this.plz = plz;
     this.birthday = birthday;
@@ -63,13 +58,13 @@ public class User extends ExtendedAuditEntity {
     this.roles = roles;
   }
 
-  public User(UUID id, String firstName, String lastName, String email, String password, String adresse, String ort, String plz, Date birthday, Level level, Set<Role> roles) {
+  public User(UUID id, String firstName, String lastName, String email, String password, String address, String ort, String plz, LocalDate birthday, Level level, Set<Role> roles) {
     super(id);
     this.firstName = firstName;
     this.lastName = lastName;
     this.email = email;
     this.password = password;
-    this.adresse = adresse;
+    this.address = address;
     this.ort = ort;
     this.plz = plz;
     this.birthday = birthday;
@@ -109,12 +104,12 @@ public class User extends ExtendedAuditEntity {
     this.password = password;
   }
 
-  public String getAdresse() {
-    return adresse;
+  public String getAddress() {
+    return address;
   }
 
-  public void setAdresse(String adresse) {
-    this.adresse = adresse;
+  public void setAddress(String adresse) {
+    this.address = address;
   }
 
   public String getOrt() {
@@ -133,11 +128,11 @@ public class User extends ExtendedAuditEntity {
     this.plz = plz;
   }
 
-  public Date getBirthday() {
+  public LocalDate getBirthday() {
     return birthday;
   }
 
-  public void setBirthday(Date birthday) {
+  public void setBirthday(LocalDate birthday) {
     this.birthday = birthday;
   }
 
