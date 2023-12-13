@@ -17,7 +17,6 @@ public class ProductServiceImpl implements ProductService {
     this.productRepository = productRepository;
   }
 
-
   @Override
   public Product save(Product entity) {
     return productRepository.save(entity);
@@ -68,15 +67,12 @@ public class ProductServiceImpl implements ProductService {
     }
   }
 
-  // As soon as we got a database connected to our application, we can fetch the most expensive product from the database
-  // and return it. For now, we just return the most expensive product from a list of products!
   @Override
   public Product findMostExpensive(List<Product> products) {
     // Hier wird die Methode findAllProducts() aus dem Repository aufgerufen
     List<Product> allProducts = productRepository.findAllProducts();
     Optional<Product> mostExpensiveProduct = allProducts.stream()
-            .max(Comparator.comparingDouble(Product::getPrice));
+            .max(Comparator.comparingDouble(Product::getSalePrice));
     return mostExpensiveProduct.orElse(null);
   }
-
 }

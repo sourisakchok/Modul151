@@ -1,9 +1,8 @@
 package com.example.jwt.domain.product;
 
 import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.mapping.Set;
-
 import javax.persistence.*;
+import java.util.Date;
 import java.util.UUID;
 
 @Entity
@@ -19,18 +18,28 @@ public class Product {
   @Column(name = "name", nullable = false)
   private String name;
 
-  @Column(name = "price")
-  private int price;
+  @Column(name = "originCountry")
+  private String originCountry;
 
+  @Column(name = "purchasePrice")
+  private double purchasePrice;
+
+  @Column(name = "salePrice")
+  private double salePrice;
+
+  @Column(name = "harvestDate")
+  private Date harvestDate;
 
   public Product() {
-
   }
 
-  public Product(UUID id, String name, int price) {
+  public Product(UUID id, String name, String originCountry, double purchasePrice, double salePrice, Date harvestDate) {
     this.id = id;
     this.name = name;
-    this.price = price;
+    this.originCountry = originCountry;
+    this.purchasePrice = purchasePrice;
+    this.salePrice = salePrice;
+    this.harvestDate = harvestDate;
   }
 
   public UUID getId() {
@@ -51,13 +60,39 @@ public class Product {
     return this;
   }
 
-  public double getPrice() {
-    return price;
+  public String getOriginCountry() {
+    return originCountry;
   }
 
-  public Product setPrice(int price) {
-    this.price = price;
+  public Product setOriginCountry(String originCountry) {
+    this.originCountry = originCountry;
     return this;
   }
 
+  public double getPurchasePrice() {
+    return purchasePrice;
+  }
+
+  public Product setPurchasePrice(double purchasePrice) {
+    this.purchasePrice = purchasePrice;
+    return this;
+  }
+
+  public double getSalePrice() {
+    return salePrice;
+  }
+
+  public Product setSalePrice(double salePrice) {
+    this.salePrice = salePrice;
+    return this;
+  }
+
+  public Date getHarvestDate() {
+    return harvestDate;
+  }
+
+  public Product setHarvestDate(Date harvestDate) {
+    this.harvestDate = harvestDate;
+    return this;
+  }
 }

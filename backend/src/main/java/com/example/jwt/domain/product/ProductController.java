@@ -12,6 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -47,10 +49,11 @@ public class ProductController {
   public ResponseEntity<Product> retrieveById(@PathVariable UUID id) {
     return new ResponseEntity<>(productService.findById(id), HttpStatus.OK);
   }
-
-  @GetMapping({"{page}/{pagesize}", "{page}/{pagesize}"})
-  public ResponseEntity<List<Product>> retrieveAll(@PathVariable int page, @PathVariable int pagesize) {
-    return new ResponseEntity<>(productService.findAll((PageRequest.of( page, pagesize, Sort.by("price").descending()))), HttpStatus.OK);
+// Muss wie folgt aufgerufen werden /products?page=0&size=5
+  @GetMapping("")
+  @PreAuthorize("hasAuthority('CAN_RETRIEVE_PRODUCTS')")
+  public ResponseEntity<List<Product>> retrieveAll(Pageable pageable) {
+    return new ResponseEntity<>(productService.findAll(pageable), HttpStatus.OK);
   }
 
   @PutMapping({"", "/"})
@@ -73,5 +76,4 @@ public class ProductController {
     List<Product> allProducts = productService.findAll(pageable);
     return new ResponseEntity<>(productService.findMostExpensive(allProducts), HttpStatus.OK);
   }
-
 }
