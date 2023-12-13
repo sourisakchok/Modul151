@@ -119,7 +119,7 @@ public class User extends ExtendedAuditEntity {
     return address;
   }
 
-  public void setAddress(String adresse) {
+  public void setAddress(String address) {
     this.address = address;
   }
 
