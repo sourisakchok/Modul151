@@ -3,7 +3,10 @@ package com.example.jwt.domain.user.dto;
 import com.example.jwt.domain.authority.Authority;
 import com.example.jwt.domain.authority.dto.AuthorityDTO;
 import com.example.jwt.domain.role.Role;
+<<<<<<< HEAD
+=======
 import com.example.jwt.domain.role.RoleEnum;
+>>>>>>> origin/main
 import com.example.jwt.domain.role.dto.RoleDTO;
 import com.example.jwt.domain.user.User;
 import java.util.ArrayList;
@@ -15,8 +18,13 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
+<<<<<<< HEAD
+    date = "2023-12-13T23:01:27+0100",
+    comments = "version: 1.5.5.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-7.5.jar, environment: Java 17.0.9 (Eclipse Adoptium)"
+=======
     date = "2023-12-13T23:32:18+0100",
     comments = "version: 1.5.5.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-7.5.jar, environment: Java 17.0.7 (Oracle Corporation)"
+>>>>>>> origin/main
 )
 @Component
 public class UserMapperImpl implements UserMapper {
@@ -178,9 +186,13 @@ public class UserMapperImpl implements UserMapper {
         Role role = new Role();
 
         role.setId( roleDTO.getId() );
+<<<<<<< HEAD
+        role.setName( roleDTO.getName() );
+=======
         if ( roleDTO.getName() != null ) {
             role.setName( Enum.valueOf( RoleEnum.class, roleDTO.getName() ) );
         }
+>>>>>>> origin/main
         role.setAuthorities( authorityDTOSetToAuthoritySet( roleDTO.getAuthorities() ) );
 
         return role;
@@ -233,9 +245,13 @@ public class UserMapperImpl implements UserMapper {
         RoleDTO roleDTO = new RoleDTO();
 
         roleDTO.setId( role.getId() );
+<<<<<<< HEAD
+        roleDTO.setName( role.getName() );
+=======
         if ( role.getName() != null ) {
             roleDTO.setName( role.getName().name() );
         }
+>>>>>>> origin/main
         roleDTO.setAuthorities( authoritySetToAuthorityDTOSet( role.getAuthorities() ) );
 
         return roleDTO;
