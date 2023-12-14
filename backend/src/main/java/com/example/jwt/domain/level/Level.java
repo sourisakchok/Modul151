@@ -16,8 +16,9 @@ public class Level extends ExtendedEntity {
     @Column(name = "name", nullable = false, unique = true)
     @Enumerated(EnumType.STRING)
     private LevelEnum name;
-    // private int seeds;
 
+    @Column(name = "discount_rate")
+    private double discountRate;  // Rabattsatz
     public Level(UUID id, LevelEnum name) {
         super(id);
         this.name = name;
