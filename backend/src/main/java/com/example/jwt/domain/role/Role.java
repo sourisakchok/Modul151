@@ -5,20 +5,15 @@ import com.example.jwt.domain.authority.Authority;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "role")
 public class Role extends ExtendedEntity {
 
   @Column(name = "name", nullable = false, unique = true)
-  private String name;
+  @Enumerated(EnumType.STRING)
+  private RoleEnum name;
 
   @ManyToMany(fetch = FetchType.EAGER)
   @JoinTable(
@@ -31,17 +26,17 @@ public class Role extends ExtendedEntity {
   public Role() {
   }
 
-  public Role(UUID id, String name, Set<Authority> authorities) {
+  public Role(UUID id, RoleEnum name, Set<Authority> authorities) {
     super(id);
     this.name = name;
     this.authorities = authorities;
   }
 
-  public String getName() {
+  public RoleEnum getName() {
     return name;
   }
 
-  public Role setName(String name) {
+  public Role setName(RoleEnum name) {
     this.name = name;
     return this;
   }

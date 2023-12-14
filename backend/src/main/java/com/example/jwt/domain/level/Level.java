@@ -13,17 +13,18 @@ import javax.persistence.*;
 @Table(name = "level")
 public class Level extends ExtendedEntity {
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false, unique = true)
     @Enumerated(EnumType.STRING)
     private LevelEnum name;
     // private int seeds;
-    @OneToOne(mappedBy = "level")
-    private User user;
 
-    public Level(UUID id, LevelEnum name, User user) {
+    public Level(UUID id, LevelEnum name) {
         super(id);
         this.name = name;
-        this.user = user;
+    }
+
+    public Level() {
+
     }
 
     public LevelEnum getName() {
@@ -32,15 +33,6 @@ public class Level extends ExtendedEntity {
 
     public Level setName(LevelEnum name) {
         this.name = name;
-        return this;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public Level setUser(User user) {
-        this.user = user;
         return this;
     }
 
