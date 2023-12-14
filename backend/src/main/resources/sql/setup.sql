@@ -20,15 +20,14 @@ ALTER TABLE role
 
 
 /* User soll über Postman localhost:8080/users/register erstellt werden.
-
    {
-    "firstName":"Max",
-    "lastName":"Muster",
+    "firstName":"Zinedine",
+    "lastName":"Tomasella",
     "email":"test@gmail.com",
-    "password":"password",
-    "address":"Peterstrasse 23",
+    "password":"Password1%",
+    "address":"Peterstrasse 34",
     "ort":"Jona",
     "plz":"8640",
-    "birthday":"2000-12-03"
+    "birthday":"2000-02-23"
 }
  */
