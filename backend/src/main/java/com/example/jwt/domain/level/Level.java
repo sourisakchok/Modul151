@@ -18,14 +18,21 @@ public class Level extends ExtendedEntity {
     private LevelEnum name;
 
     @Column(name = "discount_rate")
-    private double discountRate;  // Rabattsatz
-    public Level(UUID id, LevelEnum name) {
-        super(id);
-        this.name = name;
-    }
+    private Double discountRate;  // Rabattsatz
 
     public Level() {
 
+    }
+
+    public Level(LevelEnum name, double discountRate) {
+        this.name = name;
+        this.discountRate = discountRate;
+    }
+
+    public Level(UUID id, LevelEnum name, double discountRate) {
+        super(id);
+        this.name = name;
+        this.discountRate = discountRate;
     }
 
     public LevelEnum getName() {
@@ -34,6 +41,15 @@ public class Level extends ExtendedEntity {
 
     public Level setName(LevelEnum name) {
         this.name = name;
+        return this;
+    }
+
+    public double getDiscountRate() {
+        return discountRate;
+    }
+
+    public Level setDiscountRate(double discountRate) {
+        this.discountRate = discountRate;
         return this;
     }
 
