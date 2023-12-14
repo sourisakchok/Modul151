@@ -1,0 +1,349 @@
+Index: backend/src/main/resources/application.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>jwt.expiration-millis=86400000\r\njwt.issuer=securityApp\r\njwt.secret=wIDAQABAkAzGlFARFau7K0b9FcEwIDAQABAkAzGlFARFau7K0b9FcEwIDAQABAkAzGlFARFau7K0b9FcE\r\nspring.datasource.driver-class-name=org.postgresql.Driver\r\nspring.datasource.type=com.zaxxer.hikari.HikariDataSource\r\nspring.datasource.url=jdbc:postgresql://localhost:5432/postgres\r\nspring.datasource.username=postgres\r\nspring.datasource.password=postgrespw\r\nspring.jpa.hibernate.ddl-auto=create
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/backend/src/main/resources/application.properties b/backend/src/main/resources/application.properties
+--- a/backend/src/main/resources/application.properties	(revision 94f29eab2cc8c0e3c989fafbcd26655049bbd3aa)
++++ b/backend/src/main/resources/application.properties	(date 1702119730060)
+@@ -5,5 +5,5 @@
+ spring.datasource.type=com.zaxxer.hikari.HikariDataSource
+ spring.datasource.url=jdbc:postgresql://localhost:5432/postgres
+ spring.datasource.username=postgres
+-spring.datasource.password=postgrespw
+-spring.jpa.hibernate.ddl-auto=create
+\ No newline at end of file
++spring.datasource.password=postgres
++spring.jpa.hibernate.ddl-auto=create
+Index: .idea/sqldialects.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/sqldialects.xml b/.idea/sqldialects.xml
+new file mode 100644
+--- /dev/null	(date 1702120019126)
++++ b/.idea/sqldialects.xml	(date 1702120019126)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="SqlDialectMappings">
++    <file url="PROJECT" dialect="PostgreSQL" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/dataSources.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/dataSources.xml b/.idea/dataSources.xml
+new file mode 100644
+--- /dev/null	(date 1702119762185)
++++ b/.idea/dataSources.xml	(date 1702119762185)
+@@ -0,0 +1,15 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
++    <data-source source="LOCAL" name="postgres@localhost" uuid="3ab94a3e-696c-499c-8131-e69711e1e79b">
++      <driver-ref>postgresql</driver-ref>
++      <synchronize>true</synchronize>
++      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
++      <jdbc-url>jdbc:postgresql://localhost:5432/postgres</jdbc-url>
++      <jdbc-additional-properties>
++        <property name="com.intellij.clouds.kubernetes.db.enabled" value="false" />
++      </jdbc-additional-properties>
++      <working-dir>$ProjectFileDir$</working-dir>
++    </data-source>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/jarRepositories.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/jarRepositories.xml b/.idea/jarRepositories.xml
+new file mode 100644
+--- /dev/null	(date 1702119516927)
++++ b/.idea/jarRepositories.xml	(date 1702119516927)
+@@ -0,0 +1,20 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="RemoteRepositoriesConfiguration">
++    <remote-repository>
++      <option name="id" value="central" />
++      <option name="name" value="Maven Central repository" />
++      <option name="url" value="https://repo1.maven.org/maven2" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="jboss.community" />
++      <option name="name" value="JBoss Community repository" />
++      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="MavenRepo" />
++      <option name="name" value="MavenRepo" />
++      <option name="url" value="https://repo.maven.apache.org/maven2/" />
++    </remote-repository>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/modules/jwt.main.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules/jwt.main.iml b/.idea/modules/jwt.main.iml
+new file mode 100644
+--- /dev/null	(date 1702119516878)
++++ b/.idea/modules/jwt.main.iml	(date 1702119516878)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module version="4">
++  <component name="AdditionalModuleElements">
++    <content url="file://$MODULE_DIR$/../../backend/build/generated/sources/annotationProcessor/java/main">
++      <sourceFolder url="file://$MODULE_DIR$/../../backend/build/generated/sources/annotationProcessor/java/main" isTestSource="false" generated="true" />
++    </content>
++  </component>
++</module>
+\ No newline at end of file
+Index: backend/build/generated/sources/annotationProcessor/java/main/com/example/jwt/domain/user/dto/UserMapperImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.jwt.domain.user.dto;\r\n\r\nimport com.example.jwt.domain.authority.Authority;\r\nimport com.example.jwt.domain.authority.dto.AuthorityDTO;\r\nimport com.example.jwt.domain.role.Role;\r\nimport com.example.jwt.domain.role.dto.RoleDTO;\r\nimport com.example.jwt.domain.user.User;\r\nimport java.util.ArrayList;\r\nimport java.util.LinkedHashSet;\r\nimport java.util.List;\r\nimport java.util.Set;\r\nimport javax.annotation.processing.Generated;\r\nimport org.springframework.stereotype.Component;\r\n\r\n@Generated(\r\n    value = \"org.mapstruct.ap.MappingProcessor\",\r\n    date = \"2023-11-07T18:11:10+0100\",\r\n    comments = \"version: 1.5.5.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-7.5.jar, environment: Java 17.0.4 (Amazon.com Inc.)\"\r\n)\r\n@Component\r\npublic class UserMapperImpl implements UserMapper {\r\n\r\n    @Override\r\n    public User fromDTO(UserDTO dto) {\r\n        if ( dto == null ) {\r\n            return null;\r\n        }\r\n\r\n        User user = new User();\r\n\r\n        user.setId( dto.getId() );\r\n        user.setFirstName( dto.getFirstName() );\r\n        user.setLastName( dto.getLastName() );\r\n        user.setEmail( dto.getEmail() );\r\n        user.setRoles( roleDTOSetToRoleSet( dto.getRoles() ) );\r\n\r\n        return user;\r\n    }\r\n\r\n    @Override\r\n    public List<User> fromDTOs(List<UserDTO> dtos) {\r\n        if ( dtos == null ) {\r\n            return null;\r\n        }\r\n\r\n        List<User> list = new ArrayList<User>( dtos.size() );\r\n        for ( UserDTO userDTO : dtos ) {\r\n            list.add( fromDTO( userDTO ) );\r\n        }\r\n\r\n        return list;\r\n    }\r\n\r\n    @Override\r\n    public Set<User> fromDTOs(Set<UserDTO> dtos) {\r\n        if ( dtos == null ) {\r\n            return null;\r\n        }\r\n\r\n        Set<User> set = new LinkedHashSet<User>( Math.max( (int) ( dtos.size() / .75f ) + 1, 16 ) );\r\n        for ( UserDTO userDTO : dtos ) {\r\n            set.add( fromDTO( userDTO ) );\r\n        }\r\n\r\n        return set;\r\n    }\r\n\r\n    @Override\r\n    public UserDTO toDTO(User BO) {\r\n        if ( BO == null ) {\r\n            return null;\r\n        }\r\n\r\n        UserDTO userDTO = new UserDTO();\r\n\r\n        userDTO.setId( BO.getId() );\r\n        userDTO.setFirstName( BO.getFirstName() );\r\n        userDTO.setLastName( BO.getLastName() );\r\n        userDTO.setEmail( BO.getEmail() );\r\n        userDTO.setRoles( roleSetToRoleDTOSet( BO.getRoles() ) );\r\n\r\n        return userDTO;\r\n    }\r\n\r\n    @Override\r\n    public List<UserDTO> toDTOs(List<User> BOs) {\r\n        if ( BOs == null ) {\r\n            return null;\r\n        }\r\n\r\n        List<UserDTO> list = new ArrayList<UserDTO>( BOs.size() );\r\n        for ( User user : BOs ) {\r\n            list.add( toDTO( user ) );\r\n        }\r\n\r\n        return list;\r\n    }\r\n\r\n    @Override\r\n    public Set<UserDTO> toDTOs(Set<User> BOs) {\r\n        if ( BOs == null ) {\r\n            return null;\r\n        }\r\n\r\n        Set<UserDTO> set = new LinkedHashSet<UserDTO>( Math.max( (int) ( BOs.size() / .75f ) + 1, 16 ) );\r\n        for ( User user : BOs ) {\r\n            set.add( toDTO( user ) );\r\n        }\r\n\r\n        return set;\r\n    }\r\n\r\n    @Override\r\n    public User fromUserRegisterDTO(UserRegisterDTO dto) {\r\n        if ( dto == null ) {\r\n            return null;\r\n        }\r\n\r\n        User user = new User();\r\n\r\n        user.setId( dto.getId() );\r\n        user.setFirstName( dto.getFirstName() );\r\n        user.setLastName( dto.getLastName() );\r\n        user.setEmail( dto.getEmail() );\r\n        user.setPassword( dto.getPassword() );\r\n\r\n        return user;\r\n    }\r\n\r\n    protected Authority authorityDTOToAuthority(AuthorityDTO authorityDTO) {\r\n        if ( authorityDTO == null ) {\r\n            return null;\r\n        }\r\n\r\n        Authority authority = new Authority();\r\n\r\n        authority.setId( authorityDTO.getId() );\r\n        authority.setName( authorityDTO.getName() );\r\n\r\n        return authority;\r\n    }\r\n\r\n    protected Set<Authority> authorityDTOSetToAuthoritySet(Set<AuthorityDTO> set) {\r\n        if ( set == null ) {\r\n            return null;\r\n        }\r\n\r\n        Set<Authority> set1 = new LinkedHashSet<Authority>( Math.max( (int) ( set.size() / .75f ) + 1, 16 ) );\r\n        for ( AuthorityDTO authorityDTO : set ) {\r\n            set1.add( authorityDTOToAuthority( authorityDTO ) );\r\n        }\r\n\r\n        return set1;\r\n    }\r\n\r\n    protected Role roleDTOToRole(RoleDTO roleDTO) {\r\n        if ( roleDTO == null ) {\r\n            return null;\r\n        }\r\n\r\n        Role role = new Role();\r\n\r\n        role.setId( roleDTO.getId() );\r\n        role.setName( roleDTO.getName() );\r\n        role.setAuthorities( authorityDTOSetToAuthoritySet( roleDTO.getAuthorities() ) );\r\n\r\n        return role;\r\n    }\r\n\r\n    protected Set<Role> roleDTOSetToRoleSet(Set<RoleDTO> set) {\r\n        if ( set == null ) {\r\n            return null;\r\n        }\r\n\r\n        Set<Role> set1 = new LinkedHashSet<Role>( Math.max( (int) ( set.size() / .75f ) + 1, 16 ) );\r\n        for ( RoleDTO roleDTO : set ) {\r\n            set1.add( roleDTOToRole( roleDTO ) );\r\n        }\r\n\r\n        return set1;\r\n    }\r\n\r\n    protected AuthorityDTO authorityToAuthorityDTO(Authority authority) {\r\n        if ( authority == null ) {\r\n            return null;\r\n        }\r\n\r\n        AuthorityDTO authorityDTO = new AuthorityDTO();\r\n\r\n        authorityDTO.setId( authority.getId() );\r\n        authorityDTO.setName( authority.getName() );\r\n\r\n        return authorityDTO;\r\n    }\r\n\r\n    protected Set<AuthorityDTO> authoritySetToAuthorityDTOSet(Set<Authority> set) {\r\n        if ( set == null ) {\r\n            return null;\r\n        }\r\n\r\n        Set<AuthorityDTO> set1 = new LinkedHashSet<AuthorityDTO>( Math.max( (int) ( set.size() / .75f ) + 1, 16 ) );\r\n        for ( Authority authority : set ) {\r\n            set1.add( authorityToAuthorityDTO( authority ) );\r\n        }\r\n\r\n        return set1;\r\n    }\r\n\r\n    protected RoleDTO roleToRoleDTO(Role role) {\r\n        if ( role == null ) {\r\n            return null;\r\n        }\r\n\r\n        RoleDTO roleDTO = new RoleDTO();\r\n\r\n        roleDTO.setId( role.getId() );\r\n        roleDTO.setName( role.getName() );\r\n        roleDTO.setAuthorities( authoritySetToAuthorityDTOSet( role.getAuthorities() ) );\r\n\r\n        return roleDTO;\r\n    }\r\n\r\n    protected Set<RoleDTO> roleSetToRoleDTOSet(Set<Role> set) {\r\n        if ( set == null ) {\r\n            return null;\r\n        }\r\n\r\n        Set<RoleDTO> set1 = new LinkedHashSet<RoleDTO>( Math.max( (int) ( set.size() / .75f ) + 1, 16 ) );\r\n        for ( Role role : set ) {\r\n            set1.add( roleToRoleDTO( role ) );\r\n        }\r\n\r\n        return set1;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/backend/build/generated/sources/annotationProcessor/java/main/com/example/jwt/domain/user/dto/UserMapperImpl.java b/backend/build/generated/sources/annotationProcessor/java/main/com/example/jwt/domain/user/dto/UserMapperImpl.java
+--- a/backend/build/generated/sources/annotationProcessor/java/main/com/example/jwt/domain/user/dto/UserMapperImpl.java	(revision 94f29eab2cc8c0e3c989fafbcd26655049bbd3aa)
++++ b/backend/build/generated/sources/annotationProcessor/java/main/com/example/jwt/domain/user/dto/UserMapperImpl.java	(date 1702119483740)
+@@ -14,8 +14,8 @@
+ 
+ @Generated(
+     value = "org.mapstruct.ap.MappingProcessor",
+-    date = "2023-11-07T18:11:10+0100",
+-    comments = "version: 1.5.5.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-7.5.jar, environment: Java 17.0.4 (Amazon.com Inc.)"
++    date = "2023-12-09T11:58:03+0100",
++    comments = "version: 1.5.5.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-7.5.jar, environment: Java 17.0.7 (Oracle Corporation)"
+ )
+ @Component
+ public class UserMapperImpl implements UserMapper {
+Index: backend/build/generated/sources/annotationProcessor/java/main/com/example/jwt/domain/role/dto/RoleMapperImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.jwt.domain.role.dto;\r\n\r\nimport com.example.jwt.domain.authority.Authority;\r\nimport com.example.jwt.domain.authority.dto.AuthorityDTO;\r\nimport com.example.jwt.domain.role.Role;\r\nimport java.util.ArrayList;\r\nimport java.util.LinkedHashSet;\r\nimport java.util.List;\r\nimport java.util.Set;\r\nimport javax.annotation.processing.Generated;\r\nimport org.springframework.stereotype.Component;\r\n\r\n@Generated(\r\n    value = \"org.mapstruct.ap.MappingProcessor\",\r\n    date = \"2023-11-07T18:11:10+0100\",\r\n    comments = \"version: 1.5.5.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-7.5.jar, environment: Java 17.0.4 (Amazon.com Inc.)\"\r\n)\r\n@Component\r\npublic class RoleMapperImpl implements RoleMapper {\r\n\r\n    @Override\r\n    public Role fromDTO(RoleDTO dto) {\r\n        if ( dto == null ) {\r\n            return null;\r\n        }\r\n\r\n        Role role = new Role();\r\n\r\n        role.setId( dto.getId() );\r\n        role.setName( dto.getName() );\r\n        role.setAuthorities( authorityDTOSetToAuthoritySet( dto.getAuthorities() ) );\r\n\r\n        return role;\r\n    }\r\n\r\n    @Override\r\n    public List<Role> fromDTOs(List<RoleDTO> dtos) {\r\n        if ( dtos == null ) {\r\n            return null;\r\n        }\r\n\r\n        List<Role> list = new ArrayList<Role>( dtos.size() );\r\n        for ( RoleDTO roleDTO : dtos ) {\r\n            list.add( fromDTO( roleDTO ) );\r\n        }\r\n\r\n        return list;\r\n    }\r\n\r\n    @Override\r\n    public Set<Role> fromDTOs(Set<RoleDTO> dtos) {\r\n        if ( dtos == null ) {\r\n            return null;\r\n        }\r\n\r\n        Set<Role> set = new LinkedHashSet<Role>( Math.max( (int) ( dtos.size() / .75f ) + 1, 16 ) );\r\n        for ( RoleDTO roleDTO : dtos ) {\r\n            set.add( fromDTO( roleDTO ) );\r\n        }\r\n\r\n        return set;\r\n    }\r\n\r\n    @Override\r\n    public RoleDTO toDTO(Role BO) {\r\n        if ( BO == null ) {\r\n            return null;\r\n        }\r\n\r\n        RoleDTO roleDTO = new RoleDTO();\r\n\r\n        roleDTO.setId( BO.getId() );\r\n        roleDTO.setName( BO.getName() );\r\n        roleDTO.setAuthorities( authoritySetToAuthorityDTOSet( BO.getAuthorities() ) );\r\n\r\n        return roleDTO;\r\n    }\r\n\r\n    @Override\r\n    public List<RoleDTO> toDTOs(List<Role> BOs) {\r\n        if ( BOs == null ) {\r\n            return null;\r\n        }\r\n\r\n        List<RoleDTO> list = new ArrayList<RoleDTO>( BOs.size() );\r\n        for ( Role role : BOs ) {\r\n            list.add( toDTO( role ) );\r\n        }\r\n\r\n        return list;\r\n    }\r\n\r\n    @Override\r\n    public Set<RoleDTO> toDTOs(Set<Role> BOs) {\r\n        if ( BOs == null ) {\r\n            return null;\r\n        }\r\n\r\n        Set<RoleDTO> set = new LinkedHashSet<RoleDTO>( Math.max( (int) ( BOs.size() / .75f ) + 1, 16 ) );\r\n        for ( Role role : BOs ) {\r\n            set.add( toDTO( role ) );\r\n        }\r\n\r\n        return set;\r\n    }\r\n\r\n    protected Authority authorityDTOToAuthority(AuthorityDTO authorityDTO) {\r\n        if ( authorityDTO == null ) {\r\n            return null;\r\n        }\r\n\r\n        Authority authority = new Authority();\r\n\r\n        authority.setId( authorityDTO.getId() );\r\n        authority.setName( authorityDTO.getName() );\r\n\r\n        return authority;\r\n    }\r\n\r\n    protected Set<Authority> authorityDTOSetToAuthoritySet(Set<AuthorityDTO> set) {\r\n        if ( set == null ) {\r\n            return null;\r\n        }\r\n\r\n        Set<Authority> set1 = new LinkedHashSet<Authority>( Math.max( (int) ( set.size() / .75f ) + 1, 16 ) );\r\n        for ( AuthorityDTO authorityDTO : set ) {\r\n            set1.add( authorityDTOToAuthority( authorityDTO ) );\r\n        }\r\n\r\n        return set1;\r\n    }\r\n\r\n    protected AuthorityDTO authorityToAuthorityDTO(Authority authority) {\r\n        if ( authority == null ) {\r\n            return null;\r\n        }\r\n\r\n        AuthorityDTO authorityDTO = new AuthorityDTO();\r\n\r\n        authorityDTO.setId( authority.getId() );\r\n        authorityDTO.setName( authority.getName() );\r\n\r\n        return authorityDTO;\r\n    }\r\n\r\n    protected Set<AuthorityDTO> authoritySetToAuthorityDTOSet(Set<Authority> set) {\r\n        if ( set == null ) {\r\n            return null;\r\n        }\r\n\r\n        Set<AuthorityDTO> set1 = new LinkedHashSet<AuthorityDTO>( Math.max( (int) ( set.size() / .75f ) + 1, 16 ) );\r\n        for ( Authority authority : set ) {\r\n            set1.add( authorityToAuthorityDTO( authority ) );\r\n        }\r\n\r\n        return set1;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/backend/build/generated/sources/annotationProcessor/java/main/com/example/jwt/domain/role/dto/RoleMapperImpl.java b/backend/build/generated/sources/annotationProcessor/java/main/com/example/jwt/domain/role/dto/RoleMapperImpl.java
+--- a/backend/build/generated/sources/annotationProcessor/java/main/com/example/jwt/domain/role/dto/RoleMapperImpl.java	(revision 94f29eab2cc8c0e3c989fafbcd26655049bbd3aa)
++++ b/backend/build/generated/sources/annotationProcessor/java/main/com/example/jwt/domain/role/dto/RoleMapperImpl.java	(date 1702119483609)
+@@ -12,8 +12,8 @@
+ 
+ @Generated(
+     value = "org.mapstruct.ap.MappingProcessor",
+-    date = "2023-11-07T18:11:10+0100",
+-    comments = "version: 1.5.5.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-7.5.jar, environment: Java 17.0.4 (Amazon.com Inc.)"
++    date = "2023-12-09T11:58:03+0100",
++    comments = "version: 1.5.5.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-7.5.jar, environment: Java 17.0.7 (Oracle Corporation)"
+ )
+ @Component
+ public class RoleMapperImpl implements RoleMapper {
+Index: .idea/Modul151.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/Modul151.iml b/.idea/Modul151.iml
+new file mode 100644
+--- /dev/null	(date 1702119237922)
++++ b/.idea/Modul151.iml	(date 1702119237922)
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="JAVA_MODULE" version="4">
++  <component name="NewModuleRootManager" inherit-compiler-output="true">
++    <exclude-output />
++    <content url="file://$MODULE_DIR$" />
++    <orderEntry type="jdk" jdkName="17" jdkType="JavaSDK" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
+\ No newline at end of file
+Index: backend/build/generated/sources/annotationProcessor/java/main/com/example/jwt/domain/authority/dto/AuthorityMapperImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.jwt.domain.authority.dto;\r\n\r\nimport com.example.jwt.domain.authority.Authority;\r\nimport java.util.ArrayList;\r\nimport java.util.LinkedHashSet;\r\nimport java.util.List;\r\nimport java.util.Set;\r\nimport javax.annotation.processing.Generated;\r\nimport org.springframework.stereotype.Component;\r\n\r\n@Generated(\r\n    value = \"org.mapstruct.ap.MappingProcessor\",\r\n    date = \"2023-11-07T18:11:10+0100\",\r\n    comments = \"version: 1.5.5.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-7.5.jar, environment: Java 17.0.4 (Amazon.com Inc.)\"\r\n)\r\n@Component\r\npublic class AuthorityMapperImpl implements AuthorityMapper {\r\n\r\n    @Override\r\n    public Authority fromDTO(AuthorityDTO dto) {\r\n        if ( dto == null ) {\r\n            return null;\r\n        }\r\n\r\n        Authority authority = new Authority();\r\n\r\n        authority.setId( dto.getId() );\r\n        authority.setName( dto.getName() );\r\n\r\n        return authority;\r\n    }\r\n\r\n    @Override\r\n    public List<Authority> fromDTOs(List<AuthorityDTO> dtos) {\r\n        if ( dtos == null ) {\r\n            return null;\r\n        }\r\n\r\n        List<Authority> list = new ArrayList<Authority>( dtos.size() );\r\n        for ( AuthorityDTO authorityDTO : dtos ) {\r\n            list.add( fromDTO( authorityDTO ) );\r\n        }\r\n\r\n        return list;\r\n    }\r\n\r\n    @Override\r\n    public Set<Authority> fromDTOs(Set<AuthorityDTO> dtos) {\r\n        if ( dtos == null ) {\r\n            return null;\r\n        }\r\n\r\n        Set<Authority> set = new LinkedHashSet<Authority>( Math.max( (int) ( dtos.size() / .75f ) + 1, 16 ) );\r\n        for ( AuthorityDTO authorityDTO : dtos ) {\r\n            set.add( fromDTO( authorityDTO ) );\r\n        }\r\n\r\n        return set;\r\n    }\r\n\r\n    @Override\r\n    public AuthorityDTO toDTO(Authority BO) {\r\n        if ( BO == null ) {\r\n            return null;\r\n        }\r\n\r\n        AuthorityDTO authorityDTO = new AuthorityDTO();\r\n\r\n        authorityDTO.setId( BO.getId() );\r\n        authorityDTO.setName( BO.getName() );\r\n\r\n        return authorityDTO;\r\n    }\r\n\r\n    @Override\r\n    public List<AuthorityDTO> toDTOs(List<Authority> BOs) {\r\n        if ( BOs == null ) {\r\n            return null;\r\n        }\r\n\r\n        List<AuthorityDTO> list = new ArrayList<AuthorityDTO>( BOs.size() );\r\n        for ( Authority authority : BOs ) {\r\n            list.add( toDTO( authority ) );\r\n        }\r\n\r\n        return list;\r\n    }\r\n\r\n    @Override\r\n    public Set<AuthorityDTO> toDTOs(Set<Authority> BOs) {\r\n        if ( BOs == null ) {\r\n            return null;\r\n        }\r\n\r\n        Set<AuthorityDTO> set = new LinkedHashSet<AuthorityDTO>( Math.max( (int) ( BOs.size() / .75f ) + 1, 16 ) );\r\n        for ( Authority authority : BOs ) {\r\n            set.add( toDTO( authority ) );\r\n        }\r\n\r\n        return set;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/backend/build/generated/sources/annotationProcessor/java/main/com/example/jwt/domain/authority/dto/AuthorityMapperImpl.java b/backend/build/generated/sources/annotationProcessor/java/main/com/example/jwt/domain/authority/dto/AuthorityMapperImpl.java
+--- a/backend/build/generated/sources/annotationProcessor/java/main/com/example/jwt/domain/authority/dto/AuthorityMapperImpl.java	(revision 94f29eab2cc8c0e3c989fafbcd26655049bbd3aa)
++++ b/backend/build/generated/sources/annotationProcessor/java/main/com/example/jwt/domain/authority/dto/AuthorityMapperImpl.java	(date 1702119483656)
+@@ -10,8 +10,8 @@
+ 
+ @Generated(
+     value = "org.mapstruct.ap.MappingProcessor",
+-    date = "2023-11-07T18:11:10+0100",
+-    comments = "version: 1.5.5.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-7.5.jar, environment: Java 17.0.4 (Amazon.com Inc.)"
++    date = "2023-12-09T11:58:03+0100",
++    comments = "version: 1.5.5.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-7.5.jar, environment: Java 17.0.7 (Oracle Corporation)"
+ )
+ @Component
+ public class AuthorityMapperImpl implements AuthorityMapper {
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1702117955082)
++++ b/.idea/vcs.xml	(date 1702117955082)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+new file mode 100644
+--- /dev/null	(date 1702117955193)
++++ b/.idea/.gitignore	(date 1702117955193)
+@@ -0,0 +1,8 @@
++# Default ignored files
++/shelf/
++/workspace.xml
++# Editor-based HTTP Client requests
++/httpRequests/
++# Datasource local storage ignored files
++/dataSources/
++/dataSources.local.xml
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+new file mode 100644
+--- /dev/null	(date 1702119516890)
++++ b/.idea/modules.xml	(date 1702119516890)
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/.idea/Modul151.iml" filepath="$PROJECT_DIR$/.idea/Modul151.iml" />
++      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jwt.main.iml" filepath="$PROJECT_DIR$/.idea/modules/jwt.main.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1702119733059)
++++ b/.idea/misc.xml	(date 1702119733059)
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ExternalStorageConfigurationManager" enabled="true" />
++  <component name="FrameworkDetectionExcludesConfiguration">
++    <file type="web" url="file://$PROJECT_DIR$/backend" />
++  </component>
++  <component name="ProjectRootManager" version="2" project-jdk-name="17" project-jdk-type="JavaSDK">
++    <output url="file://$PROJECT_DIR$/out" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/git_toolbox_prj.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/git_toolbox_prj.xml b/.idea/git_toolbox_prj.xml
+new file mode 100644
+--- /dev/null	(date 1702118109204)
++++ b/.idea/git_toolbox_prj.xml	(date 1702118109204)
+@@ -0,0 +1,15 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="GitToolBoxProjectSettings">
++    <option name="commitMessageIssueKeyValidationOverride">
++      <BoolValueOverride>
++        <option name="enabled" value="true" />
++      </BoolValueOverride>
++    </option>
++    <option name="commitMessageValidationEnabledOverride">
++      <BoolValueOverride>
++        <option name="enabled" value="true" />
++      </BoolValueOverride>
++    </option>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+new file mode 100644
+--- /dev/null	(date 1702119516910)
++++ b/.idea/compiler.xml	(date 1702119516910)
+@@ -0,0 +1,15 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="CompilerConfiguration">
++    <annotationProcessing>
++      <profile name="Gradle Imported" enabled="true">
++        <outputRelativeToContentRoot value="true" />
++        <processorPath useClasspath="false">
++          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mapstruct/mapstruct-processor/1.5.5.Final/897f6f115930b936287bef552bf5fe28cc64717d/mapstruct-processor-1.5.5.Final.jar" />
++          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-configuration-processor/2.7.17/299f97eea012babd839e789c6aad8162343cbb36/spring-boot-configuration-processor-2.7.17.jar" />
++        </processorPath>
++        <module name="jwt.main" />
++      </profile>
++    </annotationProcessing>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/gradle.xml b/.idea/gradle.xml
+new file mode 100644
+--- /dev/null	(date 1702119459729)
++++ b/.idea/gradle.xml	(date 1702119459729)
+@@ -0,0 +1,15 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="GradleSettings">
++    <option name="linkedExternalProjectsSettings">
++      <GradleProjectSettings>
++        <option name="externalProjectPath" value="$PROJECT_DIR$/backend" />
++        <option name="modules">
++          <set>
++            <option value="$PROJECT_DIR$/backend" />
++          </set>
++        </option>
++      </GradleProjectSettings>
++    </option>
++  </component>
++</project>
+\ No newline at end of file

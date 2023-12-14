@@ -1,0 +1,14 @@
+<changelist name="Uncommitted_changes_before_Update_at_09_12_2023_12_07_[Changes]" date="1702120022259" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_12_2023_12_07_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 09.12.2023 12:07 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="backend/build/tmp/compileJava/previous-compilation-data.bin" />
+    <option name="AFTER_PATH" value="backend/build/tmp/compileJava/previous-compilation-data.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_12_2023_12_07_[Changes]/previous-compilation-data.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="backend/build/classes/java/main/com/example/jwt/core/security/WebSecurityConfig.class" />
+    <option name="AFTER_PATH" value="backend/build/classes/java/main/com/example/jwt/core/security/WebSecurityConfig.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_12_2023_12_07_[Changes]/WebSecurityConfig.class" />
+  </binary>
+</changelist>
