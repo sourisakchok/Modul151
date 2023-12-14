@@ -5,8 +5,103 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="076c3628-09b4-4641-bdcc-3a482ee0c3c1" name="Changes" comment="Fixed Address">
-      <change afterPath="$PROJECT_DIR$/backend/bin/main/com/example/jwt/domain/sql/setup.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/bin/main/com/example/jwt/domain/user/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/bin/main/com/example/jwt/domain/user/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/jwt/domain/order/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/jwt/domain/order/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/jwt/domain/order/OrderRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/jwt/domain/order/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/jwt/domain/order/OrderServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/jwt/domain/order/dto/OrderDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/jwt/domain/order/dto/OrderMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/465f4e7d-f0fb-4efc-bb41-b9aea12d541e/storage_v2/_src_/database/postgres.edMnLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/465f4e7d-f0fb-4efc-bb41-b9aea12d541e/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/465f4e7d-f0fb-4efc-bb41-b9aea12d541e/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/465f4e7d-f0fb-4efc-bb41-b9aea12d541e/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/465f4e7d-f0fb-4efc-bb41-b9aea12d541e/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/465f4e7d-f0fb-4efc-bb41-b9aea12d541e/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_12_2023_12_07__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_12_2023_12_07__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_12_2023_12_09__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_12_2023_12_09__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_12_2023_16_34__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_12_2023_16_34__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_12_2023_19_38__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_12_2023_19_38__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_12_2023_22_02__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_12_2023_22_02__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.gradle/7.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gradle/7.5/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.gradle/7.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gradle/7.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.gradle/7.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gradle/7.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.gradle/7.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gradle/7.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.gradle/7.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gradle/7.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/META-INF/spring-configuration-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/JwtApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/core/audit/UserAware.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/core/exception/CustomGlobalExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/core/exception/ResponseError.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/core/generic/ExtendedAuditEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/core/generic/ExtendedDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/core/generic/ExtendedEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/core/generic/ExtendedMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/core/generic/ExtendedRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/core/generic/ExtendedService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/core/generic/ExtendedServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/core/logging/LoggerConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/core/security/CustomAuthenticationFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/core/security/CustomAuthorizationFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/core/security/WebSecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/core/security/config/Encoders.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/core/security/helpers/AuthorizationSchemas.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/core/security/helpers/Credentials.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/core/security/helpers/JwtProperties.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/core/security/permissionEvaluators/UserPermissionEvaluator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/core/security/validators/link/Link.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/core/security/validators/link/LinkValidator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/domain/authority/Authority.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/domain/authority/dto/AuthorityDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/domain/authority/dto/AuthorityMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/domain/authority/dto/AuthorityMapperImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/domain/category/Category.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/domain/category/dto/CategoryDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/domain/category/dto/CategoryMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/domain/category/dto/CategoryMapperImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/domain/level/Level.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/domain/level/LevelEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/domain/product/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/domain/product/ProductController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/domain/product/ProductRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/domain/product/ProductService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/domain/product/ProductServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/domain/product/dto/ProductDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/domain/product/dto/ProductMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/domain/product/dto/ProductMapperImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/domain/role/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/domain/role/RoleRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/domain/role/RoleService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/domain/role/dto/RoleDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/domain/role/dto/RoleMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/domain/role/dto/RoleMapperImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/domain/user/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/domain/user/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/domain/user/UserDetailsImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/domain/user/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/domain/user/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/domain/user/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/domain/user/dto/UserDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/domain/user/dto/UserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/domain/user/dto/UserMapperImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/classes/java/main/com/example/jwt/domain/user/dto/UserRegisterDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/generated/sources/annotationProcessor/java/main/com/example/jwt/domain/authority/dto/AuthorityMapperImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/generated/sources/annotationProcessor/java/main/com/example/jwt/domain/category/dto/CategoryMapperImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/generated/sources/annotationProcessor/java/main/com/example/jwt/domain/product/dto/ProductMapperImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/generated/sources/annotationProcessor/java/main/com/example/jwt/domain/role/dto/RoleMapperImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/generated/sources/annotationProcessor/java/main/com/example/jwt/domain/user/dto/UserMapperImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/resources/main/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/resources/main/messages.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/resources/main/messages_de.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/resources/main/messages_en.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/resources/main/validationMessages.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/resources/main/validationMessages_de.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/resources/main/validationMessages_en.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,6 +196,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/zined/OneDrive/Desktop/Alles/Wiss/Modul151&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -126,6 +222,10 @@
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.example.jwt.domain.role" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.jwt.domain.order.dto" />
+      <recent name="com.example.jwt.domain.order" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.JwtApplication">
@@ -181,6 +281,7 @@
       <workItem from="1702119298611" duration="1504000" />
       <workItem from="1702121040080" duration="2555000" />
       <workItem from="1702489616808" duration="12136000" />
+      <workItem from="1702583465202" duration="4541000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -286,7 +387,8 @@
     <MESSAGE value="Level hinzugefügt" />
     <MESSAGE value="User mit Role und authorities verknüpft." />
     <MESSAGE value="Fixed Address" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Address" />
+    <MESSAGE value="Adding Products and Categorys" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding Products and Categorys" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
