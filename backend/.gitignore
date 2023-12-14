@@ -1,25 +1,9 @@
-Skip to content
- 
-Search…
-All gists
-Back to GitHub
-@Sanssolvant 
-@hughbiquitous
-hughbiquitous/.gitignore
-Created 7 years ago • Report abuse
-Code
-Revisions
-1
-Stars
-17
-Forks
-8
-<script src="https://gist.github.com/hughbiquitous/8c194635579dbc94aac171472c1495f5.js"></script>
-.gitignore for Java/IntelliJ/gradle
-.gitignore
 # From https://github.com/github/gitignore/blob/master/Gradle.gitignore
 .gradle
 /build/
+/build
+build
+
 
 # Ignore Gradle GUI config
 gradle-app.setting
@@ -121,26 +105,4 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
-@blainelewis1
-blainelewis1 commented on May 29, 2018
-I had some issues with this because *.jar came after !gradle-wrapper.jar and the gradle wrapper was ignored. Just change the order of these lines and it works fine though.
-
-@Krock21rus
-Krock21rus commented on Jan 19, 2019 • 
-"!gradle-wrapper.jar" should be after "*.jar", otherwise, it doesn't work
-
-@Sanssolvant
-Comment
- 
-Leave a comment
- 
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact
-Manage cookiesDo not share my personal information
+/.idea/
