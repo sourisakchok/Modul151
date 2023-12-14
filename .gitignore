@@ -4,6 +4,11 @@
 /build
 build
 
+.idea
+/.idea
+/.idea/
+.idea
+
 
 # Ignore Gradle GUI config
 gradle-app.setting
