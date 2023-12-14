@@ -14,43 +14,43 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-12-13T22:39:42+0100",
+    date = "2023-12-14T19:52:17+0100",
     comments = "version: 1.5.5.Final, compiler: Eclipse JDT (IDE) 3.36.0.v20231114-0937, environment: Java 17.0.9 (Eclipse Adoptium)"
 )
 @Component
 public class UserMapperImpl implements UserMapper {
 
     @Override
-    public User fromDTO(UserDTO arg0) {
-        if ( arg0 == null ) {
+    public User fromDTO(UserDTO dto) {
+        if ( dto == null ) {
             return null;
         }
 
         User user = new User();
 
-        user.setId( arg0.getId() );
-        user.setAddress( arg0.getAddress() );
-        user.setBirthday( arg0.getBirthday() );
-        user.setEmail( arg0.getEmail() );
-        user.setFirstName( arg0.getFirstName() );
-        user.setLastName( arg0.getLastName() );
-        user.setLevel( arg0.getLevel() );
-        user.setOrt( arg0.getOrt() );
-        user.setPassword( arg0.getPassword() );
-        user.setPlz( arg0.getPlz() );
-        user.setRoles( roleDTOSetToRoleSet( arg0.getRoles() ) );
+        user.setId( dto.getId() );
+        user.setFirstName( dto.getFirstName() );
+        user.setLastName( dto.getLastName() );
+        user.setEmail( dto.getEmail() );
+        user.setPassword( dto.getPassword() );
+        user.setAddress( dto.getAddress() );
+        user.setOrt( dto.getOrt() );
+        user.setPlz( dto.getPlz() );
+        user.setBirthday( dto.getBirthday() );
+        user.setLevel( dto.getLevel() );
+        user.setRoles( roleDTOSetToRoleSet( dto.getRoles() ) );
 
         return user;
     }
 
     @Override
-    public List<User> fromDTOs(List<UserDTO> arg0) {
-        if ( arg0 == null ) {
+    public List<User> fromDTOs(List<UserDTO> dtos) {
+        if ( dtos == null ) {
             return null;
         }
 
-        List<User> list = new ArrayList<User>( arg0.size() );
-        for ( UserDTO userDTO : arg0 ) {
+        List<User> list = new ArrayList<User>( dtos.size() );
+        for ( UserDTO userDTO : dtos ) {
             list.add( fromDTO( userDTO ) );
         }
 
@@ -58,13 +58,13 @@ public class UserMapperImpl implements UserMapper {
     }
 
     @Override
-    public Set<User> fromDTOs(Set<UserDTO> arg0) {
-        if ( arg0 == null ) {
+    public Set<User> fromDTOs(Set<UserDTO> dtos) {
+        if ( dtos == null ) {
             return null;
         }
 
-        Set<User> set = new LinkedHashSet<User>( Math.max( (int) ( arg0.size() / .75f ) + 1, 16 ) );
-        for ( UserDTO userDTO : arg0 ) {
+        Set<User> set = new LinkedHashSet<User>( Math.max( (int) ( dtos.size() / .75f ) + 1, 16 ) );
+        for ( UserDTO userDTO : dtos ) {
             set.add( fromDTO( userDTO ) );
         }
 
@@ -72,36 +72,36 @@ public class UserMapperImpl implements UserMapper {
     }
 
     @Override
-    public UserDTO toDTO(User arg0) {
-        if ( arg0 == null ) {
+    public UserDTO toDTO(User BO) {
+        if ( BO == null ) {
             return null;
         }
 
         UserDTO userDTO = new UserDTO();
 
-        userDTO.setId( arg0.getId() );
-        userDTO.setAddress( arg0.getAddress() );
-        userDTO.setBirthday( arg0.getBirthday() );
-        userDTO.setEmail( arg0.getEmail() );
-        userDTO.setFirstName( arg0.getFirstName() );
-        userDTO.setLastName( arg0.getLastName() );
-        userDTO.setLevel( arg0.getLevel() );
-        userDTO.setOrt( arg0.getOrt() );
-        userDTO.setPassword( arg0.getPassword() );
-        userDTO.setPlz( arg0.getPlz() );
-        userDTO.setRoles( roleSetToRoleDTOSet( arg0.getRoles() ) );
+        userDTO.setId( BO.getId() );
+        userDTO.setFirstName( BO.getFirstName() );
+        userDTO.setLastName( BO.getLastName() );
+        userDTO.setEmail( BO.getEmail() );
+        userDTO.setPassword( BO.getPassword() );
+        userDTO.setAddress( BO.getAddress() );
+        userDTO.setOrt( BO.getOrt() );
+        userDTO.setPlz( BO.getPlz() );
+        userDTO.setBirthday( BO.getBirthday() );
+        userDTO.setLevel( BO.getLevel() );
+        userDTO.setRoles( roleSetToRoleDTOSet( BO.getRoles() ) );
 
         return userDTO;
     }
 
     @Override
-    public List<UserDTO> toDTOs(List<User> arg0) {
-        if ( arg0 == null ) {
+    public List<UserDTO> toDTOs(List<User> BOs) {
+        if ( BOs == null ) {
             return null;
         }
 
-        List<UserDTO> list = new ArrayList<UserDTO>( arg0.size() );
-        for ( User user : arg0 ) {
+        List<UserDTO> list = new ArrayList<UserDTO>( BOs.size() );
+        for ( User user : BOs ) {
             list.add( toDTO( user ) );
         }
 
@@ -109,13 +109,13 @@ public class UserMapperImpl implements UserMapper {
     }
 
     @Override
-    public Set<UserDTO> toDTOs(Set<User> arg0) {
-        if ( arg0 == null ) {
+    public Set<UserDTO> toDTOs(Set<User> BOs) {
+        if ( BOs == null ) {
             return null;
         }
 
-        Set<UserDTO> set = new LinkedHashSet<UserDTO>( Math.max( (int) ( arg0.size() / .75f ) + 1, 16 ) );
-        for ( User user : arg0 ) {
+        Set<UserDTO> set = new LinkedHashSet<UserDTO>( Math.max( (int) ( BOs.size() / .75f ) + 1, 16 ) );
+        for ( User user : BOs ) {
             set.add( toDTO( user ) );
         }
 
@@ -131,14 +131,14 @@ public class UserMapperImpl implements UserMapper {
         User user = new User();
 
         user.setId( dto.getId() );
-        user.setAddress( dto.getAddress() );
-        user.setBirthday( dto.getBirthday() );
-        user.setEmail( dto.getEmail() );
         user.setFirstName( dto.getFirstName() );
         user.setLastName( dto.getLastName() );
-        user.setOrt( dto.getOrt() );
+        user.setEmail( dto.getEmail() );
         user.setPassword( dto.getPassword() );
+        user.setAddress( dto.getAddress() );
+        user.setOrt( dto.getOrt() );
         user.setPlz( dto.getPlz() );
+        user.setBirthday( dto.getBirthday() );
 
         return user;
     }
@@ -177,8 +177,8 @@ public class UserMapperImpl implements UserMapper {
         Role role = new Role();
 
         role.setId( roleDTO.getId() );
-        role.setAuthorities( authorityDTOSetToAuthoritySet( roleDTO.getAuthorities() ) );
         role.setName( roleDTO.getName() );
+        role.setAuthorities( authorityDTOSetToAuthoritySet( roleDTO.getAuthorities() ) );
 
         return role;
     }
@@ -230,8 +230,8 @@ public class UserMapperImpl implements UserMapper {
         RoleDTO roleDTO = new RoleDTO();
 
         roleDTO.setId( role.getId() );
-        roleDTO.setAuthorities( authoritySetToAuthorityDTOSet( role.getAuthorities() ) );
         roleDTO.setName( role.getName() );
+        roleDTO.setAuthorities( authoritySetToAuthorityDTOSet( role.getAuthorities() ) );
 
         return roleDTO;
     }
