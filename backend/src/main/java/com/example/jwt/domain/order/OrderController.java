@@ -38,4 +38,11 @@ public class OrderController {
     String topCountry = orderService.findTopCountry(days);
     return new ResponseEntity<>(topCountry, HttpStatus.OK);
   }
+
+//  @GetMapping("/order-history/")
+//  @PreAuthorize("hasAuthority('CAN_RETRIEVE_PURCHASE_HISTORY')")
+//  public ResponseEntity<String> getOrderHistory() {
+//    String orderHistory = orderService.findTopCountry(days);
+//    return new ResponseEntity<>(orderHistory, HttpStatus.OK);
+//  }
 }

@@ -85,6 +85,12 @@ public class OrderServiceImpl  extends ExtendedServiceImpl<Order> implements Ord
     return topCountry;
   }
 
+  @Override
+  public List<Order> findAllOrderBYUserID(UUID UserID) {
+//    List<Order> orderHistory = orderRepository.
+    return null;
+  }
+
   public Order calculatePriceAndSeeds(Order order) {
     // Annahme: Der Principal User ist der, der die Bestellung aufgibt.
     // Der 'principalUserId' sollte aus dem SecurityContext oder ähnlichem geholt werden.
