@@ -1,5 +1,7 @@
 package com.example.jwt.domain.product.dto;
 
+import com.example.jwt.domain.country.Country;
+
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.Date;
@@ -8,12 +10,12 @@ public class ProductDTO {
 
   @NotNull
   private String name;
-  private String originCountry;
+  private Country originCountry;
   private double purchasePrice;
   private double salePrice;
   private LocalDate harvestDate;
 
-  public ProductDTO(String name, String originCountry, double purchasePrice, double salePrice, LocalDate harvestDate) {
+  public ProductDTO(String name, Country originCountry, double purchasePrice, double salePrice, LocalDate harvestDate) {
     this.name = name;
     this.originCountry = originCountry;
     this.purchasePrice = purchasePrice;
@@ -30,11 +32,11 @@ public class ProductDTO {
     return this;
   }
 
-  public String getOriginCountry() {
+  public Country getOriginCountry() {
     return originCountry;
   }
 
-  public ProductDTO setOriginCountry(String originCountry) {
+  public ProductDTO setOriginCountry(Country originCountry) {
     this.originCountry = originCountry;
     return this;
   }

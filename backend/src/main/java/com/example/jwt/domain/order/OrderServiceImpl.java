@@ -63,26 +63,27 @@ public class OrderServiceImpl  extends ExtendedServiceImpl<Order> implements Ord
   }
 
   public String findTopCountry(int days) {
-    LocalDate startDate = LocalDate.now().minusDays(days);
-    List<Order> orders = orderRepository.findOrdersBetweenDates(startDate, LocalDate.now());
+//    LocalDate startDate = LocalDate.now().minusDays(days);
+//    List<Order> orders = orderRepository.findOrdersBetweenDates(startDate, LocalDate.now());
+//
+//    // Gruppieren Sie die Bestellungen nach dem Herkunftsland des Produkts und berechnen Sie die Gesamtmenge für jedes Land
+//    Map<String, Integer> countryOrders = new HashMap<>();
+//    for (Order order : orders) {
+//      countryOrders.put(order.getProduct().getOriginCountry(), countryOrders.getOrDefault(order.getProduct().getOriginCountry(), 0) + order.getQuantity());
+//    }
+//
+//    // Finden Sie das Land mit der höchsten Gesamtmenge
+//    String topCountry = null;
+//    int maxOrders = 0;
+//    for (Map.Entry<String, Integer> entry : countryOrders.entrySet()) {
+//      if (entry.getValue() > maxOrders) {
+//        topCountry = entry.getKey();
+//        maxOrders = entry.getValue();
+//      }
+//    }
 
-    // Gruppieren Sie die Bestellungen nach dem Herkunftsland des Produkts und berechnen Sie die Gesamtmenge für jedes Land
-    Map<String, Integer> countryOrders = new HashMap<>();
-    for (Order order : orders) {
-      countryOrders.put(order.getProduct().getOriginCountry(), countryOrders.getOrDefault(order.getProduct().getOriginCountry(), 0) + order.getQuantity());
-    }
-
-    // Finden Sie das Land mit der höchsten Gesamtmenge
-    String topCountry = null;
-    int maxOrders = 0;
-    for (Map.Entry<String, Integer> entry : countryOrders.entrySet()) {
-      if (entry.getValue() > maxOrders) {
-        topCountry = entry.getKey();
-        maxOrders = entry.getValue();
-      }
-    }
-
-    return topCountry;
+//    return topCountry;
+    return null;
   }
 
   @Override

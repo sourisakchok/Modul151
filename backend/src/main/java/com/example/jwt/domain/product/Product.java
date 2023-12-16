@@ -1,6 +1,7 @@
 package com.example.jwt.domain.product;
 
 import com.example.jwt.core.generic.ExtendedEntity;
+import com.example.jwt.domain.country.Country;
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -12,9 +13,9 @@ import java.util.UUID;
 public class Product extends ExtendedEntity {
   @Column(name = "name", nullable = false)
   private String name;
-
-  @Column(name = "originCountry")
-  private String originCountry;
+  @ManyToOne
+  @JoinColumn(name="country_id", nullable=false)
+  private Country originCountry;
 
   @Column(name = "purchasePrice")
   private double purchasePrice;
@@ -28,7 +29,16 @@ public class Product extends ExtendedEntity {
   public Product() {
   }
 
-  public Product(String name, String originCountry, double purchasePrice, double salePrice, LocalDate harvestDate) {
+  public Product(String name, Country originCountry, double purchasePrice, double salePrice, LocalDate harvestDate) {
+    this.name = name;
+    this.originCountry = originCountry;
+    this.purchasePrice = purchasePrice;
+    this.salePrice = salePrice;
+    this.harvestDate = harvestDate;
+  }
+
+  public Product(UUID id, String name, Country originCountry, double purchasePrice, double salePrice, LocalDate harvestDate) {
+    super(id);
     this.name = name;
     this.originCountry = originCountry;
     this.purchasePrice = purchasePrice;
@@ -45,11 +55,11 @@ public class Product extends ExtendedEntity {
     return this;
   }
 
-  public String getOriginCountry() {
+  public Country getOriginCountry() {
     return originCountry;
   }
 
-  public Product setOriginCountry(String originCountry) {
+  public Product setOriginCountry(Country originCountry) {
     this.originCountry = originCountry;
     return this;
   }
