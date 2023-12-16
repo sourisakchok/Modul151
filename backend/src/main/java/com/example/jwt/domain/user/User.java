@@ -59,8 +59,7 @@ public class User extends ExtendedAuditEntity {
   public User() {
   }
 
-  public User(String firstName, String lastName, String email, String password, String address, String ort, String plz,
-      LocalDate birthday, double discount, int seeds_count, Level level, Set<Role> roles) {
+  public User(String firstName, String lastName, String email, String password, String address, String ort, String plz, LocalDate birthday, double discount, int seeds_count, Level level, Set<Order> orders, Set<Role> roles) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.email = email;
@@ -69,14 +68,14 @@ public class User extends ExtendedAuditEntity {
     this.ort = ort;
     this.plz = plz;
     this.birthday = birthday;
-    this.level = level;
-    this.roles = roles;
     this.discount = discount;
     this.seeds_count = seeds_count;
+    this.level = level;
+    this.orders = orders;
+    this.roles = roles;
   }
 
-  public User(UUID id, String firstName, String lastName, String email, String password, String address, String ort,
-      String plz, LocalDate birthday, double discount, int seeds_count, Level level, Set<Role> roles) {
+  public User(UUID id, String firstName, String lastName, String email, String password, String address, String ort, String plz, LocalDate birthday, double discount, int seeds_count, Level level, Set<Order> orders, Set<Role> roles) {
     super(id);
     this.firstName = firstName;
     this.lastName = lastName;
@@ -86,10 +85,20 @@ public class User extends ExtendedAuditEntity {
     this.ort = ort;
     this.plz = plz;
     this.birthday = birthday;
-    this.level = level;
-    this.roles = roles;
     this.discount = discount;
     this.seeds_count = seeds_count;
+    this.level = level;
+    this.orders = orders;
+    this.roles = roles;
+  }
+
+  public Set<Order> getOrders() {
+    return orders;
+  }
+
+  public User setOrders(Set<Order> orders) {
+    this.orders = orders;
+    return this;
   }
 
   public String getFirstName() {

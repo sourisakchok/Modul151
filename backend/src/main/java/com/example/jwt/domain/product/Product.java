@@ -3,6 +3,7 @@ package com.example.jwt.domain.product;
 import com.example.jwt.core.generic.ExtendedEntity;
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.UUID;
 
@@ -22,12 +23,12 @@ public class Product extends ExtendedEntity {
   private double salePrice;
 
   @Column(name = "harvestDate")
-  private Date harvestDate;
+  private LocalDate harvestDate;
 
   public Product() {
   }
 
-  public Product(String name, String originCountry, double purchasePrice, double salePrice, Date harvestDate) {
+  public Product(String name, String originCountry, double purchasePrice, double salePrice, LocalDate harvestDate) {
     this.name = name;
     this.originCountry = originCountry;
     this.purchasePrice = purchasePrice;
@@ -71,11 +72,11 @@ public class Product extends ExtendedEntity {
     return this;
   }
 
-  public Date getHarvestDate() {
+  public LocalDate getHarvestDate() {
     return harvestDate;
   }
 
-  public Product setHarvestDate(Date harvestDate) {
+  public Product setHarvestDate(LocalDate harvestDate) {
     this.harvestDate = harvestDate;
     return this;
   }
