@@ -63,6 +63,8 @@ public class WebSecurityConfig {
     configuration.setAllowedOrigins(List.of("*"));
     configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE"));
     configuration.setAllowedHeaders(List.of("Authorization", "Cache-Control", "Content-Type"));
+
+//    AUFGABE 1 Zusatzaufgabe React
     configuration.setExposedHeaders(List.of("Authorization"));
 
     UrlBasedCorsConfigurationSource configurationSource = new UrlBasedCorsConfigurationSource();
