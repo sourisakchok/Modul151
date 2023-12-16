@@ -88,22 +88,22 @@ public class ProductController {
     List<Product> allProducts = productService.findAll(pageable);
     return new ResponseEntity<>(productService.findMostExpensive(allProducts), HttpStatus.OK);
   }
-  @PostMapping("/orders")
-  @PreAuthorize("hasAuthority('CAN_PLACE_ORDER')")
-  public ResponseEntity<Order> placeOrder(@Valid @RequestBody OrderDTO orderDTO) {
-    // Konvertieren des DTO in eine Order-Entität
-    Order order = orderMapper.fromOrderDTO(orderDTO);
-
-    // Berechnung des Preises und der Seeds
-    order = orderServiceImpl.calculatePriceAndSeeds(order);
-
-    // Speichern der Bestellung
-//    Order savedOrder = orderServiceImpl.save(order);
-
-    // Aktualisierung des Kundenrangs, falls notwendig
-//    userService.updateCustomerRank(order.getCustomer());
-
-    return new ResponseEntity<>(order, HttpStatus.CREATED);
-  }
+//  @PostMapping("/orders")
+//  @PreAuthorize("hasAuthority('CAN_PLACE_ORDER')")
+//  public ResponseEntity<Order> placeOrder(@PathVariable String sorte, ) {
+//    // Konvertieren des DTO in eine Order-Entität
+//    Order order = orderMapper.fromOrderDTO(orderDTO);
+//
+//    // Berechnung des Preises und der Seeds
+//    order = orderServiceImpl.calculatePriceAndSeeds(order);
+//
+//    // Speichern der Bestellung
+////    Order savedOrder = orderServiceImpl.save(order);
+//
+//    // Aktualisierung des Kundenrangs, falls notwendig
+////    userService.updateCustomerRank(order.getCustomer());
+//
+//    return new ResponseEntity<>(order, HttpStatus.CREATED);
+//  }
 
 }
