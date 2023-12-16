@@ -88,7 +88,7 @@ public class OrderServiceImpl  extends ExtendedServiceImpl<Order> implements Ord
 
   @Override
   public List<Order> findAllOrderBYUserID(UUID UserID) {
-//    List<Order> orderHistory = orderRepository.
+    List<Order> orderHistory = orderRepository.findOrderByUserId(UserID);
     return null;
   }
 

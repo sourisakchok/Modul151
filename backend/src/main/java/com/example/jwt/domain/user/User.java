@@ -39,9 +39,6 @@ public class User extends ExtendedAuditEntity {
   @Column(name = "birthday")
   private LocalDate birthday;
 
-  @Column(name = "discount")
-  private double discount;
-
   @Column(name = "seeds_count")
   private int seeds_count;
 
@@ -68,7 +65,6 @@ public class User extends ExtendedAuditEntity {
     this.ort = ort;
     this.plz = plz;
     this.birthday = birthday;
-    this.discount = discount;
     this.seeds_count = seeds_count;
     this.level = level;
     this.orders = orders;
@@ -85,7 +81,6 @@ public class User extends ExtendedAuditEntity {
     this.ort = ort;
     this.plz = plz;
     this.birthday = birthday;
-    this.discount = discount;
     this.seeds_count = seeds_count;
     this.level = level;
     this.orders = orders;
@@ -173,14 +168,7 @@ public class User extends ExtendedAuditEntity {
     return this;
   }
 
-  public double getDiscount() {
-    return discount;
-  }
 
-  public User setDiscount(double discount) {
-    this.discount = discount;
-    return this;
-  }
 
   public int getSeeds_count() {
     return seeds_count;
