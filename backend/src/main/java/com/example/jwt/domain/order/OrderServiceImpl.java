@@ -1,6 +1,16 @@
 package com.example.jwt.domain.order;
 
+import com.example.jwt.core.generic.ExtendedRepository;
+import com.example.jwt.core.generic.ExtendedServiceImpl;
+import com.example.jwt.domain.level.Level;
+import com.example.jwt.domain.level.LevelRepository;
+import com.example.jwt.domain.product.Product;
+import com.example.jwt.domain.product.ProductService;
+import com.example.jwt.domain.role.Role;
+import com.example.jwt.domain.role.RoleRepository;
 import com.example.jwt.domain.user.User;
+import com.example.jwt.domain.user.UserRepository;
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -8,16 +18,27 @@ import java.time.LocalDate;
 import java.util.*;
 
 @Service
-public class OrderServiceImpl implements OrderService {
+public class OrderServiceImpl  extends ExtendedServiceImpl<Order> implements OrderService {
 
   private final OrderRepository orderRepository;
+  private final LevelRepository levelRepository;
+
+  private final UserRepository userRepository;
+
+  private final RoleRepository roleRepository;
 
   @Autowired
-  public OrderServiceImpl(OrderRepository repository) {
-    this.orderRepository = repository;
+  public OrderServiceImpl(ExtendedRepository<Order> repository, Logger logger, OrderRepository orderRepository, LevelRepository levelRepository, UserRepository userRepository, RoleRepository roleRepository) {
+    super(repository, logger);
+    this.orderRepository = orderRepository;
+    this.levelRepository = levelRepository;
+    this.userRepository = userRepository;
+    this.roleRepository = roleRepository;
   }
 
-  @Override
+
+
+
   public User findTopCustomer() {
     LocalDate oneMonthAgo = LocalDate.now().minusMonths(1);
     List<Order> orders = orderRepository.findOrdersBetweenDates(oneMonthAgo, LocalDate.now());
@@ -41,7 +62,6 @@ public class OrderServiceImpl implements OrderService {
     return topCustomer;
   }
 
-  @Override
   public String findTopCountry(int days) {
     LocalDate startDate = LocalDate.now().minusDays(days);
     List<Order> orders = orderRepository.findOrdersBetweenDates(startDate, LocalDate.now());
@@ -64,4 +84,33 @@ public class OrderServiceImpl implements OrderService {
 
     return topCountry;
   }
+
+  public Order calculatePriceAndSeeds(Order order) {
+    // Annahme: Der Principal User ist der, der die Bestellung aufgibt.
+    // Der 'principalUserId' sollte aus dem SecurityContext oder ähnlichem geholt werden.
+    UUID principalUserId = UUID.randomUUID(); // Hier den aktuellen User ID abrufen
+
+    User user = userRepository.findById(principalUserId)
+            .orElseThrow(() -> new RuntimeException("User not found"));
+
+    Level userLevel = levelRepository.findById(user.getLevel().getId())
+            .orElseThrow(() -> new RuntimeException("Level not found"));
+
+//    double discountRate = getDiscountRate(userLevel.getRank());
+//    double totalPrice = order.getProduct().getPricePerGram() * order.getQuantity() * (1 - discountRate);
+//    int seeds = (int)(totalPrice / 2); // 1 Seed pro 2 CHF
+//
+//    order.setTotalPrice(totalPrice);
+//    order.setSeeds(seeds);
+
+    return order;
+  }
 }
+
+//  private double getDiscountRate(CustomerRank rank) {
+//    // Rabatt aus der DB abrufen
+//    Discount discount = discountRepository.findByRank(rank)
+//            .orElseThrow(() -> new RuntimeException("Discount not found for rank: " + rank));
+//    return discount.getRate();
+//  }
+//}

@@ -2,18 +2,20 @@ package com.example.jwt.domain.product;
 
 import java.util.*;
 
+import com.example.jwt.core.generic.ExtendedRepository;
+import com.example.jwt.core.generic.ExtendedServiceImpl;
+import org.slf4j.Logger;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ProductServiceImpl implements ProductService {
+public class ProductServiceImpl extends ExtendedServiceImpl<Product> implements ProductService {
 
   private final ProductRepository productRepository;
 
-  @Autowired
-  public ProductServiceImpl(ProductRepository productRepository) {
+  public ProductServiceImpl(ExtendedRepository<Product> repository, Logger logger, ProductRepository productRepository) {
+    super(repository, logger);
     this.productRepository = productRepository;
   }
 
@@ -75,4 +77,6 @@ public class ProductServiceImpl implements ProductService {
             .max(Comparator.comparingDouble(Product::getSalePrice));
     return mostExpensiveProduct.orElse(null);
   }
+
+
 }

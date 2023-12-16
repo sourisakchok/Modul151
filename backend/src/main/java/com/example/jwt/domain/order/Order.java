@@ -12,13 +12,6 @@ import java.util.UUID;
 @Entity
 @Table(name="orders")
 public class Order extends ExtendedEntity {
-
-  @Id
-  @GeneratedValue(generator = "uuid2")
-  @GenericGenerator(name = "uuid2", strategy = "uuid2")
-  @Column(name = "id", updatable = false, nullable = false, unique = true)
-  private UUID id;
-
   @ManyToOne
   @JoinColumn(name="user_id", nullable=false)
   private User user;
@@ -36,23 +29,12 @@ public class Order extends ExtendedEntity {
   public Order() {
   }
 
-  public Order(UUID id, User user, Product product, Date orderDate, int quantity) {
-    this.id = id;
+  public Order(User user, Product product, Date orderDate, int quantity) {
     this.user = user;
     this.product = product;
     this.orderDate = orderDate;
     this.quantity = quantity;
   }
-
-  public UUID getId() {
-    return id;
-  }
-
-  public Order setId(UUID id) {
-    this.id = id;
-    return this;
-  }
-
   public User getUser() {
     return user;
   }

@@ -1,5 +1,6 @@
 package com.example.jwt.domain.product;
 
+import com.example.jwt.core.generic.ExtendedEntity;
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.util.Date;
@@ -7,14 +8,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name="product")
-public class Product {
-
-  @Id
-  @GeneratedValue(generator = "uuid2")
-  @GenericGenerator(name = "uuid2", strategy = "uuid2")
-  @Column(name = "id", updatable = false, nullable = false, unique = true)
-  private UUID id;
-
+public class Product extends ExtendedEntity {
   @Column(name = "name", nullable = false)
   private String name;
 
@@ -33,22 +27,12 @@ public class Product {
   public Product() {
   }
 
-  public Product(UUID id, String name, String originCountry, double purchasePrice, double salePrice, Date harvestDate) {
-    this.id = id;
+  public Product(String name, String originCountry, double purchasePrice, double salePrice, Date harvestDate) {
     this.name = name;
     this.originCountry = originCountry;
     this.purchasePrice = purchasePrice;
     this.salePrice = salePrice;
     this.harvestDate = harvestDate;
-  }
-
-  public UUID getId() {
-    return id;
-  }
-
-  public Product setId(UUID id) {
-    this.id = id;
-    return this;
   }
 
   public String getName() {
