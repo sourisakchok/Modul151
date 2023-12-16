@@ -3,9 +3,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Card } from 'react-bootstrap';
-const Product = () => {
-    const [products, setProducts] = useState([]);
+const [products, setProducts] = useState([]);
+const { principal } = useAuth();
 
+const userHasPermission = () => {
+    return principal?.authorities.some(
+        authority => authority.name === "CAN_RETRIEVE_PRODUCTS"
+    );
+};
     useEffect(() => {
         loadProducts();
     }, []);
