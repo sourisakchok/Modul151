@@ -1,25 +1,21 @@
 package com.example.jwt.domain.product;
 
+import com.example.jwt.core.generic.ExtendedEntity;
+import com.example.jwt.domain.country.Country;
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.UUID;
 
 @Entity
 @Table(name="product")
-public class Product {
-
-  @Id
-  @GeneratedValue(generator = "uuid2")
-  @GenericGenerator(name = "uuid2", strategy = "uuid2")
-  @Column(name = "id", updatable = false, nullable = false, unique = true)
-  private UUID id;
-
+public class Product extends ExtendedEntity {
   @Column(name = "name", nullable = false)
   private String name;
-
-  @Column(name = "originCountry")
-  private String originCountry;
+  @ManyToOne
+  @JoinColumn(name="country_id", nullable=false)
+  private Country originCountry;
 
   @Column(name = "purchasePrice")
   private double purchasePrice;
@@ -28,13 +24,12 @@ public class Product {
   private double salePrice;
 
   @Column(name = "harvestDate")
-  private Date harvestDate;
+  private LocalDate harvestDate;
 
   public Product() {
   }
 
-  public Product(UUID id, String name, String originCountry, double purchasePrice, double salePrice, Date harvestDate) {
-    this.id = id;
+  public Product(String name, Country originCountry, double purchasePrice, double salePrice, LocalDate harvestDate) {
     this.name = name;
     this.originCountry = originCountry;
     this.purchasePrice = purchasePrice;
@@ -42,13 +37,13 @@ public class Product {
     this.harvestDate = harvestDate;
   }
 
-  public UUID getId() {
-    return id;
-  }
-
-  public Product setId(UUID id) {
-    this.id = id;
-    return this;
+  public Product(UUID id, String name, Country originCountry, double purchasePrice, double salePrice, LocalDate harvestDate) {
+    super(id);
+    this.name = name;
+    this.originCountry = originCountry;
+    this.purchasePrice = purchasePrice;
+    this.salePrice = salePrice;
+    this.harvestDate = harvestDate;
   }
 
   public String getName() {
@@ -60,11 +55,11 @@ public class Product {
     return this;
   }
 
-  public String getOriginCountry() {
+  public Country getOriginCountry() {
     return originCountry;
   }
 
-  public Product setOriginCountry(String originCountry) {
+  public Product setOriginCountry(Country originCountry) {
     this.originCountry = originCountry;
     return this;
   }
@@ -87,11 +82,11 @@ public class Product {
     return this;
   }
 
-  public Date getHarvestDate() {
+  public LocalDate getHarvestDate() {
     return harvestDate;
   }
 
-  public Product setHarvestDate(Date harvestDate) {
+  public Product setHarvestDate(LocalDate harvestDate) {
     this.harvestDate = harvestDate;
     return this;
   }

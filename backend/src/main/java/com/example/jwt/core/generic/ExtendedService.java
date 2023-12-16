@@ -8,6 +8,7 @@ import org.springframework.data.domain.Pageable;
 
 public interface ExtendedService<T extends ExtendedEntity> {
 
+  //Create Product
   T save(T entity);
 
   Void deleteById(UUID id) throws NoSuchElementException;
@@ -18,6 +19,7 @@ public interface ExtendedService<T extends ExtendedEntity> {
 
   List<T> findAll(Pageable pageable);
 
+  //Retrieve product or products
   T findById(UUID id);
 
   boolean existsById(UUID id);
