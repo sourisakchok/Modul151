@@ -15,8 +15,8 @@ public interface ProductRepository extends JpaRepository<Product, UUID> {
     List<Product> findAllProducts();
 
     // Derivies QUery
-    @Query(value = "SELECT * FROM Product WHERE price = 99", nativeQuery = true)
-    List<Product> findAllProductsByPrice();
+//    @Query(value = "SELECT * FROM Product WHERE price = 99", nativeQuery = true)
+//    List<Product> findAllProductsByPrice();
 
     Product findByName(String name);
 }
