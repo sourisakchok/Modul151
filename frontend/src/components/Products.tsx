@@ -3,20 +3,18 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Card } from 'react-bootstrap';
-const [products, setProducts] = useState([]);
-const { principal } = useAuth();
+import { useAuth } from "../contexts/authenticationcontext/AuthenticationContext";
 
-const userHasPermission = () => {
-    return principal?.authorities.some(
-        authority => authority.name === "CAN_RETRIEVE_PRODUCTS"
-    );
-};
+function Product() {
+    const [products, setProducts] = useState([]);
+    const { principal } = useAuth();
+
     useEffect(() => {
         loadProducts();
     }, []);
 
     const loadProducts = async () => {
-        if (/* Überprüfe Benutzerberechtigungen */) {
+        if (userHasPermission()) {
             try {
                 const response = await axios.get('/products');
                 setProducts(response.data);
@@ -25,22 +23,23 @@ const userHasPermission = () => {
             }
         }
     };
-
+    // product Cards
     return (
         <div className="product-container">
             {products.map((product, index) => (
                 <Card key={index} style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src={product.imageUrl} />
+                    {/*<Card.Img variant="top" src={product.bild} />*/}
                     <Card.Body>
-                        <Card.Title>{product.name}</Card.Title>
+                        {/*<Card.Title>{product.name}</Card.Title>*/}
                         <Card.Text>
-                            {product.description}
+                            {/*{product.description}*/}
                         </Card.Text>
                     </Card.Body>
                 </Card>
             ))}
         </div>
     );
-};
+}
 
 export default Product;
+

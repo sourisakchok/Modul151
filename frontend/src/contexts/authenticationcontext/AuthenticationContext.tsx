@@ -51,6 +51,10 @@ const AuthenticationContextProvider = ({children}: AuthenticationContextProvider
         //@ts-ignore
         localStorage.setItem('token', response.headers.getAuthorization());
         //TODO: call backend to get principal (e.g through endpoint /users/profile) and pass it to setPrincipal(). The current Max Mustermann is just a mock!
+
+        const userResponse = await api.get('/users/profile');
+        setPrincipal(userResponse.data);
+
         setPrincipal({
           id: "37bbc595-71cf-4080-b15c-6848d2d8d05c",
           firstName: "Max",
@@ -86,8 +90,11 @@ const AuthenticationContextProvider = ({children}: AuthenticationContextProvider
 
   //TODO: implement hasAnyAuthority() method. Check if principal has any of the authorities passed as parameter
   const hasAnyAuthority = (authorities: Authority["name"][]): boolean => {
-    return false;
-  }
+    return principal?.roles.some(role =>
+        role.authorities.some(auth => authorities.includes(auth.name))
+    ) || false;
+  };
+
 
   const logout = async () => {
     setPrincipal(undefined);
