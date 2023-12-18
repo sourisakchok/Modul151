@@ -7,4 +7,6 @@ import java.util.UUID;
 @Repository
 public interface LevelRepository extends JpaRepository<Level, UUID> {
     Level findByName (LevelEnum name);
+
+    Level findTopByOrderByCountToUpgradeDesc();
 }

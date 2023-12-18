@@ -2,13 +2,9 @@ package com.example.jwt.domain.authority;
 
 import com.example.jwt.core.generic.ExtendedEntity;
 import com.example.jwt.domain.role.Role;
-
 import java.util.Set;
 import java.util.UUID;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "authority")
@@ -17,7 +13,7 @@ public class Authority extends ExtendedEntity {
   @Column(name = "name", nullable = false, unique = true)
   private String name;
 
-  @ManyToMany(mappedBy = "authorities")
+  @ManyToMany(mappedBy = "authorities", fetch = FetchType.EAGER)
   private Set<Role> roles;
 
   public Authority() {

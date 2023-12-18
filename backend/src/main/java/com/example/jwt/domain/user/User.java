@@ -4,7 +4,6 @@ import com.example.jwt.core.generic.ExtendedAuditEntity;
 import com.example.jwt.domain.level.Level;
 import com.example.jwt.domain.order.Order;
 import com.example.jwt.domain.role.Role;
-
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
@@ -50,7 +49,10 @@ public class User extends ExtendedAuditEntity {
   private Set<Order> orders;
 
   @ManyToMany(fetch = FetchType.EAGER)
-  @JoinTable(name = "users_role", joinColumns = @JoinColumn(name = "users_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
+  @JoinTable(
+          name = "users_role",
+          joinColumns = @JoinColumn(name = "users_id", referencedColumnName = "id"),
+          inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
   private Set<Role> roles = new HashSet<>();
 
   public User() {

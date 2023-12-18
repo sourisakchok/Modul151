@@ -25,4 +25,17 @@ public class UserAware implements AuditorAware<User> {
 
     return Optional.empty();
   }
+  public String getCurrentAuditorEmail() {
+    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+    if (authentication != null && authentication.isAuthenticated()) {
+      Object principal = authentication.getPrincipal();
+
+      if (principal instanceof UserDetailsImpl) {
+        return ((UserDetailsImpl) principal).user().getEmail();
+      }
+    }
+
+    return null;
+  }
 }

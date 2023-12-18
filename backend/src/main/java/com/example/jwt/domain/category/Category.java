@@ -23,18 +23,24 @@ public class Category extends ExtendedEntity {
   @ManyToMany(fetch = FetchType.EAGER)
   @JoinTable(
       name = "product_category",
-      joinColumns = @JoinColumn(name = "_id", referencedColumnName = "id"),
-      inverseJoinColumns = @JoinColumn(name = "category_id", referencedColumnName = "id")
+      joinColumns = @JoinColumn(name = "category_id", referencedColumnName = "id"),
+      inverseJoinColumns = @JoinColumn(name = "product_id", referencedColumnName = "id")
   )
-  private Set<Product> authorities = new HashSet<>();
+  private Set<Product> products = new HashSet<>();
 
   public Category() {
+
   }
 
-  public Category(UUID id, String name, Set<Product> authorities) {
+  public Category(String name, Set<Product> products) {
+    this.name = name;
+    this.products = products;
+  }
+
+  public Category(UUID id, String name, Set<Product> products) {
     super(id);
     this.name = name;
-   this.authorities = authorities;
+    this.products = products;
   }
 
   public String getName() {
@@ -46,12 +52,12 @@ public class Category extends ExtendedEntity {
     return this;
   }
 
-  public Set<Product> getProduct() {
-    return authorities;
+  public Set<Product> getProducts() {
+    return products;
   }
 
- public Category setProduct(Set<Product> authorities) {
-    this.authorities = authorities;
-   return this;
+  public Category setProducts(Set<Product> products) {
+    this.products = products;
+    return this;
   }
 }

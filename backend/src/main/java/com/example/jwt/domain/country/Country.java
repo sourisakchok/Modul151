@@ -2,11 +2,7 @@ package com.example.jwt.domain.country;
 
 import com.example.jwt.core.generic.ExtendedEntity;
 import com.example.jwt.domain.product.Product;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Set;
 import java.util.UUID;
 
