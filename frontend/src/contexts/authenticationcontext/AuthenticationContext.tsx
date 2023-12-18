@@ -46,37 +46,21 @@ const AuthenticationContextProvider = ({children}: AuthenticationContextProvider
 
   const authenticate = async () => {
     try {
-      const response = await api.post('/users/login', {"email": "max@mustermann","password": "TO_BE_REPLACED"});
-      if (response.headers.hasAuthorization) {
-        //@ts-ignore
-        localStorage.setItem('token', response.headers.getAuthorization());
-        //TODO: call backend to get principal (e.g through endpoint /users/profile) and pass it to setPrincipal(). The current Max Mustermann is just a mock!
-        setPrincipal({
-          id: "37bbc595-71cf-4080-b15c-6848d2d8d05c",
-          firstName: "Max",
-          lastName: "Mustermann",
-          email: "max@mustermann",
-          roles: [{
-            id: "38bbc595-71cf-4080-b15c-6848d2d8d05c",
-            name: "CLIENT",
-            authorities: [{
-              id: "39bbc595-71cf-4080-b15c-6848d2d8d05c",
-              name: "CAN_PLACE_ORDER"
-            }, {
-              id: "40bbc595-71cf-4080-b15c-6848d2d8d05c",
-              name: "'CAN_RETRIEVE_PURCHASE_HISTORY"
-            }, {
-              id: "41bbc595-71cf-4080-b15c-6848d2d8d05c",
-              name: "CAN_RETRIEVE_PRODUCTS"
-            }]
-          }]
-        })
-        dispatch(ActionTypes.AUTHENTICATED)
+      const response = await api.post('/users/login', {"email": "max@mustermann","password": "DEIN_PASSWORT"});
+      if (response.headers['authorization']) {
+        localStorage.setItem('token', response.headers['authorization']);
+        const userProfileResponse = await api.get('/users/profile');
+        if (userProfileResponse.status === 200) {
+          setPrincipal(userProfileResponse.data);
+          dispatch(ActionTypes.AUTHENTICATED);
+        } else {
+          dispatch(ActionTypes.FAILED);
+        }
       } else {
-        dispatch(ActionTypes.FAILED)
+        dispatch(ActionTypes.FAILED);
       }
     } catch {
-      dispatch(ActionTypes.FAILED)
+      dispatch(ActionTypes.FAILED);
     }
   }
 
@@ -84,7 +68,6 @@ const AuthenticationContextProvider = ({children}: AuthenticationContextProvider
     authenticate()
   }, [])
 
-  //TODO: implement hasAnyAuthority() method. Check if principal has any of the authorities passed as parameter
   const hasAnyAuthority = (authorities: Authority["name"][]): boolean => {
     return false;
   }

@@ -28,18 +28,14 @@ export default class AxiosUtility {
 
     public static async authenticate(username: string, password: string): Promise<void> {
         try {
-            // Ersetzen Sie 'username' und 'password' durch die tatsächlichen Anmeldedaten.
-            const response = await this.api.post("/auth/login", {
+            const response = await this.api.post("/users/login", {
                 username: username,
                 password: password,
             });
 
-            if (response.status === 200) {
-                const token = response.data.token; // Stellen Sie sicher, dass die Token-Struktur richtig ist.
-
-                // Speichern Sie das JWT-Token im Local Storage unter dem Schlüssel 'token'.
+            if (response.status === 200 && response.headers['authorization']) {
+                const token = response.headers['authorization'];
                 localStorage.setItem("token", token);
-
                 console.log("Anmeldung erfolgreich");
             } else {
                 console.error("Anmeldung fehlgeschlagen");

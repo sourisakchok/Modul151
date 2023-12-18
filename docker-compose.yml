@@ -3,7 +3,7 @@ services:
   spring-app:
     image: spring-app
     build:
-      context: .
+      context: ./backend
       dockerfile: Dockerfile
     ports:
       - 8080:8080
@@ -23,12 +23,18 @@ services:
     ports:
       - "9090:9090"
     volumes:
-      - ./monitoring/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./backend/monitoring/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
   grafana:
     image: grafana/grafana:9.5.2
     container_name: grafana
     ports:
-      - "3000:3000"
+      - "4000:3000"
     restart: unless-stopped
     volumes:
-      - ./monitoring/grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./backend/monitoring/grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+  react-app:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
