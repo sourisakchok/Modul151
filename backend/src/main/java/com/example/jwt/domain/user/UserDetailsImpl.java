@@ -1,7 +1,9 @@
 package com.example.jwt.domain.user;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 import java.util.stream.Collectors;
 
 import com.example.jwt.domain.role.Role;
@@ -14,9 +16,19 @@ public record UserDetailsImpl(User user) implements UserDetails {
   @Override
   public Collection<? extends GrantedAuthority> getAuthorities() {
     if (user.getRole() != null) {
-      return user.getRole().getAuthorities().stream()
-              .map(authority -> new SimpleGrantedAuthority(authority.getName()))
-              .collect(Collectors.toList());
+      List<GrantedAuthority> authorities = new ArrayList<>();
+
+      // Add the role as a GrantedAuthority
+      authorities.add(new SimpleGrantedAuthority("ROLE_" + user.getRole().getName()));
+
+      // Add authorities associated with the role
+      authorities.addAll(
+              user.getRole().getAuthorities().stream()
+                      .map(authority -> new SimpleGrantedAuthority(authority.getName()))
+                      .collect(Collectors.toList())
+      );
+
+      return authorities;
     } else {
       return Collections.emptyList(); // No authorities if no role is assigned
     }

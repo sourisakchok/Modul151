@@ -47,8 +47,6 @@ public class WebSecurityConfig {
             .antMatchers(HttpMethod.POST, "/users/login").permitAll()
             .antMatchers(HttpMethod.POST, "/users/register").permitAll()
                 .antMatchers(HttpMethod.GET, "/actuator/**").permitAll()
-                .antMatchers(HttpMethod.GET,"/orders/admin/top-customer").hasRole("ADMIN")
-                .antMatchers(HttpMethod.GET,"/orders/admin/top-country/{days}").hasRole("ADMIN")
             .anyRequest().authenticated())
         .addFilterAfter(
             new CustomAuthenticationFilter(new AntPathRequestMatcher("/users/login", "POST"),

@@ -10,6 +10,7 @@ import com.example.jwt.domain.user.dto.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,15 +34,16 @@ public class OrderController {
   }
 
   //Aufgabe 4.1
-  @GetMapping("/top-customer")
-  @PreAuthorize("hasAuthority('ADMIN')")
+  @GetMapping("/admin/top-customer")
+  @PreAuthorize("hasRole('ADMIN')")
   public ResponseEntity<UserDTO> getTopCustomer() {
     User topCustomer = orderService.findTopCustomer();
     return new ResponseEntity<>(userMapper.toDTO(topCustomer), HttpStatus.OK);
   }
 
   //Aufgabe 4.2
-  @GetMapping("/top-country/{days}")
+  @GetMapping("/admin/top-country/{days}")
+  @PreAuthorize("hasRole('ADMIN')")
   public ResponseEntity<Country> getTopCountry(@PathVariable int days) {
     Country topCountry = orderService.findTopCountry(days);
     return new ResponseEntity<>(topCountry, HttpStatus.OK);
