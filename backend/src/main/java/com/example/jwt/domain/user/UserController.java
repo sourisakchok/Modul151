@@ -66,4 +66,11 @@ public class UserController {
     userService.deleteById(id);
     return new ResponseEntity<>(HttpStatus.NO_CONTENT);
   }
+///users/profile React Aufgabe A2
+  @GetMapping("/profile")
+  @PreAuthorize("hasAuthority('CAN_PLACE_ORDER')")
+  public ResponseEntity<Void> retrievePrincipal(@PathVariable UUID id) {
+    userService.deleteById(id);
+    return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+  }
 }

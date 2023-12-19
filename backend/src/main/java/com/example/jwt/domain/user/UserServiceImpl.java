@@ -1,5 +1,6 @@
 package com.example.jwt.domain.user;
 
+import com.example.jwt.core.audit.UserAware;
 import com.example.jwt.core.generic.ExtendedServiceImpl;
 import com.example.jwt.domain.level.LevelEnum;
 import com.example.jwt.domain.level.LevelRepository;
@@ -12,6 +13,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class UserServiceImpl extends ExtendedServiceImpl<User> implements UserService {
 
@@ -19,13 +22,16 @@ public class UserServiceImpl extends ExtendedServiceImpl<User> implements UserSe
   private final RoleRepository roleRepository;
   private final LevelRepository levelRepository;
 
+  private final UserAware userAware;
+
   @Autowired
   public UserServiceImpl(UserRepository repository, Logger logger,
-                         BCryptPasswordEncoder bCryptPasswordEncoder, RoleRepository roleRepository, LevelRepository levelRepository) {
+                         BCryptPasswordEncoder bCryptPasswordEncoder, RoleRepository roleRepository, LevelRepository levelRepository, UserAware userAware) {
     super(repository, logger);
     this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     this.roleRepository = roleRepository;
     this.levelRepository = levelRepository;
+    this.userAware = userAware;
   }
 
   @Override
@@ -35,6 +41,11 @@ public class UserServiceImpl extends ExtendedServiceImpl<User> implements UserSe
     user.setLevel(levelRepository.findByName(LevelEnum.BRONZE));
     return save(user);
 
+  }
+
+  @Override
+  public Optional<User> retrievePrincipal() {
+    return userAware.getCurrentAuditor();
   }
 
   @Override
