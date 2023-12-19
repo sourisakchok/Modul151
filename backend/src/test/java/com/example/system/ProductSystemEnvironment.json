@@ -1,0 +1,14 @@
+{
+	"id": "f7d7a909-7e22-4356-86f5-6d4ae7821d3f",
+	"name": "productSystemTestEnvironment",
+	"values": [
+		{
+			"key": "url",
+			"value": "localhost:8080",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2020-04-15T13:51:50.031Z",
+	"_postman_exported_using": "Postman/7.20.1"
+}
