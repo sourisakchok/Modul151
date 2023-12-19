@@ -6,6 +6,7 @@ import com.example.jwt.core.generic.ExtendedServiceImpl;
 import com.example.jwt.domain.country.Country;
 import com.example.jwt.domain.level.Level;
 import com.example.jwt.domain.level.LevelRepository;
+import com.example.jwt.domain.order.dto.OrderSummaryDTO;
 import com.example.jwt.domain.product.Product;
 import com.example.jwt.domain.product.ProductRepository;
 import com.example.jwt.domain.role.RoleRepository;
@@ -86,9 +87,13 @@ public class OrderServiceImpl extends ExtendedServiceImpl<Order> implements Orde
     }
 
     @Override
-    public List<Order> findAllOrderBYUserID(UUID UserID) {
-        List<Order> orderHistory = orderRepository.findOrderByUserId(UserID);
-        return null;
+    public List<Order> findAllOrderByUserID(UUID UserID) {
+        return orderRepository.findOrderByUserId(UserID);
+    }
+
+    @Override
+    public List<OrderSummaryDTO> getOrderSummaryForUser(UUID userId) {
+        return orderRepository.findOrderSummaryByUserId(userId);
     }
 
     public Order calculatePriceAndSeeds(String productName, int amount) {

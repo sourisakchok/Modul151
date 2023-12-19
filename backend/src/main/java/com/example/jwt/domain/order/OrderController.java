@@ -1,7 +1,9 @@
 package com.example.jwt.domain.order;
 
+import com.example.jwt.core.audit.UserAware;
 import com.example.jwt.domain.country.Country;
 import com.example.jwt.domain.order.dto.OrderMapper;
+import com.example.jwt.domain.order.dto.OrderSummaryDTO;
 import com.example.jwt.domain.user.User;
 import com.example.jwt.domain.user.dto.UserDTO;
 import com.example.jwt.domain.user.dto.UserMapper;
@@ -11,17 +13,21 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/orders")
 public class OrderController {
 
   private final OrderService orderService;
+  private  final UserAware userAware;
   private final UserMapper userMapper;
   private final OrderMapper orderMapper;
 
   @Autowired
-  public OrderController(OrderService orderService, UserMapper userMapper, OrderMapper orderMapper) {
+  public OrderController(OrderService orderService, UserAware userAware, UserMapper userMapper, OrderMapper orderMapper) {
     this.orderService = orderService;
+    this.userAware = userAware;
     this.userMapper = userMapper;
     this.orderMapper = orderMapper;
   }
@@ -56,4 +62,24 @@ public class OrderController {
 //    String orderHistory = orderService.findTopCountry(days);
 //    return new ResponseEntity<>(orderHistory, HttpStatus.OK);
 //  }
+
+  //@GetMapping("/order-history")
+  //@PreAuthorize("hasAuthority('CAN_RETRIEVE_PURCHASE_HISTORY')")
+  //public ResponseEntity<List<OrderDTO>> getOrderHistory(Authentication authentication) {
+    // Hier wird angenommen, dass die UUID des Benutzers als 'username' im Authentication-Objekt gespeichert ist.
+    //UUID userId = UUID.fromString(authentication.getName());
+    //List<Order> orders = orderService.findAllOrderByUserID(userId);
+    //List<OrderDTO> orderDTOs = orders.stream()
+      //      .map(orderMapper::toDTO)
+        //    .collect(Collectors.toList());
+    //return ResponseEntity.ok(orderDTOs); // Verwenden von ResponseEntity.ok() um direkt den Status OK zu setzen
+  //}
+  @GetMapping("/order-history")
+  @PreAuthorize("hasAuthority('CAN_RETRIEVE_PURCHASE_HISTORY')")
+  public ResponseEntity<List<OrderSummaryDTO>> getOrderHistory() {
+    List<OrderSummaryDTO> orderHistorySummary = orderService.getOrderSummaryForUser(userAware.getCurrentAuditor().get().getId());
+    System.out.println("test");
+    return ResponseEntity.ok(orderHistorySummary);
+  }
+
 }
