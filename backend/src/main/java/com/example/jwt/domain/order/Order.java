@@ -13,10 +13,12 @@ import java.util.UUID;
 public class Order extends ExtendedEntity {
   @ManyToOne(fetch = FetchType.EAGER)
   @JoinColumn(name="user_id", nullable=false)
+  @JsonIgnore
   private User user;
 
   @ManyToOne(fetch = FetchType.EAGER)
   @JoinColumn(name="product_id", nullable=false)
+  @JsonIgnore
   private Product product;
 
   @Column(name = "orderDate")

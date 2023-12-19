@@ -26,6 +26,7 @@ public class OrderController {
     this.orderMapper = orderMapper;
   }
 
+  //Aufgabe 4.1
   @GetMapping("/top-customer")
   @PreAuthorize("hasAuthority('ADMIN')")
   public ResponseEntity<UserDTO> getTopCustomer() {
@@ -33,12 +34,14 @@ public class OrderController {
     return new ResponseEntity<>(userMapper.toDTO(topCustomer), HttpStatus.OK);
   }
 
+  //Aufgabe 4.2
   @GetMapping("/top-country/{days}")
   public ResponseEntity<Country> getTopCountry(@PathVariable int days) {
     Country topCountry = orderService.findTopCountry(days);
     return new ResponseEntity<>(topCountry, HttpStatus.OK);
   }
 
+  //Aufgabe 3
   @PostMapping("/{productName}/{amount}")
   @PreAuthorize("hasAuthority('CAN_PLACE_ORDER')")
   @ResponseBody
