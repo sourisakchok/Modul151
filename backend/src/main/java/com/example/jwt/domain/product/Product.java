@@ -4,6 +4,8 @@ import com.example.jwt.core.generic.ExtendedEntity;
 import com.example.jwt.domain.category.Category;
 import com.example.jwt.domain.country.Country;
 import com.example.jwt.domain.order.Order;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -16,7 +18,7 @@ public class Product extends ExtendedEntity {
   @Column(name = "name", nullable = false)
   private String name;
 
-  @ManyToMany(mappedBy = "products", fetch = FetchType.EAGER)
+  @ManyToMany(mappedBy = "products")
   private Set<Category> category = new HashSet<>();
 
   @ManyToOne()

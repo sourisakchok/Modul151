@@ -2,6 +2,8 @@ package com.example.jwt.domain.country;
 
 import com.example.jwt.core.generic.ExtendedEntity;
 import com.example.jwt.domain.product.Product;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Set;
 import java.util.UUID;
@@ -14,6 +16,7 @@ public class Country extends ExtendedEntity {
     private String name;
 
     @OneToMany(mappedBy="originCountry")
+    @JsonIgnore
     private Set<Product> products;
 
     public Country() {

@@ -2,6 +2,8 @@ package com.example.jwt.domain.category;
 
 import com.example.jwt.core.generic.ExtendedEntity;
 import com.example.jwt.domain.product.Product;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
@@ -26,6 +28,7 @@ public class Category extends ExtendedEntity {
       joinColumns = @JoinColumn(name = "category_id", referencedColumnName = "id"),
       inverseJoinColumns = @JoinColumn(name = "product_id", referencedColumnName = "id")
   )
+  @JsonIgnore
   private Set<Product> products = new HashSet<>();
 
   public Category() {
