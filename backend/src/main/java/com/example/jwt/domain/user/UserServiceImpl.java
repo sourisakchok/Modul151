@@ -37,7 +37,7 @@ public class UserServiceImpl extends ExtendedServiceImpl<User> implements UserSe
   @Override
   public User register(User user) {
     user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-    user.setRoles(roleRepository.findByName(RoleEnum.CLIENT));
+    user.setRole(roleRepository.findByName(RoleEnum.CLIENT));
     user.setLevel(levelRepository.findByName(LevelEnum.BRONZE));
     return save(user);
 

@@ -42,7 +42,8 @@ public class ProductController {
   public ResponseEntity<Product> retrieveById(@PathVariable UUID id) {
     return new ResponseEntity<>(productService.findById(id), HttpStatus.OK);
   }
-// Muss wie folgt aufgerufen werden /products?page=0&size=5
+
+  // Muss wie folgt aufgerufen werden /products?page=0&size=5
   @GetMapping("")
   @ResponseBody
   @PreAuthorize("hasAuthority('CAN_RETRIEVE_PRODUCTS')")
@@ -50,24 +51,24 @@ public class ProductController {
     return new ResponseEntity<>(productService.findAll(pageable), HttpStatus.OK);
   }
 
-  @PutMapping({"", "/"})
-  public ResponseEntity<Product> updateById(@RequestBody Product product) {
-    return new ResponseEntity<>(productService.updateById(product.getId(), product), HttpStatus.OK);
-  }
-
-  @PatchMapping("/{id}")
-  public ResponseEntity<Product> partialUpdateById(@RequestBody Product product) {
-    return new ResponseEntity<>(productService.updateById(product.getId(), product), HttpStatus.OK);
-  }
-
-  @DeleteMapping("/{id}")
-  public ResponseEntity<Void> deleteById(@PathVariable UUID id) {
-    return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-  }
-
   @GetMapping("/price/highest")
   public ResponseEntity<Product> retrieveMostExpensive(Pageable pageable) {
     List<Product> allProducts = productService.findAll(pageable);
     return new ResponseEntity<>(productService.findMostExpensive(allProducts), HttpStatus.OK);
   }
+
+//  @PutMapping({"", "/"})
+//  public ResponseEntity<Product> updateById(@RequestBody Product product) {
+//    return new ResponseEntity<>(productService.updateById(product.getId(), product), HttpStatus.OK);
+//  }
+//
+//  @PatchMapping("/{id}")
+//  public ResponseEntity<Product> partialUpdateById(@RequestBody Product product) {
+//    return new ResponseEntity<>(productService.updateById(product.getId(), product), HttpStatus.OK);
+//  }
+//
+//  @DeleteMapping("/{id}")
+//  public ResponseEntity<Void> deleteById(@PathVariable UUID id) {
+//    return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//  }
 }

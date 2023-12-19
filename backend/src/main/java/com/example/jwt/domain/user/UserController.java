@@ -52,25 +52,26 @@ public class UserController {
     return new ResponseEntity<>(userMapper.toDTO(user), HttpStatus.CREATED);
   }
 
-  @PutMapping("/{id}")
-  @PreAuthorize("hasAuthority('USER_MODIFY') && @userPermissionEvaluator.isUserAboveAge(authentication.principal.user,18)")
-  public ResponseEntity<UserDTO> updateById(@PathVariable UUID id,
-      @Valid @RequestBody UserDTO userDTO) {
-    User user = userService.updateById(id, userMapper.fromDTO(userDTO));
-    return new ResponseEntity<>(userMapper.toDTO(user), HttpStatus.OK);
-  }
-
-  @DeleteMapping("/{id}")
-  @PreAuthorize("hasAuthority('USER_DELETE')")
-  public ResponseEntity<Void> deleteById(@PathVariable UUID id) {
-    userService.deleteById(id);
-    return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-  }
-///users/profile React Aufgabe A2
   @GetMapping("/profile")
   @PreAuthorize("hasAuthority('CAN_PLACE_ORDER')")
   public ResponseEntity<Void> retrievePrincipal(@PathVariable UUID id) {
     userService.deleteById(id);
     return new ResponseEntity<>(HttpStatus.NO_CONTENT);
   }
+
+//  @PutMapping("/{id}")
+//  @PreAuthorize("hasAuthority('USER_MODIFY') && @userPermissionEvaluator.isUserAboveAge(authentication.principal.user,18)")
+//  public ResponseEntity<UserDTO> updateById(@PathVariable UUID id,
+//      @Valid @RequestBody UserDTO userDTO) {
+//    User user = userService.updateById(id, userMapper.fromDTO(userDTO));
+//    return new ResponseEntity<>(userMapper.toDTO(user), HttpStatus.OK);
+//  }
+//
+//  @DeleteMapping("/{id}")
+//  @PreAuthorize("hasAuthority('USER_DELETE')")
+//  public ResponseEntity<Void> deleteById(@PathVariable UUID id) {
+//    userService.deleteById(id);
+//    return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//  }
+///users/profile React Aufgabe A2
 }

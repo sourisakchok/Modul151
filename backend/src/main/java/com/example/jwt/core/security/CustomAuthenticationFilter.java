@@ -40,7 +40,7 @@ public class CustomAuthenticationFilter extends AbstractAuthenticationProcessing
 
     return Jwts.builder()
         .claims(Map.of("sub", userDetailsImpl.user().getId().toString(), "authorities",
-            userDetailsImpl.getAuthorities()))
+            userDetailsImpl.getAuthorities(), "roles", userDetailsImpl.getRole()))
         .issuedAt(new Date())
         .expiration(new Date(System.currentTimeMillis() + jwtProperties.getExpirationMillis()))
         .issuer(jwtProperties.getIssuer())
