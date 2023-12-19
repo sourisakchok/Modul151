@@ -2,6 +2,7 @@ package com.example.jwt.domain.user.dto;
 
 import com.example.jwt.core.generic.ExtendedDTO;
 import com.example.jwt.domain.level.Level;
+import com.example.jwt.domain.role.Role;
 import com.example.jwt.domain.role.dto.RoleDTO;
 
 import java.time.LocalDate;
@@ -24,14 +25,12 @@ public class UserDTO extends ExtendedDTO {
   private String plz;
   private LocalDate birthday;
   private Level level;
-
-  @Valid
-  private Set<RoleDTO> roles;
+  private Role role;
 
   public UserDTO() {
   }
 
-  public UserDTO(String firstName, String lastName, String email, String password, String address, String ort, String plz, LocalDate birthday, Level level, Set<RoleDTO> roles) {
+  public UserDTO(String firstName, String lastName, String email, String password, String address, String ort, String plz, LocalDate birthday, Level level, Role role) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.email = email;
@@ -41,10 +40,10 @@ public class UserDTO extends ExtendedDTO {
     this.plz = plz;
     this.birthday = birthday;
     this.level = level;
-    this.roles = roles;
+    this.role = role;
   }
 
-  public UserDTO(UUID id, String firstName, String lastName, String email, String password, String address, String ort, String plz, LocalDate birthday, Level level, Set<RoleDTO> roles) {
+  public UserDTO(UUID id, String firstName, String lastName, String email, String password, String address, String ort, String plz, LocalDate birthday, Level level, Role role) {
     super(id);
     this.firstName = firstName;
     this.lastName = lastName;
@@ -55,7 +54,7 @@ public class UserDTO extends ExtendedDTO {
     this.plz = plz;
     this.birthday = birthday;
     this.level = level;
-    this.roles = roles;
+    this.role = role;
   }
 
   public String getFirstName() {
@@ -139,12 +138,12 @@ public class UserDTO extends ExtendedDTO {
     return this;
   }
 
-  public Set<RoleDTO> getRoles() {
-    return roles;
+  public Role getRole() {
+    return role;
   }
 
-  public UserDTO setRoles(Set<RoleDTO> roles) {
-    this.roles = roles;
+  public UserDTO setRole(Role role) {
+    this.role = role;
     return this;
   }
 }

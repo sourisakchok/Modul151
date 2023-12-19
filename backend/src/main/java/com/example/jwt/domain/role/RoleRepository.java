@@ -8,5 +8,5 @@ import java.util.UUID;
 
 @Repository
 public interface RoleRepository extends JpaRepository<Role, UUID> {
-    Set<Role> findByName(RoleEnum name);
+    Role findByName(RoleEnum name);
 }

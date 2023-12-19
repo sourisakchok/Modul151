@@ -2,6 +2,8 @@ package com.example.jwt.domain.authority;
 
 import com.example.jwt.core.generic.ExtendedEntity;
 import com.example.jwt.domain.role.Role;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.Set;
 import java.util.UUID;
 import javax.persistence.*;
@@ -14,6 +16,7 @@ public class Authority extends ExtendedEntity {
   private String name;
 
   @ManyToMany(mappedBy = "authorities", fetch = FetchType.EAGER)
+  @JsonIgnore
   private Set<Role> roles;
 
   public Authority() {
