@@ -61,8 +61,9 @@ VALUES ('562ef1c8-57a3-447a-93cf-d5f03012a330', 'White'),
        ('81ede6ba-419d-4c48-90fe-8682982c8182', 'Medicinal Herbs');
 
 -- Einfügen in die Tabelle users
-INSERT INTO users (id, created_at, modified_at, birthday, email, first_name, last_name, password, address, ort, plz, seeds_count)
-VALUES ('59fd5f90-e51d-40a2-a627-78e3520cd848', current_timestamp, current_timestamp, '2000-05-23', 'test@mail.com', 'Peter', 'Meier', 'Password1%', 'Peterstrasse 34', 'Jona', '8640',  0);
+INSERT INTO users (id, created_at, modified_at, birthday, email, first_name, last_name, password, address, ort, plz, seeds_count, users_level, users_role)
+VALUES ('59fd5f90-e51d-40a2-a627-78e3520cd848', current_timestamp, current_timestamp, '2000-05-23', 'test@mail.com', 'Peter', 'Meier', '$2a$10$tojqH26OSMp5hyGfomZAJelM0vbov2HWI/4L20uMh0GUqCWeq1EuS', 'Peterstrasse 34', 'Jona', '8640',  0, '686bb227-87b1-43e8-8665-8c2a6e22b25d', '164ca30f-9104-4e5a-b871-b4df6444708f'),
+       ('64cf300e-ba61-47e5-8f32-376071b72901', current_timestamp, current_timestamp, '2000-05-23', 'test@gmail.com', 'Admin', 'Meier', '$2a$10$tojqH26OSMp5hyGfomZAJelM0vbov2HWI/4L20uMh0GUqCWeq1EuS', 'Peterstrasse 34', 'Jona', '8640',  0, '686bb227-87b1-43e8-8665-8c2a6e22b25d', 'f4b3b8a8-c23f-4ab3-830e-a519f478c3c3');
 
 -- Einfügen in die Tabelle product_category
 INSERT INTO product_category (category_id, product_id)
@@ -81,11 +82,15 @@ VALUES ('562ef1c8-57a3-447a-93cf-d5f03012a330', '123e4567-e89b-12d3-a456-4266141
 INSERT INTO role_authority (role_id, authority_id)
 VALUES ('164ca30f-9104-4e5a-b871-b4df6444708f', '779f50c3-a1f5-4d12-9643-32139c14d2ec'),
        ('164ca30f-9104-4e5a-b871-b4df6444708f', 'a661a689-f48e-46b7-b29a-48bd0823da23'),
-       ('164ca30f-9104-4e5a-b871-b4df6444708f', 'fcf0114b-88af-4920-8db0-11f50d4e6c0b');
+       ('164ca30f-9104-4e5a-b871-b4df6444708f', 'fcf0114b-88af-4920-8db0-11f50d4e6c0b'),
+       ('f4b3b8a8-c23f-4ab3-830e-a519f478c3c3', '779f50c3-a1f5-4d12-9643-32139c14d2ec'),
+       ('f4b3b8a8-c23f-4ab3-830e-a519f478c3c3', 'a661a689-f48e-46b7-b29a-48bd0823da23'),
+       ('f4b3b8a8-c23f-4ab3-830e-a519f478c3c3', 'fcf0114b-88af-4920-8db0-11f50d4e6c0b');
 
--- Einfügen in die Tabelle users_role
-INSERT INTO users_role (users_id, role_id)
-VALUES ('59fd5f90-e51d-40a2-a627-78e3520cd848', '164ca30f-9104-4e5a-b871-b4df6444708f');
+-- -- Einfügen in die Tabelle users_role
+-- INSERT INTO users_role (users_id, role_id)
+-- VALUES ('59fd5f90-e51d-40a2-a627-78e3520cd848', '164ca30f-9104-4e5a-b871-b4df6444708f'),
+--        ('64cf300e-ba61-47e5-8f32-376071b72901', 'f4b3b8a8-c23f-4ab3-830e-a519f478c3c3');
 
 
 
