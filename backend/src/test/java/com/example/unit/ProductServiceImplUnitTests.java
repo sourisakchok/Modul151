@@ -1,8 +1,8 @@
-package com.example.testing.domain.product.unit;
+package com.example.unit;
 
-import com.example.testing.domain.product.Product;
-import com.example.testing.domain.product.ProductRepository;
-import com.example.testing.domain.product.ProductServiceImpl;
+import com.example.jwt.domain.product.Product;
+import com.example.jwt.domain.product.ProductRepository;
+import com.example.jwt.domain.product.ProductServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;

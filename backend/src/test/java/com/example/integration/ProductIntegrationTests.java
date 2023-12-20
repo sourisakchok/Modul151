@@ -1,15 +1,13 @@
-package com.example.testing.domain.product.integration;
-
-import com.example.testing.core.security.helpers.AuthorizationSchemas;
-import com.example.testing.core.security.helpers.JwtProperties;
-import com.example.testing.domain.authority.Authority;
-import com.example.testing.domain.authority.AuthorityRepository;
-import com.example.testing.domain.product.Product;
-import com.example.testing.domain.product.ProductRepository;
-import com.example.testing.domain.role.Role;
-import com.example.testing.domain.role.RoleRepository;
-import com.example.testing.domain.user.User;
-import com.example.testing.domain.user.UserRepository;
+package com.example.integration;
+import com.example.jwt.core.security.helpers.AuthorizationSchemas;
+import com.example.jwt.core.security.helpers.JwtProperties;
+import com.example.jwt.domain.authority.Authority;
+import com.example.jwt.domain.product.Product;
+import com.example.jwt.domain.product.ProductRepository;
+import com.example.jwt.domain.role.Role;
+import com.example.jwt.domain.role.RoleRepository;
+import com.example.jwt.domain.user.User;
+import com.example.jwt.domain.user.UserRepository;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
@@ -45,9 +43,6 @@ public class ProductIntegrationTests {
 
     @Autowired
     private JwtProperties jwtProperties;
-
-    @Autowired
-    private AuthorityRepository authorityRepository;
 
     @Autowired
     private RoleRepository roleRepository;

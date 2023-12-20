@@ -1,13 +1,13 @@
-package com.example.testing.domain.product.unit;
+package com.example.unit;
 
-import com.example.testing.core.security.helpers.AuthorizationSchemas;
-import com.example.testing.core.security.helpers.JwtProperties;
-import com.example.testing.domain.authority.Authority;
-import com.example.testing.domain.product.Product;
-import com.example.testing.domain.product.ProductService;
-import com.example.testing.domain.role.Role;
-import com.example.testing.domain.user.User;
-import com.example.testing.domain.user.UserService;
+import com.example.jwt.core.security.helpers.AuthorizationSchemas;
+import com.example.jwt.core.security.helpers.JwtProperties;
+import com.example.jwt.domain.authority.Authority;
+import com.example.jwt.domain.product.Product;
+import com.example.jwt.domain.product.ProductService;
+import com.example.jwt.domain.role.Role;
+import com.example.jwt.domain.user.User;
+import com.example.jwt.domain.user.UserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
