@@ -92,8 +92,9 @@ public class OrderServiceImpl extends ExtendedServiceImpl<Order> implements Orde
     }
 
     @Override
-    public List<OrderSummaryDTO> getOrderSummaryForUser(UUID userId) {
-        return orderRepository.findOrderSummaryByUserId(userId);
+    public List<OrderSummaryDTO> getOrderSummaryForUser() {
+        Optional<User> user = userRepository.findByEmail(userAware.getCurrentAuditorEmail());
+        return orderRepository.findOrderSummaryByUserId(user.get().getId());
     }
 
     public Order calculatePriceAndSeeds(String productName, int amount) {
@@ -122,6 +123,7 @@ public class OrderServiceImpl extends ExtendedServiceImpl<Order> implements Orde
         user.setSeeds_count(totalSeeds);
         userRepository.save(user);
         Order order = new Order();
+        order.setSeedCount(seeds);
         order.setProduct(product);
         order.setQuantity(amount);
         order.setUser(user);

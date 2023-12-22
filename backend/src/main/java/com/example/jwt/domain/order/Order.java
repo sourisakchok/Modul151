@@ -30,24 +30,29 @@ public class Order extends ExtendedEntity {
   @Column(name = "total")
   private double total;
 
+  @Column(name = "seed_count")
+  private int seedCount;
+
   public Order() {
   }
 
-  public Order(User user, Product product, LocalDate orderDate, int quantity, double total) {
+  public Order(User user, Product product, LocalDate orderDate, int quantity, double total, int seedCount) {
     this.user = user;
     this.product = product;
     this.orderDate = orderDate;
     this.quantity = quantity;
     this.total = total;
+    this.seedCount = seedCount;
   }
 
-  public Order(UUID id, User user, Product product, LocalDate orderDate, int quantity, double total) {
+  public Order(UUID id, User user, Product product, LocalDate orderDate, int quantity, double total, int seedCount) {
     super(id);
     this.user = user;
     this.product = product;
     this.orderDate = orderDate;
     this.quantity = quantity;
     this.total = total;
+    this.seedCount = seedCount;
   }
 
   public User getUser() {
@@ -92,6 +97,15 @@ public class Order extends ExtendedEntity {
 
   public Order setTotal(double total) {
     this.total = total;
+    return this;
+  }
+
+  public int getSeedCount() {
+    return seedCount;
+  }
+
+  public Order setSeedCount(int seedCount) {
+    this.seedCount = seedCount;
     return this;
   }
 }

@@ -79,8 +79,7 @@ public class OrderController {
   @GetMapping("/order-history")
   @PreAuthorize("hasAuthority('CAN_RETRIEVE_PURCHASE_HISTORY')")
   public ResponseEntity<List<OrderSummaryDTO>> getOrderHistory() {
-    List<OrderSummaryDTO> orderHistorySummary = orderService.getOrderSummaryForUser(userAware.getCurrentAuditor().get().getId());
-    System.out.println("test");
+    List<OrderSummaryDTO> orderHistorySummary = orderService.getOrderSummaryForUser();
     return ResponseEntity.ok(orderHistorySummary);
   }
 

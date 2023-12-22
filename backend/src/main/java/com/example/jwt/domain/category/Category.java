@@ -3,7 +3,6 @@ package com.example.jwt.domain.category;
 import com.example.jwt.core.generic.ExtendedEntity;
 import com.example.jwt.domain.product.Product;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;

@@ -16,6 +16,6 @@ public interface OrderService extends ExtendedService<Order>{
   List<Order> findAllOrderByUserID(UUID UserID);
 
   Order calculatePriceAndSeeds(String productName, int amount);
-  List<OrderSummaryDTO> getOrderSummaryForUser(UUID userId);
+  List<OrderSummaryDTO> getOrderSummaryForUser();
 
 }
