@@ -5,6 +5,7 @@ import com.example.jwt.domain.authority.Authority;
 import com.example.jwt.domain.product.Product;
 import com.example.jwt.domain.product.ProductRepository;
 import com.example.jwt.domain.role.Role;
+import com.example.jwt.domain.role.RoleEnum;
 import com.example.jwt.domain.role.RoleRepository;
 import com.example.jwt.domain.user.User;
 import com.example.jwt.domain.user.UserRepository;
@@ -22,6 +23,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
@@ -33,6 +35,7 @@ import java.util.stream.Stream;
 import static org.hamcrest.Matchers.hasSize;
 
 @SpringBootTest
+@ContextConfiguration
 @AutoConfigureMockMvc
 @ActiveProfiles("test")
 @DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
@@ -70,10 +73,15 @@ public class ProductIntegrationTests {
 
     @Test
     public void retrieveAll_requestAllProducts_expectAllProductsAsDTOS() throws Exception {
-        Authority authority = authorityRepository.saveAndFlush(new Authority().setName("USER_READ"));
-        Role role = roleRepository.saveAndFlush(new Role().setName("ROLE_TESTER").setAuthorities(Set.of(authority)));
-        User user = userRepository.saveAndFlush(new User().setEmail("john@doe.com").setRoles(Set.of(role)));
-        List<Product> dummyProducts = productRepository.saveAllAndFlush(Stream.of(new Product(UUID.randomUUID(), "shirt", 49), new Product(UUID.randomUUID(), "sandwich", 8)).collect(Collectors.toList()));
+        Authority authority = new Authority("CAN_RETRIEVE_PRODUCTS", null);
+        Role role = roleRepository.saveAndFlush(new Role().setName(RoleEnum.valueOf("ROLE_TESTER")).setAuthorities(Set.of(authority)));
+        User user = userRepository.saveAndFlush(new User().setEmail("john@doe.com").setRole(role));
+        List<Product> dummyProducts = productRepository.saveAllAndFlush(
+                Stream.of(
+                        new Product("shirt", null, null, 0, 49, null, null),
+                        new Product("sandwich", null, null, 0, 8, null, null)
+                ).collect(Collectors.toList())
+        );
 
         mvc.perform(MockMvcRequestBuilders
                         .get("/products")
@@ -83,13 +91,13 @@ public class ProductIntegrationTests {
                 .andExpect(MockMvcResultMatchers.jsonPath("$", hasSize(2)))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[*].id").value(Matchers.containsInAnyOrder(dummyProducts.get(0).getId().toString(), dummyProducts.get(1).getId().toString())))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[*].name").value(Matchers.containsInAnyOrder(dummyProducts.get(0).getName(), dummyProducts.get(1).getName())))
-                .andExpect(MockMvcResultMatchers.jsonPath("$[*].price").doesNotExist());
+                .andExpect(MockMvcResultMatchers.jsonPath("$[*].price").value(Matchers.containsInAnyOrder(dummyProducts.get(0).getPurchasePrice(), dummyProducts.get(1).getPurchasePrice())));
     }
 
     @Test
     public void retrieveById_requestProductById_expectProductAsDTO() throws Exception {
-        User user = userRepository.saveAndFlush(new User().setEmail("john@doe.com").setRoles(Collections.emptySet()));
-        Product product = productRepository.saveAndFlush(new Product(UUID.randomUUID(), "sandwich", 8));
+        User user = userRepository.saveAndFlush(new User().setEmail("john@doe.com").setRole(null));
+        Product product = productRepository.saveAndFlush(new Product("sandwich", null, null, 0, 8, null, null));
 
         mvc.perform(MockMvcRequestBuilders
                         .get("/products/{id}", product.getId())
@@ -98,7 +106,7 @@ public class ProductIntegrationTests {
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.id").value(product.getId().toString()))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.name").value(product.getName()))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.price").doesNotExist());
+                .andExpect(MockMvcResultMatchers.jsonPath("$.price").value(product.getSalePrice()));
     }
 
     @Test

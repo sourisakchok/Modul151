@@ -75,24 +75,17 @@ public class ProductControllerUnitTests {
     @BeforeEach
     public void setUp() {
         dummyToken = generateToken();
-        dummyProduct = new Product(UUID.randomUUID(), "kettle", 107);
-        dummyProducts = Stream.of(new Product(UUID.randomUUID(), "shirt", 49), new Product(UUID.randomUUID(), "sandwich", 8)).collect(Collectors.toList());
+        dummyProduct = new Product("kettle", null, null, 0, 107, null, null);
+        dummyProducts = Stream.of(
+                new Product("shirt", null, null, 0, 49, null, null),
+                new Product("sandwich", null, null, 0, 8, null, null)
+        ).collect(Collectors.toList());
     }
 
     @Test
-    /*
-        @WithUserDetails(setupBefore = TestExecutionEvent.TEST_EXECUTION, userDetailsServiceBeanName = "userServiceImpl", value = "robert@gmail.com")
-        Above annotation invokes the [userDetailsServiceBeanName].loadUserByUsername(String email) method with the parameter [value]. Hence, the method
-        loadUserByUsername(String email) needs to be mocked accordingly. Even though the returned user is saved as principal in the security context, the
-        result of the test method stays "FALSE: Status Expected:<200> but was:<403>". This is due to the fact that WebSecurityConfig.filterChain()
-        gets invoked by mvc.perform() AFTER the annotation @WithUserDetails got triggered. This leads to a SecurityContextHolder.clearContext() by
-        CustomAuthorizationFilter as no valid JWT was passed to doFilterInternal(). Following approach solves the given issue:
-        -   Pass a dummy JWT to the requests triggered by mvc.perform()
-        -   Mock the method UserService.findById and return the desired users with the requested roles and authorities
-    */
     public void retrieveAll_requestAllProducts_expectAllProductsAsDTOS() throws Exception {
         given(userService.findById(any(UUID.class))).willReturn(
-                new User().setRoles(Set.of(new Role().setAuthorities(Set.of(new Authority().setName("USER_READ"))))));
+                new User().setRole(new Role().setAuthorities(Set.of(new Authority().setName("USER_READ")))));
         given(productService.findAll()).willReturn(dummyProducts);
 
         mvc.perform(MockMvcRequestBuilders
@@ -138,7 +131,7 @@ public class ProductControllerUnitTests {
         given(userService.findById(any(UUID.class))).willReturn(new User());
         given(productService.save(any(Product.class))).will(invocation -> {
             if ("non-existent".equals(invocation.getArgument(0))) throw new Exception("Product could not be created");
-            return ((Product) invocation.getArgument(0)).setPrice(dummyProduct.getPrice()).setId(uuid);
+            return ((Product) invocation.getArgument(0)).setPurchasePrice(dummyProduct.getPurchasePrice()).setId(uuid);
         });
 
         mvc.perform(MockMvcRequestBuilders
@@ -183,7 +176,7 @@ public class ProductControllerUnitTests {
         assertAll(
                 () -> assertThat(productArgumentCaptor.getValue().getId()).isEqualTo(dummyProduct.getId()),
                 () -> assertThat(productArgumentCaptor.getValue().getName()).isEqualTo(updatedProductName),
-                () -> assertThat(productArgumentCaptor.getValue().getPrice()).isNull()
+                () -> assertThat(productArgumentCaptor.getValue().getPurchasePrice()).isNull()
         );
     }
 
