@@ -3,9 +3,12 @@ package com.example.jwt.domain.order;
 import com.example.jwt.core.audit.UserAware;
 import com.example.jwt.core.generic.ExtendedRepository;
 import com.example.jwt.core.generic.ExtendedServiceImpl;
+import com.example.jwt.domain.category.Category;
+import com.example.jwt.domain.category.CategoryRepository;
 import com.example.jwt.domain.country.Country;
 import com.example.jwt.domain.level.Level;
 import com.example.jwt.domain.level.LevelRepository;
+import com.example.jwt.domain.order.dto.NewOrderDTO;
 import com.example.jwt.domain.order.dto.OrderSummaryDTO;
 import com.example.jwt.domain.product.Product;
 import com.example.jwt.domain.product.ProductRepository;
@@ -25,16 +28,18 @@ public class OrderServiceImpl extends ExtendedServiceImpl<Order> implements Orde
     private final LevelRepository levelRepository;
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
+    private final CategoryRepository categoryRepository;
     private final ProductRepository productRepository;
     private final UserAware userAware;
 
     @Autowired
-    public OrderServiceImpl(ExtendedRepository<Order> repository, Logger logger, OrderRepository orderRepository, LevelRepository levelRepository, UserRepository userRepository, RoleRepository roleRepository, ProductRepository productRepository, UserAware userAware) {
+    public OrderServiceImpl(ExtendedRepository<Order> repository, Logger logger, OrderRepository orderRepository, LevelRepository levelRepository, UserRepository userRepository, RoleRepository roleRepository, CategoryRepository categoryRepository, ProductRepository productRepository, UserAware userAware) {
         super(repository, logger);
         this.orderRepository = orderRepository;
         this.levelRepository = levelRepository;
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
+        this.categoryRepository = categoryRepository;
         this.productRepository = productRepository;
         this.userAware = userAware;
     }
@@ -97,7 +102,7 @@ public class OrderServiceImpl extends ExtendedServiceImpl<Order> implements Orde
         return orderRepository.findOrderSummaryByUserId(user.get().getId());
     }
 
-    public Order calculatePriceAndSeeds(String productName, int amount) {
+    public NewOrderDTO calculatePriceAndSeeds(String productName, int amount) {
         // Annahme: Der Principal User ist der, der die Bestellung aufgibt.
         // Der 'principalUserId' sollte aus dem SecurityContext oder ähnlichem geholt werden.
         User user = userRepository.findByEmail(userAware.getCurrentAuditorEmail())
@@ -130,7 +135,14 @@ public class OrderServiceImpl extends ExtendedServiceImpl<Order> implements Orde
         order.setOrderDate(LocalDate.now());
         order.setTotal(Math.round(totalPrice * 100.0) / 100.0);
         orderRepository.save(order);
-        return order;
+        NewOrderDTO newOrderDTO = new NewOrderDTO();
+        newOrderDTO.setSeedCount(seeds);
+        newOrderDTO.setTeaName(productName);
+        newOrderDTO.setOrderDate(LocalDate.now());
+        newOrderDTO.setTotal(totalPrice);
+        newOrderDTO.setQuantity(amount);
+        newOrderDTO.setTeaType(categoryRepository.findCategoryNameByProductId(product.getId()));
+        return newOrderDTO;
     }
 
     private Level findNextLevel(Level currentLevel) {
