@@ -11,7 +11,6 @@ import com.example.jwt.domain.user.dto.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,7 +21,7 @@ import java.util.List;
 public class OrderController {
 
   private final OrderService orderService;
-  private  final UserAware userAware;
+  private final UserAware userAware;
   private final UserMapper userMapper;
   private final OrderMapper orderMapper;
 
@@ -53,7 +52,7 @@ public class OrderController {
   //Aufgabe 3
   @PostMapping("/{productName}/{amount}")
   @PreAuthorize("hasAuthority('CAN_PLACE_ORDER')")
-  @ResponseBody
+  //@ResponseBody
   public ResponseEntity<NewOrderDTO> placeOrder(@PathVariable String productName, @PathVariable int amount) {
     NewOrderDTO newOrderDTO = orderService.calculatePriceAndSeeds(productName, amount);
     return new ResponseEntity<>(newOrderDTO, HttpStatus.CREATED);

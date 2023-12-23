@@ -1,11 +1,7 @@
 package com.example.jwt.domain.level;
 
 import com.example.jwt.core.generic.ExtendedEntity;
-import com.example.jwt.domain.authority.Authority;
-import com.example.jwt.domain.user.User;
 
-import java.util.HashSet;
-import java.util.Set;
 import java.util.UUID;
 import javax.persistence.*;
 
