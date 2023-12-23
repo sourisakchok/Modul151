@@ -39,8 +39,11 @@ public class ProductServiceImplUnitTests {
 
     @BeforeEach
     public void setUp() {
-        dummyProduct = new Product(UUID.randomUUID(), "kettle", 107);
-        dummyProducts = Stream.of(new Product(UUID.randomUUID(), "shirt", 49), new Product(UUID.randomUUID(), "sandwich", 8)).collect(Collectors.toList());
+        dummyProduct = new Product("kettle", null, null, 0, 107, null, null);
+        dummyProducts = Stream.of(
+                new Product("shirt", null, null, 0, 49, null, null),
+                new Product("sandwich", null, null, 0, 8, null, null)
+        ).collect(Collectors.toList());
     }
 
     @Test

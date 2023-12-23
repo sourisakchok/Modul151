@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.annotation.DirtiesContext;
 
 import java.util.List;
@@ -20,14 +21,17 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 @DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
 public class ProductRepositoryUnitTests {
 
-    @Autowired
+    @MockBean
     ProductRepository productRepository;
 
     private List<Product> dummyProducts;
 
     @BeforeEach
     public void setUp() {
-        dummyProducts = productRepository.saveAll(Stream.of(new Product(UUID.randomUUID(), "shirt", 49), new Product(UUID.randomUUID(), "sandwich", 8)).collect(Collectors.toList()));
+        dummyProducts = productRepository.saveAll(Stream.of(
+                new Product("shirt", null, null, 0, 49, null, null),
+                new Product("sandwich", null, null, 0, 8, null, null)
+        ).collect(Collectors.toList()));
     }
 
     @Test
