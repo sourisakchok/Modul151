@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="076c3628-09b4-4641-bdcc-3a482ee0c3c1" name="Changes" comment="Bereitstellung und Monitoring">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/jwt/domain/order/dto/OrderSummaryDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_12_2023_19_38_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_12_2023_19_38__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/.gradle/7.5/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gradle/7.5/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/.gradle/7.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gradle/7.5/executionHistory/executionHistory.bin" afterDir="false" />
@@ -15,13 +16,20 @@
       <change beforePath="$PROJECT_DIR$/backend/.gradle/7.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gradle/7.5/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/.gradle/7.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gradle/7.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/jwt/domain/order/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/jwt/domain/order/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/jwt/domain/order/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/jwt/domain/order/OrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/jwt/domain/order/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/jwt/domain/order/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/jwt/domain/order/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/jwt/domain/order/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/bin/generated-sources/annotations/com/example/jwt/domain/authority/dto/AuthorityMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/bin/generated-sources/annotations/com/example/jwt/domain/authority/dto/AuthorityMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/bin/generated-sources/annotations/com/example/jwt/domain/category/dto/CategoryMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/bin/generated-sources/annotations/com/example/jwt/domain/category/dto/CategoryMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/bin/generated-sources/annotations/com/example/jwt/domain/product/dto/ProductMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/bin/generated-sources/annotations/com/example/jwt/domain/product/dto/ProductMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/bin/generated-sources/annotations/com/example/jwt/domain/role/dto/RoleMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/bin/generated-sources/annotations/com/example/jwt/domain/role/dto/RoleMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/bin/generated-sources/annotations/com/example/jwt/domain/user/dto/UserMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/bin/generated-sources/annotations/com/example/jwt/domain/user/dto/UserMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/bin/main/com/example/jwt/domain/sql/setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/backend/bin/main/com/example/jwt/domain/sql/setup.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Products.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Products.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,10 +59,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Class" />
         <option value="Enum" />
         <option value="Interface" />
         <option value="Dockerfile" />
-        <option value="Class" />
       </list>
     </option>
   </component>
@@ -101,7 +109,7 @@
   &quot;associatedIndex&quot;: 0
 }</component>
   <component name="ProjectId" id="2ZImPSx1P3xtYzM8Mdxp3ynTqvn" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -132,15 +140,12 @@
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\chris\\Desktop\\Project\\4IT\\frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Souri\\Projects\\Modul151\\frontend\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
       &quot;postgresql&quot;
-    ],
-    &quot;RunConfigurationTargetLRU&quot;: [
-      &quot;61625faa-a25b-415f-bd19-fc0fdb1e40e9&quot;
     ],
     &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/&quot;: [
       &quot;PostgreSQL&quot;
@@ -156,11 +161,27 @@
       <recent name="com.example.jwt.domain.order" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.backend [bootRun]">
-    <configuration name="setup.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
-      <script-file value="$PROJECT_DIR$/backend/src/main/resources/sql/setup.sql" />
-      <script-mode>FILE</script-mode>
-      <data-source id="61625faa-a25b-415f-bd19-fc0fdb1e40e9" />
+  <component name="RunManager" selected="Gradle.backend [bootJar]">
+    <configuration name="backend [bootBuildImage]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/backend" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="bootBuildImage" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="backend [bootJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -260,11 +281,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.backend [bootRun]" />
-        <item itemvalue="Database Script.setup.sql" />
         <item itemvalue="Gradle.backend [bootJar]" />
         <item itemvalue="Gradle.backend [clean]" />
         <item itemvalue="Gradle.backend [build]" />
+        <item itemvalue="Gradle.backend [bootBuildImage]" />
+        <item itemvalue="Gradle.backend [bootRun]" />
       </list>
     </recent_temporary>
   </component>
@@ -415,29 +436,11 @@
     <MESSAGE value="Bereitstellung und Monitoring" />
     <option name="LAST_COMMIT_MESSAGE" value="Bereitstellung und Monitoring" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/com/example/jwt/domain/order/OrderRepository.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/com/example/jwt/domain/order/OrderServiceImpl.java</url>
-          <line>96</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/com/example/jwt/domain/order/OrderController.java</url>
-          <line>80</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/jwt$JwtApplication.ic" NAME="JwtApplication Coverage Results" MODIFIED="1702734409483" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

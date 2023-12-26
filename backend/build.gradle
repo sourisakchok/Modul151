@@ -2,6 +2,7 @@ plugins {
     id 'org.springframework.boot' version '2.7.2'
     id 'io.spring.dependency-management' version '1.0.12.RELEASE'
     id 'java'
+    id 'org.sonarqube' version '3.3'
 }
 
 group = 'com.example'
@@ -33,6 +34,16 @@ dependencies {
     testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.7.17'
     testImplementation group: 'org.springframework.security', name: 'spring-security-test', version: '5.8.8'
 }
+sonarqube {
+    properties {
+        property 'sonar.projectKey', 'com.example:Modul151'
+        property 'sonar.projectName', 'Modul151'
+        property 'sonar.projectVersion', '0.0.1-SNAPSHOT'
+        property 'sonar.host.url', 'http://localhost:9000'
+
+    }
+}
+
 
 tasks.named('test') {
     useJUnitPlatform()
