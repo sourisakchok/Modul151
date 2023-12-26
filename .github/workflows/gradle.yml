@@ -19,15 +19,16 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
-    - name: Build and test backend
+    - name: Test Project
+      working-directory: backend
+      run: |
+        chmod +x gradlew
+        ./gradlew test
+
+    - name: Build Project
       working-directory: backend
       run: |
         chmod +x gradlew
         ./gradlew build
-        ./gradlew test
+        
 
-    - name: Display test results
-      if: always()
-      run: |
-        find . -name "TEST-*.xml" -exec cat {} + | junit-xml2json > test-results.json
-        cat test-results.json
