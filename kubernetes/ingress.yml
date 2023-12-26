@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: spring-app-ingress
+spec:
+  rules:
+    - host: minikube.local
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: spring-app-service
+                port:
+                  number: 80
