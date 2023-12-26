@@ -4,8 +4,9 @@ on:
   push:
     branches:
       - main
+
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,12 +18,16 @@ jobs:
       with:
         distribution: 'temurin'
         java-version: '17'
-        
-    - name: Set executable permission
-      run: chmod +x ./backend/gradlew
-      
-    - name: Build with Gradle
-      run: ./backend/gradlew build
 
-    - name: Run tests
-      run: ./backend/gradlew test
+    - name: Build and test backend
+      working-directory: backend
+      run: |
+        chmod +x gradlew
+        ./gradlew build
+        ./gradlew test
+
+    - name: Display test results
+      if: always()
+      run: |
+        find . -name "TEST-*.xml" -exec cat {} + | junit-xml2json > test-results.json
+        cat test-results.json
