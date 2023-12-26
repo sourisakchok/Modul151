@@ -2,7 +2,7 @@ plugins {
     id 'org.springframework.boot' version '2.7.2'
     id 'io.spring.dependency-management' version '1.0.12.RELEASE'
     id 'java'
-    id 'org.sonarqube' version '3.3'
+    id 'org.sonarqube' version '4.4.1.3373'  // updated version
 }
 
 group = 'com.example'
@@ -36,11 +36,10 @@ dependencies {
 }
 sonarqube {
     properties {
-        property 'sonar.projectKey', 'com.example:Modul151'
-        property 'sonar.projectName', 'Modul151'
+        property 'sonar.projectKey', 'sourisakchok_Modul151_AYynrRWB1CMCP4tduAkR'
+        property 'sonar.projectName', 'Analyze "Modul151"'
         property 'sonar.projectVersion', '0.0.1-SNAPSHOT'
         property 'sonar.host.url', 'http://localhost:9000'
-
     }
 }
 
