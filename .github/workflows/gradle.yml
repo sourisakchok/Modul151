@@ -20,7 +20,7 @@ jobs:
         java-version: '17'
 
     - name: Build with Gradle
-      run: ./gradlew build
+      run: ./backend/gradlew build
 
     - name: Run tests
-      run: ./gradlew test
+      run: ./backend/gradlew test
