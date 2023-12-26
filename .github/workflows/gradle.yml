@@ -19,16 +19,18 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
+    - name: Build Project
+      working-directory: backend
+      run: |
+        chmod +x gradlew
+        ./gradlew build -x test
+
     - name: Test Project
       working-directory: backend
       run: |
         chmod +x gradlew
         ./gradlew test
 
-    - name: Build Project
-      working-directory: backend
-      run: |
-        chmod +x gradlew
-        ./gradlew build
+
         
 
