@@ -36,7 +36,7 @@ dependencies {
 }
 sonarqube {
     properties {
-        property 'sonar.projectKey', 'com.example:Modul151'
+        property 'sonar.projectKey', 'sourisakchok_Modul151_AYynrRWB1CMCP4tduAkR'
         property 'sonar.projectName', 'Modul151'
         property 'sonar.projectVersion', '0.0.1-SNAPSHOT'
         property 'sonar.host.url', 'http://localhost:9000'
