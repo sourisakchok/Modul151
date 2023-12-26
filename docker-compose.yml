@@ -15,6 +15,9 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: postgres
+      SONAR_DB: sonar
+      SONAR_USER: sonar
+      SONAR_PASSWORD: sonar
     ports:
       - 5432:5432
   prometheus:
@@ -38,3 +41,14 @@ services:
       dockerfile: Dockerfile
     ports:
       - 3000:3000
+  sonarqube:
+    image: sonarqube:latest
+    ports:
+      - "9000:9000"
+    environment:
+      - SONARQUBE_JDBC_URL=jdbc:postgresql://db:5432/sonar
+      - SONAR_JDBC_USERNAME=sonar
+      - SONAR_JDBC_PASSWORD=sonar
+    depends_on:
+      - db
+

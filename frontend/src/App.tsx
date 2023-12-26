@@ -5,18 +5,17 @@ import {Protected} from "./routes/Protected";
 import Products from "./components/Products";
 
 function App() {
-  return (
-      <Router>
-        <AuthenticationContext>
-          <Routes>
-            <Route element={<Protected authoritiesToGrantAccess={["CAN_RETRIEVE_PRODUCTS"]}/>}>
-              <Route path="/" element={<Products/>}/>
-            </Route>
-            <Route path="/login" element={<h1>Not Authenticated</h1>}/>
-          </Routes>
-        </AuthenticationContext>
-      </Router>
-  );
+    return (
+        <Router>
+            <AuthenticationContext>
+                <Routes>
+                    <Route path="/login" />
+                    <Route element={<Protected authoritiesToGrantAccess={["CAN_RETRIEVE_PRODUCTS"]}/>}>
+                        {/*<Route path="/" element={<Products/>}/>*/}
+                    </Route>
+                </Routes>
+            </AuthenticationContext>
+        </Router>
+    );
 }
-
 export default App;

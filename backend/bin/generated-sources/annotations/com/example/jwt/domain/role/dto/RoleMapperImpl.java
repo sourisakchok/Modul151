@@ -3,6 +3,7 @@ package com.example.jwt.domain.role.dto;
 import com.example.jwt.domain.authority.Authority;
 import com.example.jwt.domain.authority.dto.AuthorityDTO;
 import com.example.jwt.domain.role.Role;
+import com.example.jwt.domain.role.RoleEnum;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-12-14T19:52:16+0100",
+    date = "2023-12-14T20:04:15+0100",
     comments = "version: 1.5.5.Final, compiler: Eclipse JDT (IDE) 3.36.0.v20231114-0937, environment: Java 17.0.9 (Eclipse Adoptium)"
 )
 @Component
@@ -27,7 +28,9 @@ public class RoleMapperImpl implements RoleMapper {
         Role role = new Role();
 
         role.setId( dto.getId() );
-        role.setName( dto.getName() );
+        if ( dto.getName() != null ) {
+            role.setName( Enum.valueOf( RoleEnum.class, dto.getName() ) );
+        }
         role.setAuthorities( authorityDTOSetToAuthoritySet( dto.getAuthorities() ) );
 
         return role;
@@ -70,7 +73,9 @@ public class RoleMapperImpl implements RoleMapper {
         RoleDTO roleDTO = new RoleDTO();
 
         roleDTO.setId( BO.getId() );
-        roleDTO.setName( BO.getName() );
+        if ( BO.getName() != null ) {
+            roleDTO.setName( BO.getName().name() );
+        }
         roleDTO.setAuthorities( authoritySetToAuthorityDTOSet( BO.getAuthorities() ) );
 
         return roleDTO;

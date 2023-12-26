@@ -1,0 +1,36 @@
+name: Build and Test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up JDK
+      uses: actions/setup-java@v2
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+
+    - name: Build Project
+      working-directory: backend
+      run: |
+        chmod +x gradlew
+        ./gradlew build -x test
+
+    - name: Test Project
+      working-directory: backend
+      run: |
+        chmod +x gradlew
+        ./gradlew test
+
+
+        
+
