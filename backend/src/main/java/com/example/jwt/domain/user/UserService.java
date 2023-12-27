@@ -10,4 +10,5 @@ public interface UserService extends UserDetailsService, ExtendedService<User> {
   User register(User user);
 
 Optional<User> retrievePrincipal();
+
 }

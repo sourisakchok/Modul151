@@ -8,6 +8,8 @@ import com.example.jwt.domain.role.RoleEnum;
 import com.example.jwt.domain.role.RoleRepository;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -37,16 +39,16 @@ public class UserServiceImpl extends ExtendedServiceImpl<User> implements UserSe
   @Override
   public User register(User user) {
     user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-    user.setRole(roleRepository.findByName(RoleEnum.CLIENT));
+    user.getRoles().add(roleRepository.findByName(RoleEnum.CLIENT));
     user.setLevel(levelRepository.findByName(LevelEnum.BRONZE));
     return save(user);
 
   }
 
-  @Override
-  public Optional<User> retrievePrincipal() {
-    return userAware.getCurrentAuditor();
-  }
+//  @Override
+//  public Optional<User> retrievePrincipal() {
+//    return userAware.getCurrentAuditor();
+//  }
 
   @Override
   public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
@@ -54,4 +56,17 @@ public class UserServiceImpl extends ExtendedServiceImpl<User> implements UserSe
         .orElseThrow(() -> new UsernameNotFoundException(email));
   }
 
+  public Optional<User> retrievePrincipal() throws UsernameNotFoundException {
+    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+    if (authentication != null && authentication.isAuthenticated()) {
+      Object principal = authentication.getPrincipal();
+
+      if (principal instanceof UserDetailsImpl) {
+        return Optional.of(((UserDetailsImpl) principal).user());
+      }
+    }
+
+    return Optional.empty();
+  }
 }

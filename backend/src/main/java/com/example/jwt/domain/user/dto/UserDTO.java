@@ -25,25 +25,12 @@ public class UserDTO extends ExtendedDTO {
   private String plz;
   private LocalDate birthday;
   private Level level;
-  private Role role;
+  private Set<RoleDTO> role;
 
   public UserDTO() {
   }
 
-  public UserDTO(String firstName, String lastName, String email, String password, String address, String ort, String plz, LocalDate birthday, Level level, Role role) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.email = email;
-    this.password = password;
-    this.address = address;
-    this.ort = ort;
-    this.plz = plz;
-    this.birthday = birthday;
-    this.level = level;
-    this.role = role;
-  }
-
-  public UserDTO(UUID id, String firstName, String lastName, String email, String password, String address, String ort, String plz, LocalDate birthday, Level level, Role role) {
+  public UserDTO(UUID id, String firstName, String lastName, String email, String password, String address, String ort, String plz, LocalDate birthday, Level level, Set<RoleDTO> role) {
     super(id);
     this.firstName = firstName;
     this.lastName = lastName;
@@ -138,11 +125,11 @@ public class UserDTO extends ExtendedDTO {
     return this;
   }
 
-  public Role getRole() {
+  public Set<RoleDTO> getRole() {
     return role;
   }
 
-  public UserDTO setRole(Role role) {
+  public UserDTO setRole(Set<RoleDTO> role) {
     this.role = role;
     return this;
   }

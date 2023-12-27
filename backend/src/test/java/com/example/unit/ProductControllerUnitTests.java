@@ -85,7 +85,7 @@ public class ProductControllerUnitTests {
     @Test
     public void retrieveAll_requestAllProducts_expectAllProductsAsDTOS() throws Exception {
         given(userService.findById(any(UUID.class))).willReturn(
-                new User().setRole(new Role().setAuthorities(Set.of(new Authority().setName("USER_READ")))));
+                new User().setRoles(new Role().setAuthorities(Set.of(new Authority().setName("USER_READ")))));
         given(productService.findAll()).willReturn(dummyProducts);
 
         mvc.perform(MockMvcRequestBuilders

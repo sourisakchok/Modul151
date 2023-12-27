@@ -46,10 +46,12 @@ const AuthenticationContextProvider = ({children}: AuthenticationContextProvider
 
   const authenticate = async () => {
     try {
-      const response = await api.post('/users/login', {"email": "max@mustermann","password": "DEIN_PASSWORT"});
+      const response = await api.post('/users/login', {"email": "max@mustermann.com","password": "Souri1234#"});
+      console.log(response);
       if (response.headers['authorization']) {
         localStorage.setItem('token', response.headers['authorization']);
         const userProfileResponse = await api.get('/users/profile');
+        console.log(userProfileResponse);
         if (userProfileResponse.status === 200) {
           setPrincipal(userProfileResponse.data);
           dispatch(ActionTypes.AUTHENTICATED);

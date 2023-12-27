@@ -53,11 +53,11 @@ public class UserController {
   }
 
   @GetMapping("/profile")
-  @PreAuthorize("hasAuthority('CAN_PLACE_ORDER')")
-  public ResponseEntity<Void> retrievePrincipal(@PathVariable UUID id) {
-    userService.deleteById(id);
-    return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+  public ResponseEntity<User> retrieveProfile() {
+    User user = userService.findOrThrow(userService.retrievePrincipal());
+    return new ResponseEntity<>(user, HttpStatus.OK);
   }
+
 
 //  @PutMapping("/{id}")
 //  @PreAuthorize("hasAuthority('USER_MODIFY') && @userPermissionEvaluator.isUserAboveAge(authentication.principal.user,18)")
