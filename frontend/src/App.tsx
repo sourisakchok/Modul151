@@ -9,13 +9,14 @@ function App() {
         <Router>
             <AuthenticationContext>
                 <Routes>
-                    <Route path="/login" />
                     <Route element={<Protected authoritiesToGrantAccess={["CAN_RETRIEVE_PRODUCTS"]}/>}>
-                        {/*<Route path="/" element={<Products/>}/>*/}
+                        <Route path="/" element={<Products/>}/>
                     </Route>
+                    <Route path="/login" element={<h1>Not Authenticated</h1>}/>
                 </Routes>
             </AuthenticationContext>
         </Router>
     );
 }
+
 export default App;

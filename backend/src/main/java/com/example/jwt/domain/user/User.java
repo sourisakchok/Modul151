@@ -7,7 +7,6 @@ import com.example.jwt.domain.role.Role;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.UUID;
 import javax.persistence.*;
 
 @Entity
@@ -45,25 +44,25 @@ public class User extends ExtendedAuditEntity {
   @JoinColumn(name = "users_level", referencedColumnName = "id")
   private Level level;
 
-  @OneToOne(cascade = CascadeType.ALL)
-  @JoinColumn(name = "users_role", referencedColumnName = "id")
-  private Role role;
+//  @OneToOne(cascade = CascadeType.ALL)
+//  @JoinColumn(name = "users_role", referencedColumnName = "id")
+//  private Role role;
 
   @OneToMany(mappedBy = "user")
   private Set<Order> orders;
 
-//  @ManyToMany(fetch = FetchType.EAGER)
-//  @JoinTable(
-//          name = "users_role",
-//          joinColumns = @JoinColumn(name = "users_id", referencedColumnName = "id"),
-//          inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
-//  private Set<Role> roles = new HashSet<>();
+  @ManyToMany(fetch = FetchType.EAGER)
+  @JoinTable(
+          name = "users_role",
+          joinColumns = @JoinColumn(name = "users_id", referencedColumnName = "id"),
+          inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
+  private Set<Role> roles = new HashSet<>();
 
 
   public User() {
   }
 
-  public User(String firstName, String lastName, String email, String password, String address, String ort, String plz, LocalDate birthday, int seeds_count, Level level, Role role, Set<Order> orders) {
+  public User(String firstName, String lastName, String email, String password, String address, String ort, String plz, LocalDate birthday, int seeds_count, Level level, Set<Role> roles, Set<Order> orders) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.email = email;
@@ -74,25 +73,25 @@ public class User extends ExtendedAuditEntity {
     this.birthday = birthday;
     this.seeds_count = seeds_count;
     this.level = level;
-    this.role = role;
+    this.roles = roles;
     this.orders = orders;
   }
 
-  public User(UUID id, String firstName, String lastName, String email, String password, String address, String ort, String plz, LocalDate birthday, int seeds_count, Level level, Role role, Set<Order> orders) {
-    super(id);
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.email = email;
-    this.password = password;
-    this.address = address;
-    this.ort = ort;
-    this.plz = plz;
-    this.birthday = birthday;
-    this.seeds_count = seeds_count;
-    this.level = level;
-    this.role = role;
-    this.orders = orders;
-  }
+//  public User(UUID id, String firstName, String lastName, String email, String password, String address, String ort, String plz, LocalDate birthday, int seeds_count, Level level, Role role, Set<Order> orders) {
+//    super(id);
+//    this.firstName = firstName;
+//    this.lastName = lastName;
+//    this.email = email;
+//    this.password = password;
+//    this.address = address;
+//    this.ort = ort;
+//    this.plz = plz;
+//    this.birthday = birthday;
+//    this.seeds_count = seeds_count;
+//    this.level = level;
+//    this.role = role;
+//    this.orders = orders;
+//  }
 
   public String getFirstName() {
     return firstName;
@@ -184,12 +183,12 @@ public class User extends ExtendedAuditEntity {
     return this;
   }
 
-  public Role getRole() {
-    return role;
+  public Set<Role> getRoles() {
+    return roles;
   }
 
-  public User setRole(Role role) {
-    this.role = role;
+  public User setRoles(Set<Role> roles) {
+    this.roles = roles;
     return this;
   }
 
