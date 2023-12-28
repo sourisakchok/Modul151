@@ -57,18 +57,18 @@ public class ProductController {
     return new ResponseEntity<>(productService.findMostExpensive(allProducts), HttpStatus.OK);
   }
 
-//  @PutMapping({"", "/"})
-//  public ResponseEntity<Product> updateById(@RequestBody Product product) {
-//    return new ResponseEntity<>(productService.updateById(product.getId(), product), HttpStatus.OK);
-//  }
-//
-//  @PatchMapping("/{id}")
-//  public ResponseEntity<Product> partialUpdateById(@RequestBody Product product) {
-//    return new ResponseEntity<>(productService.updateById(product.getId(), product), HttpStatus.OK);
-//  }
-//
-//  @DeleteMapping("/{id}")
-//  public ResponseEntity<Void> deleteById(@PathVariable UUID id) {
-//    return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-//  }
+  @PutMapping({"", "/"})
+  public ResponseEntity<Product> updateById(@RequestBody Product product) {
+    return new ResponseEntity<>(productService.updateById(product.getId(), product), HttpStatus.OK);
+  }
+
+  @PatchMapping("/{id}")
+  public ResponseEntity<Product> partialUpdateById(@RequestBody Product product) {
+    return new ResponseEntity<>(productService.updateById(product.getId(), product), HttpStatus.OK);
+  }
+
+  @DeleteMapping("/{id}")
+  public ResponseEntity<Void> deleteById(@PathVariable UUID id) {
+    return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+  }
 }

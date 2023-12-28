@@ -4,6 +4,7 @@ import com.example.jwt.domain.user.dto.UserDTO;
 import com.example.jwt.domain.user.dto.UserMapper;
 import com.example.jwt.domain.user.dto.UserRegisterDTO;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,16 +49,16 @@ public class UserController {
 
   @PostMapping("/register")
   public ResponseEntity<UserDTO> register(@Valid @RequestBody UserRegisterDTO userRegisterDTO) {
-    User user = userService.register(userMapper.fromUserRegisterDTO(userRegisterDTO));
+    User user = userService.register(userRegisterDTO);
     return new ResponseEntity<>(userMapper.toDTO(user), HttpStatus.CREATED);
   }
 
   @GetMapping("/profile")
-  @PreAuthorize("hasAuthority('CAN_PLACE_ORDER')")
-  public ResponseEntity<Void> retrievePrincipal(@PathVariable UUID id) {
-    userService.deleteById(id);
-    return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+  public ResponseEntity<UserDTO> retrieveProfile() {
+    User user = userService.retrievePrincipal().get();
+    return new ResponseEntity<>(userMapper.toDTO(user), HttpStatus.OK);
   }
+
 
 //  @PutMapping("/{id}")
 //  @PreAuthorize("hasAuthority('USER_MODIFY') && @userPermissionEvaluator.isUserAboveAge(authentication.principal.user,18)")
