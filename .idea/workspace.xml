@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="076c3628-09b4-4641-bdcc-3a482ee0c3c1" name="Changes" comment="sonarqube einbinden">
+    <list default="true" id="076c3628-09b4-4641-bdcc-3a482ee0c3c1" name="Changes" comment="sonarcloud">
       <change beforePath="$PROJECT_DIR$/.github/workflows/sonarqube.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/sonarqube.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -372,7 +368,23 @@
       <option name="project" value="LOCAL" />
       <updated>1703604183006</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="sonarcloud">
+      <option name="closed" value="true" />
+      <created>1703796508059</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1703796508059</updated>
+    </task>
+    <task id="LOCAL-00011" summary="sonarcloud">
+      <option name="closed" value="true" />
+      <created>1703796630167</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1703796630167</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -432,7 +444,8 @@
     <MESSAGE value="Aufgabe 4 Vollenden(PostMan noch nicht getestet)" />
     <MESSAGE value="Bereitstellung und Monitoring" />
     <MESSAGE value="sonarqube einbinden" />
-    <option name="LAST_COMMIT_MESSAGE" value="sonarqube einbinden" />
+    <MESSAGE value="sonarcloud" />
+    <option name="LAST_COMMIT_MESSAGE" value="sonarcloud" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
