@@ -3,6 +3,7 @@ package com.example.jwt.domain.user;
 import com.example.jwt.core.generic.ExtendedAuditEntity;
 import com.example.jwt.domain.level.Level;
 import com.example.jwt.domain.order.Order;
+import com.example.jwt.domain.plz.Plz;
 import com.example.jwt.domain.role.Role;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -31,12 +32,6 @@ public class User extends ExtendedAuditEntity {
   @Column(name = "address")
   private String address;
 
-  @Column(name = "ort")
-  private String ort;
-
-  @Column(name = "plz")
-  private String plz;
-
   @Column(name = "birthday")
   private LocalDate birthday;
 
@@ -50,6 +45,10 @@ public class User extends ExtendedAuditEntity {
   @OneToOne(cascade = CascadeType.ALL)
   @JoinColumn(name = "users_role", referencedColumnName = "id")
   private Role role;
+
+  @OneToOne(cascade = CascadeType.ALL)
+  @JoinColumn(name = "plz", referencedColumnName = "plz")
+  private Plz plz;
 
   @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
   private Set<Order> orders;
@@ -65,34 +64,33 @@ public class User extends ExtendedAuditEntity {
   public User() {
   }
 
-  public User(String firstName, String lastName, String email, String password, String address, String ort, String plz, LocalDate birthday, int seeds_count, Level level, Role role, Set<Order> orders) {
+
+  public User(String firstName, String lastName, String email, String password, String address, LocalDate birthday, int seeds_count, Level level, Role role, Plz plz, Set<Order> orders) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.email = email;
     this.password = password;
     this.address = address;
-    this.ort = ort;
-    this.plz = plz;
     this.birthday = birthday;
     this.seeds_count = seeds_count;
     this.level = level;
     this.role = role;
+    this.plz = plz;
     this.orders = orders;
   }
 
-  public User(UUID id, String firstName, String lastName, String email, String password, String address, String ort, String plz, LocalDate birthday, int seeds_count, Level level, Role role, Set<Order> orders) {
+  public User(UUID id, String firstName, String lastName, String email, String password, String address, LocalDate birthday, int seeds_count, Level level, Role role, Plz plz, Set<Order> orders) {
     super(id);
     this.firstName = firstName;
     this.lastName = lastName;
     this.email = email;
     this.password = password;
     this.address = address;
-    this.ort = ort;
-    this.plz = plz;
     this.birthday = birthday;
     this.seeds_count = seeds_count;
     this.level = level;
     this.role = role;
+    this.plz = plz;
     this.orders = orders;
   }
 
@@ -100,107 +98,88 @@ public class User extends ExtendedAuditEntity {
     return firstName;
   }
 
-  public User setFirstName(String firstName) {
+  public void setFirstName(String firstName) {
     this.firstName = firstName;
-    return this;
   }
 
   public String getLastName() {
     return lastName;
   }
 
-  public User setLastName(String lastName) {
+  public void setLastName(String lastName) {
     this.lastName = lastName;
-    return this;
   }
 
   public String getEmail() {
     return email;
   }
 
-  public User setEmail(String email) {
+  public void setEmail(String email) {
     this.email = email;
-    return this;
   }
 
   public String getPassword() {
     return password;
   }
 
-  public User setPassword(String password) {
+  public void setPassword(String password) {
     this.password = password;
-    return this;
   }
 
   public String getAddress() {
     return address;
   }
 
-  public User setAddress(String address) {
+  public void setAddress(String address) {
     this.address = address;
-    return this;
-  }
-
-  public String getOrt() {
-    return ort;
-  }
-
-  public User setOrt(String ort) {
-    this.ort = ort;
-    return this;
-  }
-
-  public String getPlz() {
-    return plz;
-  }
-
-  public User setPlz(String plz) {
-    this.plz = plz;
-    return this;
   }
 
   public LocalDate getBirthday() {
     return birthday;
   }
 
-  public User setBirthday(LocalDate birthday) {
+  public void setBirthday(LocalDate birthday) {
     this.birthday = birthday;
-    return this;
   }
 
   public int getSeeds_count() {
     return seeds_count;
   }
 
-  public User setSeeds_count(int seeds_count) {
+  public void setSeeds_count(int seeds_count) {
     this.seeds_count = seeds_count;
-    return this;
   }
 
   public Level getLevel() {
     return level;
   }
 
-  public User setLevel(Level level) {
+  public void setLevel(Level level) {
     this.level = level;
-    return this;
   }
 
   public Role getRole() {
     return role;
   }
 
-  public User setRole(Role role) {
+  public void setRole(Role role) {
     this.role = role;
-    return this;
+  }
+
+  public Plz getPlz() {
+    return plz;
+  }
+
+  public void setPlz(Plz plz) {
+    this.plz = plz;
   }
 
   public Set<Order> getOrders() {
     return orders;
   }
 
-  public User setOrders(Set<Order> orders) {
+  public void setOrders(Set<Order> orders) {
     this.orders = orders;
-    return this;
   }
+
 }

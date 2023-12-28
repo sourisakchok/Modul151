@@ -3,15 +3,11 @@ package com.example.jwt.domain.user.dto;
 import com.example.jwt.core.generic.ExtendedDTO;
 import com.example.jwt.domain.level.Level;
 import com.example.jwt.domain.order.Order;
+import com.example.jwt.domain.plz.Plz;
 import com.example.jwt.domain.role.Role;
-import com.example.jwt.domain.role.dto.RoleDTO;
-
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.Set;
 import java.util.UUID;
-import javax.persistence.Column;
-import javax.validation.Valid;
 import javax.validation.constraints.Email;
 
 public class UserDTO extends ExtendedDTO {
@@ -22,8 +18,7 @@ public class UserDTO extends ExtendedDTO {
   private String email;
   private String password;
   private String address;
-  private String ort;
-  private String plz;
+  private Plz plz;
   private LocalDate birthday;
   private Level level;
   private Role role;
@@ -32,13 +27,12 @@ public class UserDTO extends ExtendedDTO {
   public UserDTO() {
   }
 
-  public UserDTO(String firstName, String lastName, String email, String password, String address, String ort, String plz, LocalDate birthday, Level level, Role role, Set<Order> orders) {
+  public UserDTO(String firstName, String lastName, String email, String password, String address, Plz plz, LocalDate birthday, Level level, Role role, Set<Order> orders) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.email = email;
     this.password = password;
     this.address = address;
-    this.ort = ort;
     this.plz = plz;
     this.birthday = birthday;
     this.level = level;
@@ -46,14 +40,13 @@ public class UserDTO extends ExtendedDTO {
     this.orders = orders;
   }
 
-  public UserDTO(UUID id, String firstName, String lastName, String email, String password, String address, String ort, String plz, LocalDate birthday, Level level, Role role, Set<Order> orders) {
+  public UserDTO(UUID id, String firstName, String lastName, String email, String password, String address, Plz plz, LocalDate birthday, Level level, Role role, Set<Order> orders) {
     super(id);
     this.firstName = firstName;
     this.lastName = lastName;
     this.email = email;
     this.password = password;
     this.address = address;
-    this.ort = ort;
     this.plz = plz;
     this.birthday = birthday;
     this.level = level;
@@ -105,21 +98,11 @@ public class UserDTO extends ExtendedDTO {
     this.address = address;
     return this;
   }
-
-  public String getOrt() {
-    return ort;
-  }
-
-  public UserDTO setOrt(String ort) {
-    this.ort = ort;
-    return this;
-  }
-
-  public String getPlz() {
+  public Plz getPlz() {
     return plz;
   }
 
-  public UserDTO setPlz(String plz) {
+  public UserDTO setPlz(Plz plz) {
     this.plz = plz;
     return this;
   }
