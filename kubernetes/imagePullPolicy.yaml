@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  containers:
+    - name: spring-app
+      image: spring-app:latest
+      imagePullPolicy: Always
