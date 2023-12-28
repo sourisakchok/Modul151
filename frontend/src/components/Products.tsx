@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Card } from 'react-bootstrap';
+// import { Card } from 'react-bootstrap';
 
 const Products = () => {
     const [products, setProducts] = useState([]);

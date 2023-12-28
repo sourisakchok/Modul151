@@ -4,17 +4,33 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public record UserDetailsImpl(User user) implements UserDetails {
 
   @Override
   public Collection<? extends GrantedAuthority> getAuthorities() {
-    return user.getRoles().stream()
-            .flatMap(r -> r.getAuthorities().stream())
-            .map(a -> new SimpleGrantedAuthority(a.getName()))
-            .collect(Collectors.toList());
+    if (user.getRole() != null) {
+      List<GrantedAuthority> authorities = new ArrayList<>();
+
+      // Add the role as a GrantedAuthority
+      authorities.add(new SimpleGrantedAuthority("ROLE_" + user.getRole().getName()));
+
+      // Add authorities associated with the role
+      authorities.addAll(
+              user.getRole().getAuthorities().stream()
+                      .map(authority -> new SimpleGrantedAuthority(authority.getName()))
+                      .collect(Collectors.toList())
+      );
+
+      return authorities;
+    } else {
+      return Collections.emptyList(); // No authorities if no role is assigned
+    }
   }
 
   @Override

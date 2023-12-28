@@ -5,9 +5,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="076c3628-09b4-4641-bdcc-3a482ee0c3c1" name="Changes" comment="react">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/sonarqube.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/jwt.main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_12_2023_12_07__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_12_2023_12_07__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_12_2023_22_02__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_12_2023_22_02__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.gradle/7.5/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gradle/7.5/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.gradle/7.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gradle/7.5/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.gradle/7.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gradle/7.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.gradle/7.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gradle/7.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.gradle/7.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gradle/7.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.gradle/7.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gradle/7.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/generated/sources/annotationProcessor/java/main/com/example/jwt/domain/authority/dto/AuthorityMapperImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/generated/sources/annotationProcessor/java/main/com/example/jwt/domain/category/dto/CategoryMapperImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/generated/sources/annotationProcessor/java/main/com/example/jwt/domain/order/dto/OrderMapperImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/generated/sources/annotationProcessor/java/main/com/example/jwt/domain/product/dto/ProductMapperImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/generated/sources/annotationProcessor/java/main/com/example/jwt/domain/role/dto/RoleMapperImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build/generated/sources/annotationProcessor/java/main/com/example/jwt/domain/user/dto/UserMapperImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/jwt/domain/product/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/jwt/domain/product/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/jwt/domain/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/jwt/domain/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/jwt/domain/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/jwt/domain/user/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/jwt/domain/user/UserDetailsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/jwt/domain/user/UserDetailsImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/jwt/domain/user/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/jwt/domain/user/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/jwt/domain/user/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/jwt/domain/user/dto/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/integration/ProductIntegrationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/integration/ProductIntegrationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/unit/ProductControllerUnitTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/unit/ProductControllerUnitTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/unit/ProductRepositoryUnitTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/unit/ProductRepositoryUnitTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/unit/ProductServiceImplUnitTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/unit/ProductServiceImplUnitTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Products.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Products.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/contexts/authenticationcontext/AuthenticationContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/contexts/authenticationcontext/AuthenticationContext.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/models/User.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/models/User.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/routes/Protected.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/routes/Protected.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/yarn.lock" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +131,7 @@
   &quot;associatedIndex&quot;: 0
 }</component>
   <component name="ProjectId" id="2ZImPSx1P3xtYzM8Mdxp3ynTqvn" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -123,7 +162,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.keymap",
-    "ts.external.directory.path": "C:\\Users\\Souri\\Projects\\Modul151\\frontend\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "C:\\Users\\zined\\OneDrive\\Desktop\\Alles\\Wiss\\Modul151\\frontend\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -132,7 +171,8 @@
       "postgresql"
     ],
     "RunConfigurationTargetLRU": [
-      "61625faa-a25b-415f-bd19-fc0fdb1e40e9"
+      "61625faa-a25b-415f-bd19-fc0fdb1e40e9",
+      "41644b3f-175c-43b3-ab1e-1941c83e05dc"
     ],
     "com.intellij.ide.scratch.LRUPopupBuilder$1/": [
       "PostgreSQL"
@@ -148,11 +188,11 @@
       <recent name="com.example.jwt.domain.order" />
     </key>
   </component>
-  <component name="RunManager" selected="Database Script.setup.sql">
+  <component name="RunManager" selected="Gradle.backend [bootJar]">
     <configuration name="setup.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/backend/src/main/resources/sql/setup.sql" />
       <script-mode>FILE</script-mode>
-      <data-source id="61625faa-a25b-415f-bd19-fc0fdb1e40e9" />
+      <data-source id="41644b3f-175c-43b3-ab1e-1941c83e05dc" />
       <method v="2" />
     </configuration>
     <configuration name="backend [bootJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -199,28 +239,6 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="backend [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/backend" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
     <configuration name="backend [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -250,13 +268,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/frontend/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Database Script.setup.sql" />
+      <item itemvalue="Gradle.backend [bootJar]" />
+      <item itemvalue="Gradle.backend [bootRun]" />
+      <item itemvalue="Gradle.backend [clean]" />
+      <item itemvalue="npm.start" />
+      <item itemvalue="Spring Boot.JwtApplication" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Database Script.setup.sql" />
         <item itemvalue="Gradle.backend [bootJar]" />
         <item itemvalue="Gradle.backend [clean]" />
+        <item itemvalue="Database Script.setup.sql" />
+        <item itemvalue="npm.start" />
         <item itemvalue="Gradle.backend [bootRun]" />
-        <item itemvalue="Gradle.backend [build]" />
       </list>
     </recent_temporary>
   </component>

@@ -1,6 +1,7 @@
 import {Navigate, Outlet} from 'react-router-dom';
 import {useAuth} from "../contexts/authenticationcontext/AuthenticationContext";
 import Authority from "../models/Authority";
+import React from 'react';
 
 export interface ProtectedProps {
   authoritiesToGrantAccess: Authority["name"][];

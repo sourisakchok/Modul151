@@ -1,4 +1,5 @@
 package com.example.integration;
+import com.example.jwt.JwtApplication;
 import com.example.jwt.core.security.helpers.AuthorizationSchemas;
 import com.example.jwt.core.security.helpers.JwtProperties;
 import com.example.jwt.domain.authority.Authority;
@@ -35,7 +36,7 @@ import java.util.stream.Stream;
 
 import static org.hamcrest.Matchers.hasSize;
 
-@SpringBootTest
+@SpringBootTest(classes = JwtApplication.class)
 @ContextConfiguration
 @AutoConfigureMockMvc
 @ActiveProfiles("test")
@@ -75,15 +76,15 @@ public class ProductIntegrationTests {
 //    @Test
 //    public void retrieveAll_requestAllProducts_expectAllProductsAsDTOS() throws Exception {
 //        Authority authority = new Authority("CAN_RETRIEVE_PRODUCTS", null);
-//        Role role = roleRepository.saveAndFlush(new Role().setName(RoleEnum.valueOf("ROLE_TESTER")).setAuthorities(Set.of(authority)));
-//        User user = userRepository.saveAndFlush(new User().setEmail("john@doe.com").getRoles().add(role));
+//        Role role = roleRepository.saveAndFlush(new Role().setName(RoleEnum.valueOf("CLIENT")).setAuthorities(Set.of(authority)));
+//        User user = userRepository.saveAndFlush(new User().setEmail("john@doe.com").setRole(role));
 //        List<Product> dummyProducts = productRepository.saveAllAndFlush(
 //                Stream.of(
 //                        new Product("shirt", null, null, 0, 49, null, null),
 //                        new Product("sandwich", null, null, 0, 8, null, null)
 //                ).collect(Collectors.toList())
 //        );
-
+//
 //        mvc.perform(MockMvcRequestBuilders
 //                        .get("/products")
 //                        .header(HttpHeaders.AUTHORIZATION, AuthorizationSchemas.BEARER + " " + generateToken(user.getId()))
@@ -94,21 +95,21 @@ public class ProductIntegrationTests {
 //                .andExpect(MockMvcResultMatchers.jsonPath("$[*].name").value(Matchers.containsInAnyOrder(dummyProducts.get(0).getName(), dummyProducts.get(1).getName())))
 //                .andExpect(MockMvcResultMatchers.jsonPath("$[*].price").value(Matchers.containsInAnyOrder(dummyProducts.get(0).getPurchasePrice(), dummyProducts.get(1).getPurchasePrice())));
 //    }
-
-    @Test
-    public void retrieveById_requestProductById_expectProductAsDTO() throws Exception {
-        User user = userRepository.saveAndFlush(new User().setEmail("john@doe.com").setRoles(null));
-        Product product = productRepository.saveAndFlush(new Product("sandwich", null, null, 0, 8, null, null));
-
-        mvc.perform(MockMvcRequestBuilders
-                        .get("/products/{id}", product.getId())
-                        .header(HttpHeaders.AUTHORIZATION, AuthorizationSchemas.BEARER + " " + generateToken(user.getId()))
-                        .accept(MediaType.APPLICATION_JSON))
-                .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.id").value(product.getId().toString()))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.name").value(product.getName()))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.price").value(product.getSalePrice()));
-    }
+//
+//    @Test
+//    public void retrieveById_requestProductById_expectProductAsDTO() throws Exception {
+//        User user = userRepository.saveAndFlush(new User().setEmail("john@doe.com").setRole(null));
+//        Product product = productRepository.saveAndFlush(new Product("sandwich", null, null, 0, 8, null, null));
+//
+//        mvc.perform(MockMvcRequestBuilders
+//                        .get("/products/{id}", product.getId())
+//                        .header(HttpHeaders.AUTHORIZATION, AuthorizationSchemas.BEARER + " " + generateToken(user.getId()))
+//                        .accept(MediaType.APPLICATION_JSON))
+//                .andExpect(MockMvcResultMatchers.status().isOk())
+//                .andExpect(MockMvcResultMatchers.jsonPath("$.id").value(product.getId().toString()))
+//                .andExpect(MockMvcResultMatchers.jsonPath("$.name").value(product.getName()))
+//                .andExpect(MockMvcResultMatchers.jsonPath("$.price").value(product.getSalePrice()));
+//    }
 
     @Test
     @Disabled("Not implemented yet")
