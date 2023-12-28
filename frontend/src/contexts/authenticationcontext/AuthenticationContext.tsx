@@ -47,12 +47,13 @@ const AuthenticationContextProvider = ({children}: AuthenticationContextProvider
   const authenticate = async () => {
     try {
       const response = await api.post('/users/login', {"email": "max@mustermann.com","password": "Souri1234#"});
-      console.log(response);
+      // console.log(response);
       if (response.headers['authorization']) {
         localStorage.setItem('token', response.headers['authorization']);
         const userProfileResponse = await api.get('/users/profile');
-        console.log(userProfileResponse);
+        // console.log(userProfileResponse);
         if (userProfileResponse.status === 200) {
+          // console.log(userProfileResponse.data)
           setPrincipal(userProfileResponse.data);
           dispatch(ActionTypes.AUTHENTICATED);
         } else {
@@ -70,14 +71,20 @@ const AuthenticationContextProvider = ({children}: AuthenticationContextProvider
     authenticate()
   }, [])
 
-
-//TODO: implement hasAnyAuthority() method. Check if principal has any of the authorities passed as parameter
   const hasAnyAuthority = (authorities: Authority["name"][]): boolean => {
-    if (principal && Array.isArray(principal.authorities)) {
-      // Überprüfe, ob mindestens eine der angegebenen Autoritäten in der Liste der Autoritäten des Benutzers enthalten ist
-      return principal.authorities.some(authority => authorities.includes(authority.name));
+    if (principal === undefined) {
+      return false;
     }
-    return false;
+    const result = getAuthorities(principal);
+    return authorities.every(authorities =>
+        result.some(userAuthority => userAuthority.name === authorities)
+    );
+  }
+
+  function getAuthorities(user: User): Authority[] {
+    const authorities = user.role.authorities;
+    return Array.from(new Set(authorities.map((authority) => authority.id)))
+        .map((authorityId) => authorities.find((authority) => authority.id === authorityId) as Authority);
   }
 
   const logout = async () => {
