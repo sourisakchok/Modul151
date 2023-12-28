@@ -2,6 +2,7 @@ package com.example.jwt.domain.user.dto;
 
 import com.example.jwt.core.generic.ExtendedDTO;
 import com.example.jwt.domain.level.Level;
+import com.example.jwt.domain.order.Order;
 import com.example.jwt.domain.role.Role;
 import com.example.jwt.domain.role.dto.RoleDTO;
 
@@ -25,12 +26,27 @@ public class UserDTO extends ExtendedDTO {
   private String plz;
   private LocalDate birthday;
   private Level level;
-  private Set<RoleDTO> role;
+  private Role role;
+  private Set<Order> orders;
 
   public UserDTO() {
   }
 
-  public UserDTO(UUID id, String firstName, String lastName, String email, String password, String address, String ort, String plz, LocalDate birthday, Level level, Set<RoleDTO> role) {
+  public UserDTO(String firstName, String lastName, String email, String password, String address, String ort, String plz, LocalDate birthday, Level level, Role role, Set<Order> orders) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.email = email;
+    this.password = password;
+    this.address = address;
+    this.ort = ort;
+    this.plz = plz;
+    this.birthday = birthday;
+    this.level = level;
+    this.role = role;
+    this.orders = orders;
+  }
+
+  public UserDTO(UUID id, String firstName, String lastName, String email, String password, String address, String ort, String plz, LocalDate birthday, Level level, Role role, Set<Order> orders) {
     super(id);
     this.firstName = firstName;
     this.lastName = lastName;
@@ -42,6 +58,7 @@ public class UserDTO extends ExtendedDTO {
     this.birthday = birthday;
     this.level = level;
     this.role = role;
+    this.orders = orders;
   }
 
   public String getFirstName() {
@@ -125,12 +142,21 @@ public class UserDTO extends ExtendedDTO {
     return this;
   }
 
-  public Set<RoleDTO> getRole() {
+  public Role getRole() {
     return role;
   }
 
-  public UserDTO setRole(Set<RoleDTO> role) {
+  public UserDTO setRole(Role role) {
     this.role = role;
+    return this;
+  }
+
+  public Set<Order> getOrders() {
+    return orders;
+  }
+
+  public UserDTO setOrders(Set<Order> orders) {
+    this.orders = orders;
     return this;
   }
 }

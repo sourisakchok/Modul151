@@ -39,16 +39,11 @@ public class UserServiceImpl extends ExtendedServiceImpl<User> implements UserSe
   @Override
   public User register(User user) {
     user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-    user.getRoles().add(roleRepository.findByName(RoleEnum.CLIENT));
+    user.setRole(roleRepository.findByName(RoleEnum.CLIENT));
     user.setLevel(levelRepository.findByName(LevelEnum.BRONZE));
     return save(user);
 
   }
-
-//  @Override
-//  public Optional<User> retrievePrincipal() {
-//    return userAware.getCurrentAuditor();
-//  }
 
   @Override
   public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
@@ -57,16 +52,6 @@ public class UserServiceImpl extends ExtendedServiceImpl<User> implements UserSe
   }
 
   public Optional<User> retrievePrincipal() throws UsernameNotFoundException {
-    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-
-    if (authentication != null && authentication.isAuthenticated()) {
-      Object principal = authentication.getPrincipal();
-
-      if (principal instanceof UserDetailsImpl) {
-        return Optional.of(((UserDetailsImpl) principal).user());
-      }
-    }
-
-    return Optional.empty();
+    return userAware.getCurrentAuditor();
   }
 }

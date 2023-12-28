@@ -4,6 +4,7 @@ import com.example.jwt.domain.user.dto.UserDTO;
 import com.example.jwt.domain.user.dto.UserMapper;
 import com.example.jwt.domain.user.dto.UserRegisterDTO;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,9 +54,9 @@ public class UserController {
   }
 
   @GetMapping("/profile")
-  public ResponseEntity<User> retrieveProfile() {
-    User user = userService.findOrThrow(userService.retrievePrincipal());
-    return new ResponseEntity<>(user, HttpStatus.OK);
+  public ResponseEntity<UserDTO> retrieveProfile() {
+    User user = userService.retrievePrincipal().get();
+    return new ResponseEntity<>(userMapper.toDTO(user), HttpStatus.OK);
   }
 
 

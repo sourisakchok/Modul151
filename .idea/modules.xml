@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/4IT.iml" filepath="$PROJECT_DIR$/.idea/4IT.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jwt.main.iml" filepath="$PROJECT_DIR$/.idea/modules/jwt.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jwt.iml" filepath="$PROJECT_DIR$/.idea/modules/jwt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jwt.test.iml" filepath="$PROJECT_DIR$/.idea/modules/jwt.test.iml" />
     </modules>
   </component>
 </project>

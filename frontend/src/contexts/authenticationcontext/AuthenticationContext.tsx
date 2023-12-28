@@ -70,7 +70,13 @@ const AuthenticationContextProvider = ({children}: AuthenticationContextProvider
     authenticate()
   }, [])
 
+
+//TODO: implement hasAnyAuthority() method. Check if principal has any of the authorities passed as parameter
   const hasAnyAuthority = (authorities: Authority["name"][]): boolean => {
+    if (principal && Array.isArray(principal.authorities)) {
+      // Überprüfe, ob mindestens eine der angegebenen Autoritäten in der Liste der Autoritäten des Benutzers enthalten ist
+      return principal.authorities.some(authority => authorities.includes(authority.name));
+    }
     return false;
   }
 
