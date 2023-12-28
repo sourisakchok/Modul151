@@ -1,3 +1,59 @@
+#version: '3.8'
+#services:
+#  db:
+#    image: postgres
+#    environment:
+#      POSTGRES_USER: postgres
+#      POSTGRES_PASSWORD: postgres
+#      POSTGRES_DB: postgres
+#      SONAR_DB: sonar
+#      SONAR_USER: sonar
+#      SONAR_PASSWORD: sonar
+#    ports:
+#      - 5432:5432
+#  spring-app:
+#    image: spring-app
+#    build:
+#      context: ./backend
+#      dockerfile: Dockerfile
+#    ports:
+#        - 8080:8080
+#    depends_on:
+#      - db
+#  prometheus:
+#    image: prom/prometheus:v2.44.0
+#    container_name: prometheus
+#    ports:
+#      - "9090:9090"
+#    volumes:
+#      - ./backend/monitoring/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+#  grafana:
+#    image: grafana/grafana:9.5.2
+#    container_name: grafana
+#    ports:
+#      - "4000:3000"
+#    restart: unless-stopped
+#    volumes:
+#      - ./backend/monitoring/grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+#  react-app:
+#    build:
+#      context: ./frontend
+#      dockerfile: Dockerfile
+#    ports:
+#      - 3000:3000
+#  sonarqube:
+#    image: sonarqube:latest
+#    ports:
+#      - "9000:9000"
+#    environment:
+#      - SONARQUBE_JDBC_URL=jdbc:postgresql://db:5432/sonar
+#      - SONAR_JDBC_USERNAME=sonar
+#      - SONAR_JDBC_PASSWORD=sonar
+#    depends_on:
+#      - db
+#
+
+
 version: '3.8'
 services:
   db:
@@ -17,7 +73,7 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     ports:
-        - 8080:8080
+      - 8080:8080
     depends_on:
       - db
   prometheus:
@@ -41,14 +97,4 @@ services:
       dockerfile: Dockerfile
     ports:
       - 3000:3000
-  sonarqube:
-    image: sonarqube:latest
-    ports:
-      - "9000:9000"
-    environment:
-      - SONARQUBE_JDBC_URL=jdbc:postgresql://db:5432/sonar
-      - SONAR_JDBC_USERNAME=sonar
-      - SONAR_JDBC_PASSWORD=sonar
-    depends_on:
-      - db
 
