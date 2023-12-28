@@ -49,7 +49,7 @@ public class UserController {
 
   @PostMapping("/register")
   public ResponseEntity<UserDTO> register(@Valid @RequestBody UserRegisterDTO userRegisterDTO) {
-    User user = userService.register(userMapper.fromUserRegisterDTO(userRegisterDTO));
+    User user = userService.register(userRegisterDTO);
     return new ResponseEntity<>(userMapper.toDTO(user), HttpStatus.CREATED);
   }
 
