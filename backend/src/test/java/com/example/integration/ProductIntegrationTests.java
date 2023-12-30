@@ -82,6 +82,7 @@ public class ProductIntegrationTests {
         userRepository.saveAndFlush(user);
     }
 
+
     @Test
     public void retrieveAll_requestAllProducts_expectAllProductsAsDTOS() throws Exception {
         List<Product> dummyProducts = productRepository.saveAllAndFlush(
@@ -94,9 +95,8 @@ public class ProductIntegrationTests {
         // Define the user variable
         User user;
 
-        // Initialize the user variable
-        user = userRepository.findByEmail("john@doe.com").get();
-
+        given(userService.findById(any(UUID.class))).willReturn(user);
+        given(productService.findAll()).willReturn(dummyProducts);
         mvc.perform(MockMvcRequestBuilders
                         .get("/products")
                         .header(HttpHeaders.AUTHORIZATION, AuthorizationSchemas.BEARER + " " + generateToken(user.getId()))
