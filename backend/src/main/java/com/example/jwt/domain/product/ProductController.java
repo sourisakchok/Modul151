@@ -48,7 +48,7 @@ public class ProductController {
   @ResponseBody
   @PreAuthorize("hasAuthority('CAN_RETRIEVE_PRODUCTS')")
   public ResponseEntity<List<Product>> retrieveAll(Pageable pageable) {
-    return new ResponseEntity<>(productService.findAll(pageable), HttpStatus.OK);
+    return new ResponseEntity<>(productService.findAll(), HttpStatus.OK);
   }
 
   @GetMapping("/price/highest")
