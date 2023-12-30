@@ -39,10 +39,10 @@ public class ProductServiceImplUnitTests {
 
     @BeforeEach
     public void setUp() {
-        dummyProduct = new Product("kettle", null, null, 0, 107, null, null);
+        dummyProduct = new Product(UUID.randomUUID(),"kettle", null, null, 0, 107, null, null);
         dummyProducts = Stream.of(
-                new Product("shirt", null, null, 0, 49, null, null),
-                new Product("sandwich", null, null, 0, 8, null, null)
+                new Product(UUID.randomUUID(),"shirt", null, null, 0, 49, null, null),
+                new Product(UUID.randomUUID(),"sandwich", null, null, 0, 8, null, null)
         ).collect(Collectors.toList());
     }
 
@@ -61,12 +61,12 @@ public class ProductServiceImplUnitTests {
         assertThat(productArgumentCaptor.getValue()).isEqualTo(dummyProduct.getId());
     }
 
-    @Test
-    @Disabled("Not implemented yet")
-    public void accumulatedPriceOfAllProducts_provideProducts_expectCorrectPrice () {}
-
-    @Test
-    @Disabled("Not implemented yet - Recommended test method: Limit Tests")
-    public void isPriceOfProductAbove_provideProduct_expectItToBeAboveGivenPrice () {}
+//    @Test
+//    @Disabled("Not implemented yet")
+//    public void accumulatedPriceOfAllProducts_provideProducts_expectCorrectPrice () {}
+//
+//    @Test
+//    @Disabled("Not implemented yet - Recommended test method: Limit Tests")
+//    public void isPriceOfProductAbove_provideProduct_expectItToBeAboveGivenPrice () {}
 
 }

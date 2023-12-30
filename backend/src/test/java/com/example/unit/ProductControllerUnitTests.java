@@ -85,9 +85,12 @@ public class ProductControllerUnitTests {
 
     @Test
     public void retrieveAll_requestAllProducts_expectAllProductsAsDTOS() throws Exception {
-        given(userService.findById(any(UUID.class))).willReturn(
-                new User().setEmail("john@doe.com").setRoles(Set.of(new Role()
-                        .setAuthorities(Set.of(new Authority().setName("USER_READ"))))));
+        User user = new User();
+        user.setEmail("john@doe.com");
+        user.setRole(new Role().setAuthorities(Set.of(new Authority().setName("CAN_RETRIEVE_PRODUCTS"))));
+
+        given(userService.findById(any(UUID.class))).willReturn(user);
+        //Reintroduce pageable in endpoint and adapt mock
         given(productService.findAll()).willReturn(dummyProducts);
 
         mvc.perform(MockMvcRequestBuilders

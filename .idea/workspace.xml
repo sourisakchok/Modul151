@@ -5,16 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="076c3628-09b4-4641-bdcc-3a482ee0c3c1" name="Changes" comment="sonarcloud">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/sonarqube.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/sonarqube.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/.gradle/7.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gradle/7.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/.gradle/7.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gradle/7.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/.gradle/7.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gradle/7.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/.gradle/7.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gradle/7.5/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.gradle/7.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gradle/7.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/integration/ProductIntegrationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/integration/ProductIntegrationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/unit/ProductControllerUnitTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/unit/ProductControllerUnitTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/unit/ProductServiceImplUnitTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/unit/ProductServiceImplUnitTests.java" afterDir="false" />
+    </list>
+    <list id="85276aab-8065-46ab-8b4b-d05168d2ea34" name="Changes by chris" comment="">
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/jwt/domain/product/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/jwt/domain/product/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/integration/ProductIntegrationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/integration/ProductIntegrationTests.java" afterDir="false" />
+    </list>
+    <list id="97c2a04a-39d9-4c49-bae4-7150b9cf441c" name="Changes by Erazer" comment="">
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/integration/ProductIntegrationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/integration/ProductIntegrationTests.java" afterDir="false" />
+    </list>
+    <list id="eb22d65b-13d3-4951-a397-28b1b0a8db31" name="Changes by yves" comment="">
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/unit/ProductControllerUnitTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/unit/ProductControllerUnitTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,11 +98,54 @@
   <component name="KubernetesSettings">
     <option name="contextName" value="minikube" />
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/backend/src/test/java/com/example/unit/ProductControllerUnitTests.java">
+      <ranges>
+        <range start1="50" end1="51" start2="50" end2="51" changelist="eb22d65b-13d3-4951-a397-28b1b0a8db31" />
+        <range start1="64" end1="64" start2="64" end2="65" changelist="eb22d65b-13d3-4951-a397-28b1b0a8db31" />
+        <range start1="67" end1="68" start2="68" end2="69" changelist="eb22d65b-13d3-4951-a397-28b1b0a8db31" />
+        <range start1="78" end1="79" start2="79" end2="80" changelist="eb22d65b-13d3-4951-a397-28b1b0a8db31" />
+        <range start1="80" end1="82" start2="81" end2="83" changelist="eb22d65b-13d3-4951-a397-28b1b0a8db31" />
+        <range start1="87" end1="90" start2="88" end2="94" changelist="076c3628-09b4-4641-bdcc-3a482ee0c3c1" />
+        <range start1="107" end1="108" start2="111" end2="116" changelist="eb22d65b-13d3-4951-a397-28b1b0a8db31" />
+        <range start1="128" end1="129" start2="136" end2="137" changelist="eb22d65b-13d3-4951-a397-28b1b0a8db31" />
+        <range start1="130" end1="130" start2="138" end2="141" changelist="eb22d65b-13d3-4951-a397-28b1b0a8db31" />
+        <range start1="132" end1="133" start2="143" end2="144" changelist="eb22d65b-13d3-4951-a397-28b1b0a8db31" />
+        <range start1="202" end1="203" start2="213" end2="214" changelist="eb22d65b-13d3-4951-a397-28b1b0a8db31" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/backend/src/test/java/com/example/integration/ProductIntegrationTests.java">
+      <ranges>
+        <range start1="7" end1="7" start2="7" end2="8" changelist="85276aab-8065-46ab-8b4b-d05168d2ea34" />
+        <range start1="12" end1="12" start2="13" end2="14" changelist="85276aab-8065-46ab-8b4b-d05168d2ea34" />
+        <range start1="37" end1="37" start2="39" end2="41" changelist="85276aab-8065-46ab-8b4b-d05168d2ea34" />
+        <range start1="48" end1="49" start2="52" end2="53" changelist="076c3628-09b4-4641-bdcc-3a482ee0c3c1" />
+        <range start1="53" end1="53" start2="57" end2="60" changelist="85276aab-8065-46ab-8b4b-d05168d2ea34" />
+        <range start1="56" end1="56" start2="63" end2="66" changelist="85276aab-8065-46ab-8b4b-d05168d2ea34" />
+        <range start1="59" end1="59" start2="69" end2="71" changelist="85276aab-8065-46ab-8b4b-d05168d2ea34" />
+        <range start1="60" end1="61" start2="72" end2="74" changelist="85276aab-8065-46ab-8b4b-d05168d2ea34" />
+        <range start1="64" end1="65" start2="77" end2="78" changelist="85276aab-8065-46ab-8b4b-d05168d2ea34" />
+        <range start1="74" end1="74" start2="87" end2="88" changelist="85276aab-8065-46ab-8b4b-d05168d2ea34" />
+        <range start1="77" end1="78" start2="91" end2="92" changelist="85276aab-8065-46ab-8b4b-d05168d2ea34" />
+        <range start1="80" end1="80" start2="94" end2="95" changelist="85276aab-8065-46ab-8b4b-d05168d2ea34" />
+        <range start1="83" end1="83" start2="98" end2="99" changelist="97c2a04a-39d9-4c49-bae4-7150b9cf441c" />
+        <range start1="86" end1="92" start2="102" end2="107" changelist="85276aab-8065-46ab-8b4b-d05168d2ea34" />
+        <range start1="94" end1="95" start2="109" end2="112" changelist="85276aab-8065-46ab-8b4b-d05168d2ea34" />
+        <range start1="96" end1="99" start2="113" end2="115" changelist="97c2a04a-39d9-4c49-bae4-7150b9cf441c" />
+        <range start1="101" end1="102" start2="117" end2="118" changelist="85276aab-8065-46ab-8b4b-d05168d2ea34" />
+        <range start1="107" end1="108" start2="123" end2="124" changelist="85276aab-8065-46ab-8b4b-d05168d2ea34" />
+        <range start1="116" end1="117" start2="132" end2="133" changelist="85276aab-8065-46ab-8b4b-d05168d2ea34" />
+        <range start1="120" end1="121" start2="136" end2="137" changelist="85276aab-8065-46ab-8b4b-d05168d2ea34" />
+        <range start1="122" end1="124" start2="138" end2="139" changelist="85276aab-8065-46ab-8b4b-d05168d2ea34" />
+        <range start1="128" end1="139" start2="143" end2="154" changelist="85276aab-8065-46ab-8b4b-d05168d2ea34" />
+      </ranges>
+    </file>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -101,42 +158,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/zined/OneDrive/Desktop/Alles/Wiss/Modul151&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Souri\\Projects\\Modul151\\frontend\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/zined/OneDrive/Desktop/Alles/Wiss/Modul151",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "ts.external.directory.path": "C:\\Users\\Souri\\Projects\\Modul151\\frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ],
-    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/&quot;: [
-      &quot;PostgreSQL&quot;
+    "RunConfigurationTargetLRU": [
+      "b1e38621-9d8f-465b-adc7-e6b6f8901ef0/database/\"postgres\""
+    ],
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/": [
+      "PostgreSQL"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.example.jwt.domain.role" />
@@ -146,115 +206,125 @@
       <recent name="com.example.jwt.domain.order" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.backend [bootJar]">
-    <configuration name="backend [bootBuildImage]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.ProductIntegrationTests">
+    <configuration name="ProductIntegrationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/backend" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="bootBuildImage" />
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.example.integration.ProductIntegrationTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
+      <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="backend [bootJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ProductIntegrationTests.retrieveAll_requestAllProducts_expectAllProductsAsDTOS" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/backend" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="bootJar" />
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.example.integration.ProductIntegrationTests.retrieveAll_requestAllProducts_expectAllProductsAsDTOS&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
+      <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="backend [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ProductIntegrationTests.retrieveById_requestProductById_expectProductAsDTO" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/backend" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="bootRun" />
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.example.integration.ProductIntegrationTests.retrieveById_requestProductById_expectProductAsDTO&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
+      <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="backend [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ProductRepositoryUnitTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/backend" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="build" />
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.example.unit.ProductRepositoryUnitTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
+      <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="backend [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ProductServiceImplUnitTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/backend" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="clean" />
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.example.unit.ProductServiceImplUnitTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
+      <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="JwtApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
@@ -265,20 +335,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Gradle.backend [bootBuildImage]" />
-      <item itemvalue="Gradle.backend [build]" />
-      <item itemvalue="Gradle.backend [bootJar]" />
-      <item itemvalue="Gradle.backend [bootRun]" />
-      <item itemvalue="Gradle.backend [clean]" />
+      <item itemvalue="Gradle.ProductIntegrationTests" />
+      <item itemvalue="Gradle.ProductIntegrationTests.retrieveAll_requestAllProducts_expectAllProductsAsDTOS" />
+      <item itemvalue="Gradle.ProductIntegrationTests.retrieveById_requestProductById_expectProductAsDTO" />
+      <item itemvalue="Gradle.ProductRepositoryUnitTests" />
+      <item itemvalue="Gradle.ProductServiceImplUnitTests" />
       <item itemvalue="Spring Boot.JwtApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.backend [bootJar]" />
-        <item itemvalue="Gradle.backend [clean]" />
-        <item itemvalue="Gradle.backend [bootJar]" />
-        <item itemvalue="Gradle.backend [clean]" />
-        <item itemvalue="Gradle.backend [build]" />
+        <item itemvalue="Gradle.ProductIntegrationTests.retrieveById_requestProductById_expectProductAsDTO" />
+        <item itemvalue="Gradle.ProductIntegrationTests" />
+        <item itemvalue="Gradle.ProductIntegrationTests.retrieveAll_requestAllProducts_expectAllProductsAsDTOS" />
+        <item itemvalue="Gradle.ProductRepositoryUnitTests" />
+        <item itemvalue="Gradle.ProductServiceImplUnitTests" />
       </list>
     </recent_temporary>
   </component>
@@ -304,6 +374,7 @@
       <workItem from="1702718998652" duration="11961000" />
       <workItem from="1702735809739" duration="8031000" />
       <workItem from="1703615960509" duration="1910000" />
+      <workItem from="1703883294059" duration="7545000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -425,7 +496,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703798859869</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="sonarcloud">
+      <option name="closed" value="true" />
+      <created>1703800089799</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1703800089799</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -487,6 +566,42 @@
     <MESSAGE value="sonarqube einbinden" />
     <MESSAGE value="sonarcloud" />
     <option name="LAST_COMMIT_MESSAGE" value="sonarcloud" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/test/java/com/example/unit/ProductControllerUnitTests.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/test/java/com/example/unit/ProductControllerUnitTests.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/test/java/com/example/integration/ProductIntegrationTests.java</url>
+          <line>76</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/test/java/com/example/integration/ProductIntegrationTests.java</url>
+          <line>117</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/test/java/com/example/integration/ProductIntegrationTests.java</url>
+          <line>132</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/test/java/com/example/integration/ProductIntegrationTests.java</url>
+          <line>138</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -46,7 +46,7 @@ public class ProductIntegrationTests {
     @Autowired
     private MockMvc mvc;
 
-    @MockBean
+    @Autowired
     private JwtProperties jwtProperties;
 
     @MockBean
